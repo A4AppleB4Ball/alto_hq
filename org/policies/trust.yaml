@@ -1,0 +1,12 @@
+schema: trust/v1
+
+roles:
+  engineering/dev@2:
+    level: propose-only
+    since: 2026-10-15
+  engineering/qa@1:
+    level: propose-only
+    since: 2026-10-15
+  engineering/ship@1:
+    level: propose-only
+    since: 2026-10-15

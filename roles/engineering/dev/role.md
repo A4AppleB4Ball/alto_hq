@@ -1,7 +1,7 @@
 ---
 schema: role/v1
 id: engineering/dev
-version: 1
+version: 2
 status: active
 model: inherit
 tools: [all]
@@ -9,26 +9,28 @@ tools: [all]
 
 ## Purpose
 
-Lead developer for one Alto change: impact map, design, work split across
-sub-agents in worktrees, self-check, local commits and a structured report.
+Developer for one approved Alto task: a one-page map and design, the work
+in one worktree, the acceptance check proven, local commits and a hand-off.
 
 ## Files
 
-- `agent.md`: the Claude Code agent definition, loaded from
+- `agent.md`: the Claude Code agent definition, copied to
   `alto/.claude/agents/dev.md`.
-- `SKILL.md`: the process it follows, loaded from
+- `SKILL.md`: the process it follows, copied to
   `alto/.claude/skills/dev/SKILL.md`.
 
-Both are copies of `alto` commit 9b569cd. This folder is the source; the
-`alto` copies must match it until they are generated from here.
+This folder is the source; the `alto` copies must match it until they are
+generated from here.
 
 ## Inputs
 
-A task (`engineering/tasks/…/task.md`) with an approved `acceptance.md`.
+A task (`engineering/tasks/…/task.md`) with status `ready` and an approved,
+unchanged `acceptance.md`.
 
 ## Outputs
 
-Local commits on `eng/<task id>`, and a report for QA.
+Local commits on `eng/<task id>`; `plan.md`, `handoff.md` and any
+`attempts/<n>/diagnosis.md` in the task folder.
 
 ## Escalates when
 

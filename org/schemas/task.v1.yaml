@@ -21,5 +21,7 @@ body: [Goal, Why, Out of scope]
 
 # Other files in the task folder (free text, no frontmatter of their own):
 #   acceptance.md             the check that proves done; approved before code
+#   plan.md                   dev's one-page map and design
 #   attempts/<n>/diagnosis.md why an attempt stopped
+#   handoff.md                dev's report: commits, check outputs, not done
 #   evidence.md               schema evidence/v1

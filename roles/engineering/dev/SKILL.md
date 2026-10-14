@@ -1,111 +1,117 @@
 ---
 name: dev
-description: The gated procedure for any code change to Alto — impact map, design, implement in worktrees with sub-agents, self-check against main, hand-off. Use whenever implementing a feature or fix.
+description: The procedure for one code change to Alto — start from an approved task in alto_hq, map and design in one page, implement in one worktree, prove the acceptance check, stop after two failed attempts, hand off. Use whenever implementing a feature or fix.
 ---
 
 # dev
 
-Do the gates in order. Do not start a gate before the previous one is done.
-`<task>` below is the task id; its folder is `work/tasks/<task>/` (see
-`work/README.md`). Raw logs go to `../news_server/verify_data/runs/<task>/`.
+`<task>` is an `alto_hq` task id. Its folder is
+`../alto_hq/engineering/tasks/<year>/<task>/` (conventions:
+`../alto_hq/README.md`, schema `../alto_hq/org/schemas/task.v1.yaml`).
 
-## Gate 0 — Load memory
+## Step 0 — Check the task is ready (stop if not)
 
-Read `work/decisions.md`, `work/dev/notes.md`, and `work/tasks/<task>/`
-(`task.md`, plus `qa.md` and `thread.md` if this is a re-round). If the
-task has no folder, create `task.md` from the user's request. Set
-`status: in-dev` and `owner:`, and add a log line.
+Read `task.md` and `acceptance.md`.
 
-On a re-round, answer every open QA finding in `thread.md`: fixed (commit),
-disputed (evidence), or deferred (new task id). Never silently skip one.
+- `status` must be `ready`, and `approvals` must hold `acceptance.md` with
+  the sha256 of the file as it is now (`shasum -a 256 acceptance.md`).
+- If there is no task folder, the status is not `ready`, or the hash
+  differs: stop and report. Never write or rewrite the acceptance check
+  yourself; propose a change to it in your report instead.
 
-## Gate 1 — Impact map (before any code)
+Claim it: set `status: in_progress`, `claimed_by: <run id>`,
+`lease_until:` (now + 1 day). Read `work/decisions.md` and
+`work/dev/notes.md` in `alto` once.
 
-Write `work/tasks/<task>/impact.md`:
+## Step 1 — Map and design: one page, before code
 
-- **Touches:** files, stores (`backend/stores/<feature>/`), pipelines,
-  entry points (intake.runner, stance.runner, e2e.run, workflow.cli,
-  execution.runner, raw.master_pipeline, backtest.replay, the API).
-- **Callers:** grep every caller of every function whose behaviour changes.
-  A change to a shared function is a change to all its callers.
-- **Who is affected:** which users/accounts, live orders, positions,
-  on-disk formats. Does any user data leave `workspace/<userid>/`?
-- **Money path?** Does it touch target weights (`backend/trading/core.py`),
-  planning, order placement, reconcile, fills? If yes, every change needs
-  a test that pins old vs new numbers.
-- **Ownership:** which sub-agent owns which files. One owner per file.
+Write `plan.md` in the task folder, at most one page:
 
-## Gate 2 — Design
+- **Touches:** files, stores, entry points (intake.runner, stance.runner,
+  e2e.run, workflow.cli, execution.runner, raw.master_pipeline,
+  backtest.replay, the API). Grep every caller of every function whose
+  behaviour changes.
+- **Money path?** Target weights, planning, order placement, reconcile,
+  fills. If yes, every change gets a test pinning old vs new numbers.
+- **Change:** what changes, what explicitly stays the same, and behaviour
+  the owner will notice.
+- **How each acceptance check will be run**, command by command.
 
-Append to `impact.md`: what changes, what explicitly stays the same, and
-**behaviour changes the user will notice** (new errors, stopped jobs,
-changed numbers). Prefer the smallest change. No fallbacks — anything
-that would "default" must raise instead.
+If the map shows the change is a different `kind` than `task.md` declares,
+or bigger than about a day: stop, set `status: needs_owner`, say why.
 
-## Gate 3 — Implement
+## Step 2 — Implement in one worktree, yourself
 
-- You are the lead: you plan, split, integrate and judge. Hand the actual
-  work to sub-agents, including ad-hoc work that comes up mid-task
-  (investigating a caller, a data scan, a flaky test, a design spike) —
-  spawn one for it rather than doing it yourself.
-- Independent pieces → one sub-agent each, in its own worktree
-  (`isolation: "worktree"`). Dependent pieces → sequential.
-- A sub-agent may split its piece further and launch its own sub-agents,
-  as deep as the work needs. Each level passes the full rules on and
-  reports up. If a sub-agent cannot launch agents, it does the work itself
-  or reports back the split for you to launch.
-- Every sub-agent brief contains: the task, its owned files, the rules
-  (raise don't fallback, no brittle rules or keyword/regex heuristics,
-  modular code, absolute imports, paths via `backend.config.paths`
-  and stores, per-user data only, no real-data writes, tests in
-  `<feature>/tests/`, no attribution lines), and "report what you did not do".
+- One branch, `eng/<task>`, one worktree under `.claude/worktrees/`. Do the
+  work yourself.
+- Use a sub-agent only for (a) a read-only search that would flood your
+  context, or (b) a genuinely independent piece of more than half a day.
+  One level only: sub-agents do not launch sub-agents. Every brief carries
+  the rules below.
+- Rules: raise, never fall back or silently skip; no brittle rules or
+  keyword/regex heuristics; modular code; absolute imports, no shims; data
+  paths only through `backend.config.paths` and `backend/stores/`; user
+  data only under `workspace/<userid>/`; tests in `<feature>/tests/`.
+- **Data safety, until T-20261015-0321-checkout-data-root is merged:**
+  worktrees resolve the production data root (the
+  `.claude/worktrees/news_server` symlink). Run nothing that writes data
+  from a worktree: only `--dry-run`, read-only commands and tests that use
+  temp dirs.
 - Every bug fix ships with the test that fails before and passes after.
-  Where a rule in `backend/invariants/` fits, add the rule too.
 
-## Gate 4 — Self-check
+## Step 3 — Prove it
 
-Run from `backend/` (the sandbox blocks pytest from scanning the repo root):
+Run, in this order, and keep the outputs:
 
-```bash
-cd backend && PYTHONPATH=.. SESSION_SECRET=x ALLOWED_EMAILS=a@b.c \
-  GOOGLE_CLIENT_ID=x GOOGLE_CLIENT_SECRET=x GOOGLE_REDIRECT_URI=http://x \
-  python -m pytest -q -p no:cacheprovider --rootdir=. . \
-  | grep -E '^(FAILED|ERROR)' | sed 's/ - .*//' | sort > $TMPDIR/<task>.new
-```
+1. **The acceptance check**, exactly as `acceptance.md` states it. This is
+   the proof; tests are not a substitute for it.
+2. **Targeted tests** of the touched features (`<feature>/tests/`).
+3. **The full suite once, at the end**, against a baseline of the base
+   commit. Build the baseline from a committed tree
+   (`git worktree add --detach .claude/worktrees/<task>-base <base>`), run
+   from `backend/`:
 
-Run the same on `main` (a fresh worktree under `.claude/worktrees/`) into
-`$TMPDIR/<task>.base`, then `comm -23 new base`. Required:
+   ```bash
+   cd backend && PYTHONPATH=.. SESSION_SECRET=x ALLOWED_EMAILS=a@b.c \
+     GOOGLE_CLIENT_ID=x GOOGLE_CLIENT_SECRET=x GOOGLE_REDIRECT_URI=http://x \
+     python -m pytest -q -p no:cacheprovider --rootdir=. . \
+     | grep -E '^(FAILED|ERROR)' | sed 's/ - .*//' | sort > $TMPDIR/<task>.new
+   ```
 
-- No failure that is new versus main. A test that moved files counts as
-  the same test.
-- `stores/tests/test_boundaries.py` passes; KNOWN_VIOLATIONS only shrank.
-- Every entry point above imports (`python -c "import backend.x.y"`).
-- Rebased onto current `main` with conflicts resolved.
+   Same into `$TMPDIR/<task>.base`; `comm -23 new base` must be empty.
+   `stores/tests/test_boundaries.py` passes; every entry point imports.
 
-Then launch at least one **independent verifier** sub-agent per piece:
-it gets the diff and the task only, and tries to break the change.
-Fix what it confirms; re-verify.
+No separate verifier sub-agents: QA is the independent check.
 
-## Gate 5 — Hand-off
+## Stop rule
 
-One local commit per item, message `<Area>: <what changed>`, no
-Co-Authored-By or Claude attribution. Never push.
+An **attempt** ends when a check in Step 3 fails and you cannot see why
+from its output. Then write `attempts/<n>/diagnosis.md`: what you tried,
+what failed (the output), what you now believe the cause is. After the
+second attempt, set `status: needs_owner` with `waiting_on:` and stop. Do
+not start a third attempt, and do not loosen a check to make it pass.
 
-Write the memory before reporting (commit it with the work):
-- `work/tasks/<task>/handoff.md` — the report below.
-- `task.md` — `status: in-qa`, a log line with the commit range.
-- Anything found outside the task → a new `work/tasks/<id>/task.md`
-  (`status: open`); product ideas → `backend/docs/25_future_ideas.md`.
-- `work/dev/` — tend your space (`work/README.md`, "Role spaces"): what a
-  future dev must know that the code does not say; fix what proved wrong;
-  improve this skill if a step proved wrong or missing.
+Also stop, with the same diagnosis, when the task's budget (`task.md`, or
+`../alto_hq/org/policies/budgets.yaml`) is spent.
 
-Report:
+## Step 4 — Hand off
 
-- branch, commit hashes, base commit
-- per item: what changed, its test(s), verifier result
-- suite: base vs new counts, new-only failures (must be none)
-- behaviour changes the user must know before deploy
-- deferred / not done, with file:line
+- One local commit per item on `eng/<task>`, message `<Area>: <what
+  changed>`, no Co-Authored-By or Claude attribution. Never push, never
+  merge.
+- Write `handoff.md` in the task folder: branch, base and commit hashes;
+  each acceptance check with its command and output; targeted tests; suite
+  base vs new; behaviour changes the owner must know; what was not done,
+  with file:line.
+- `task.md`: keep `status: in_progress`, clear `claimed_by`, add a
+  `friction:` line if the process or a template got in the way.
+- Found something outside the task: a one-paragraph note under "Found" in
+  `handoff.md`. Do not open or start other work.
+- `work/dev/notes.md`: add a fact only if this run proved it (with
+  file:line or a commit); fix an entry this run proved wrong. Do not
+  reorganise it.
 
-Next step for the user: `/qa` on the commit range.
+Do not edit this skill or your agent definition. Propose a change in
+`handoff.md`; the owner versions roles in `../alto_hq/roles/`.
+
+Next step for the owner: QA on the commit range.

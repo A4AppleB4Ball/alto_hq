@@ -114,7 +114,9 @@ alto_hq/
 │   ├── tasks/<year>/T-…/
 │   │   ├── task.md                    # goal, change kind, status, claim
 │   │   ├── acceptance.md              # the check, written and approved before code
+│   │   ├── plan.md                    # dev: one-page map and design, before code
 │   │   ├── attempts/<n>/diagnosis.md  # written when an attempt stops; at most 2
+│   │   ├── handoff.md                 # dev: commits, acceptance check outputs, what was not done
 │   │   └── evidence.md                # QA result, golden replay, merge commit
 │   └── releases/v<n>.md               # what a release shipped, linking its tasks
 │
