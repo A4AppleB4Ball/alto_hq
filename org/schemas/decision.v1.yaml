@@ -1,0 +1,14 @@
+schema: decision/v1
+extends: item/v1
+file: org/decisions/<year>/D-….md
+
+required:
+  status: {type: enum, values: [in_force, superseded, revoked], final: [superseded, revoked]}
+  decided_by: {type: enum, values: [owner]}
+  covers: {type: list, of: ref, note: "the items or the action class it decides"}
+
+optional:
+  standing: {type: bool, note: "true: a policy for every future case of its class"}
+  superseded_by: {type: ref}
+
+body: [Decision, Why, Conditions]

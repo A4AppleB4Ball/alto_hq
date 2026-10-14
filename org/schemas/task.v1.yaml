@@ -1,0 +1,25 @@
+schema: task/v1
+extends: item/v1
+file: engineering/tasks/<year>/T-…/task.md
+
+required:
+  status:
+    type: enum
+    values: [draft, awaiting_owner, ready, in_progress, needs_owner, done, abandoned]
+    final: [done, abandoned]
+  kind: {type: enum, values: [decision, user-facing, internal]}
+
+optional:
+  branch: {type: text, note: "eng/<id> in alto"}
+  version: {type: text, note: "the product version this ships in, v<n>"}
+  attempts: {type: int, note: "attempts stopped so far; at most 2"}
+
+required_when:
+  approvals: "status is ready or later; must hold acceptance.md"
+
+body: [Goal, Why, Out of scope]
+
+# Other files in the task folder (free text, no frontmatter of their own):
+#   acceptance.md             the check that proves done; approved before code
+#   attempts/<n>/diagnosis.md why an attempt stopped
+#   evidence.md               schema evidence/v1

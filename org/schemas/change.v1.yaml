@@ -1,0 +1,19 @@
+schema: change/v1
+extends: item/v1
+file: org/changes/<year>/P-….md
+
+required:
+  status:
+    type: enum
+    values: [proposed, awaiting_owner, accepted, rejected, applied]
+    final: [rejected, applied]
+  evidence: {type: list, of: ref, note: "the items whose friction or warnings show the problem"}
+  migration: {type: text, note: "how every existing file moves to the new form; 'none' if nothing changes shape"}
+
+optional:
+  conventions_version: {type: text, note: "hq/v<n> this change produces"}
+
+required_when:
+  conventions_version: "status is applied"
+
+body: [Problem, Change]

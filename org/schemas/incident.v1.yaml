@@ -1,0 +1,25 @@
+schema: incident/v1
+extends: item/v1
+file: operations/incidents/<year>/I-…/incident.md
+
+required:
+  status:
+    type: enum
+    values: [open, repairing, awaiting_owner, needs_owner, resolved, waived]
+    final: [resolved, waived]
+  detected_by: {type: text, note: "the check or verdict that found it"}
+  severity: {type: enum, values: [wrong-output, stale-output, blocked, degraded]}
+
+optional:
+  defect_class: {type: text, note: "a runbook name, once known"}
+  companies: {type: list, of: text}
+  waiver: {type: ref}
+
+required_when:
+  defect_class: "status is resolved"
+  waiver: "status is waived"
+
+body: [What was seen, Root cause, Impact]
+
+# repair.md (free text): the owned command used, its output, and the
+# detecting check passing again.

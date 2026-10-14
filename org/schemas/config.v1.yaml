@@ -1,0 +1,45 @@
+# The shapes of the config files. Each file carries `schema:` at the top.
+
+verticals/v1:
+  file: org/verticals.yaml
+  shape:
+    verticals:
+      <vertical id>:
+        status: {type: enum, values: [active, retired]}
+        renamed_from: {type: text, optional: true}
+        roles: {type: list, of: text, note: "role ids under roles/<vertical>/"}
+
+authority/v1:
+  file: org/policies/authority.yaml
+  shape:
+    actions:
+      <action class>:
+        level: {type: enum, values: [auto, propose, owner-only]}
+        decision: {type: ref, optional: true, note: "the D- that set it"}
+
+trust/v1:
+  file: org/policies/trust.yaml
+  shape:
+    roles:
+      <role id>@<version>:
+        level: {type: enum, values: [propose-only, trusted]}
+        since: {type: date}
+
+budgets/v1:
+  file: org/policies/budgets.yaml
+  shape:
+    roles:
+      <role id>:
+        daily_usd: {type: number}
+    per_task_usd: {type: number}
+
+registry/v1:
+  file: product/registry.yaml
+  shape:
+    champion: {type: text, note: "v<n>"}
+    challengers:
+      type: list
+      of:
+        version: {type: text}
+        shadow_store: {type: text}
+        started: {type: date}

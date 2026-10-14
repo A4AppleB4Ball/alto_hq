@@ -1,0 +1,15 @@
+schema: cohort/v1
+extends: item/v1
+file: research/cohorts/C-…/cohort.md
+
+required:
+  status: {type: enum, values: [active, superseded], final: [superseded]}
+  builder: {type: text, note: "the committed script that builds the csv"}
+  sha256: {type: text, note: "hash of the csv; the cohort never changes"}
+  size: {type: int}
+  as_of: {type: date, note: "the date whose knowledge the selection uses"}
+
+optional:
+  supersedes: {type: ref}
+
+body: [How members are chosen, Why the selection does not use evaluated outcomes]

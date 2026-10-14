@@ -1,0 +1,17 @@
+schema: audit/v1
+extends: item/v1
+file: audit/samples/<year>/A-…/audit.md
+
+required:
+  status: {type: enum, values: [planned, running, done], final: [done]}
+  method: {type: enum, values: [rebuild, planted-defect, coverage-review]}
+  target: {type: text, note: "the check, store or companies audited"}
+
+optional:
+  result: {type: enum, values: [held, failed]}
+  spawned: {type: list, of: ref, note: "incidents or tasks it opened"}
+
+required_when:
+  result: "status is done"
+
+body: [What was done, What was found]

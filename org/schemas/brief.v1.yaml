@@ -1,0 +1,12 @@
+schema: brief/v1
+file: management/briefs/<year>/<month>/<date>.md
+
+required:
+  schema: {type: text}
+  date: {type: date}
+  generated: {type: datetime}
+  generated_by: {type: ref}
+  overall: {type: enum, values: [green, red], note: "red when anything needs action today"}
+  needs_owner: {type: int, note: "count of items awaiting the owner"}
+
+body: [Needs you, Red, Heartbeats, Changes since yesterday]

@@ -1,0 +1,17 @@
+schema: role/v1
+file: roles/<vertical>/<role>/role.md
+
+required:
+  schema: {type: text}
+  id: {type: text, note: "<vertical>/<role>; never changes"}
+  version: {type: int, note: "raised on every change; CHANGELOG.md says why"}
+  status: {type: enum, values: [active, retired]}
+  model: {type: text}
+  tools: {type: list, of: text}
+
+optional:
+  budget: {type: text, note: "tokens or $ per run; the daily limit is in org/policies/budgets.yaml"}
+  superseded_by: {type: text}
+  renamed_from: {type: text}
+
+body: [Purpose, Inputs, Outputs, Escalates when, Never does]

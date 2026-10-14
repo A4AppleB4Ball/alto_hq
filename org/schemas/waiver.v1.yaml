@@ -1,0 +1,11 @@
+schema: waiver/v1
+extends: item/v1
+file: operations/waivers/W-….md
+
+required:
+  status: {type: enum, values: [active, expired, revoked], final: [expired, revoked]}
+  covers: {type: text, note: "the check and the scope it waives (companies, defect class)"}
+  expires: {type: date}
+  decision: {type: ref, note: "the D- that granted it"}
+
+body: [Why it is accepted, What would end it]

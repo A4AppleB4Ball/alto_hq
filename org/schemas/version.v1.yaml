@@ -1,0 +1,34 @@
+schema: version/v1
+file: product/versions/v<n>/version.md
+
+# A version id is v<n> or v<n>.<m> (hotfix), not a time-based id, because it
+# is also the git tag and the stamp on every stance.
+required:
+  schema: {type: text}
+  id: {type: text, note: "v<n> or v<n>.<m>"}
+  status:
+    type: enum
+    values: [staging, shadow, awaiting_owner, promoted, dropped, rolled_back]
+    final: [dropped, rolled_back]
+  kind: {type: enum, values: [decision, user-facing, internal]}
+  layers: {type: list, of: {enum: [stance, trading, ui]}}
+  sources: {type: list, of: ref, note: "the R- and T- items it ships"}
+  created: {type: datetime}
+
+optional:
+  branch: {type: text, note: "staging/v<n> in alto"}
+  commit: {type: text, note: "the exact commit shadowed and promoted"}
+  decision: {type: ref, note: "the D- that promoted, dropped or rolled it back"}
+  waiting_on: {type: text}
+  friction: {type: text}
+
+required_when:
+  commit: "status is shadow or later"
+  decision: "status is promoted, dropped or rolled_back"
+  waiting_on: "status is awaiting_owner"
+
+body: [What changes for users and trades]
+
+# shadow.md (free text, required for kind decision): criterion, window,
+#   start, restarts, result.
+# promotion.md (free text): the outcome and its decision.

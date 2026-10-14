@@ -1,0 +1,30 @@
+schema: experiment/v1
+extends: item/v1
+file: research/experiments/<year>/R-…/plan.md
+
+required:
+  status:
+    type: enum
+    values: [draft, awaiting_owner, running, concluded, abandoned]
+    final: [concluded, abandoned]
+  question: {type: text}
+  cohort: {type: ref, note: "a C- cohort id"}
+  protocol: {type: text, note: "protocol-v<n>"}
+  success: {type: text, note: "the criterion, fixed before any result is seen"}
+
+optional:
+  branch: {type: text, note: "exp/<id> in alto"}
+  store: {type: text, note: "experiments/<id>/ in the data repo"}
+  budget_usd: {type: number}
+  outcome: {type: enum, values: [won, lost, inconclusive]}
+  candidate: {type: text, note: "the product version built from it, v<n>"}
+
+required_when:
+  approvals: "status is running or later; must hold plan.md"
+  outcome: "status is concluded"
+
+body: [Hypothesis, Method, Risks to validity]
+
+# Other files in the experiment folder:
+#   results/        self-contained summary and metrics; cites cohort hash and protocol
+#   conclusion.md   free text: what was learned, what to do next

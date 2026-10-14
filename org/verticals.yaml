@@ -1,0 +1,21 @@
+schema: verticals/v1
+
+verticals:
+  management:
+    status: active
+    roles: []
+  operations:
+    status: active
+    roles: []
+  engineering:
+    status: active
+    roles: [engineering/dev, engineering/qa, engineering/ship]
+  research:
+    status: active
+    roles: []
+  product:
+    status: active
+    roles: []
+  audit:
+    status: active
+    roles: []

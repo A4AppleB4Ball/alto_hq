@@ -1,0 +1,40 @@
+schema: authority/v1
+
+# Who may take each class of action. auto: an employee does it and records
+# it. propose: an employee prepares it; the owner approves. owner-only: only
+# the owner does it. An action class not listed here is owner-only.
+
+actions:
+  # Read-only
+  read-product-state:            {level: auto}
+  run-checks-and-reconcilers-read-only: {level: auto}
+  run-in-sandbox:                {level: auto}
+
+  # Company records
+  create-item:                   {level: auto}
+  update-own-claimed-item:       {level: auto}
+  change-conventions:            {level: propose}    # a P- item
+  change-role-definition:        {level: propose}
+
+  # Engineering
+  commit-on-eng-branch:          {level: auto}
+  approve-acceptance-or-plan:    {level: owner-only}
+  merge-to-develop:              {level: owner-only}
+  promote-to-live:               {level: owner-only}
+  push-to-remote:                {level: owner-only}
+  deploy-to-server:              {level: owner-only}
+
+  # Operations
+  repair-via-owned-command:      {level: propose}
+  edit-data-store-by-hand:       {level: owner-only}
+  delete-production-data:        {level: owner-only}
+
+  # Research and product
+  llm-pilot-run:                 {level: propose}
+  llm-run-beyond-pilot:          {level: owner-only}
+  start-shadow:                  {level: propose}
+  promote-version:               {level: owner-only}
+
+  # Trading and secrets
+  place-or-cancel-orders:        {level: owner-only}
+  touch-credentials:             {level: owner-only}

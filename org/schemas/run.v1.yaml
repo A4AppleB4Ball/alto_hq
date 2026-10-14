@@ -1,0 +1,19 @@
+schema: run/v1
+file: alto_runs/<year>/<month>/<day>/<run-id>/meta.json
+
+# JSON, outside git. One line per run is also appended to alto_runs/index.jsonl.
+required:
+  schema: {type: text}
+  run_id: {type: text, note: "<YYYYMMDD>-<HHMMSS>-<role>-<4 hex>"}
+  role: {type: text, note: "role id@version, or owner"}
+  model: {type: text}
+  items: {type: list, of: ref, note: "the items worked on; empty only for scheduled checks"}
+  started: {type: datetime}
+  ended: {type: datetime}
+  outcome: {type: enum, values: [done, stopped, failed, escalated]}
+
+optional:
+  tokens_in: {type: int}
+  tokens_out: {type: int}
+  cost_usd: {type: number}
+  repo_commits: {type: map, note: "repo name → commit at start, e.g. {alto: …, alto_hq: …}"}

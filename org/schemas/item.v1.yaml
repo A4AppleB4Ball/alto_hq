@@ -1,0 +1,44 @@
+# The fields every work item carries, in the frontmatter of its main file.
+# Every other item schema extends this one.
+#
+# How to read a schema file:
+#   required  fields the validator fails on when missing or invalid
+#   optional  fields the validator checks only when present
+#   required_when  a field that becomes required under a condition
+#   body      suggested sections of the file body; free text, never checked
+# A field in neither list is unknown: the validator warns and counts it
+# (README § How these conventions change).
+#
+# Types: id, text, datetime (ISO 8601 with offset, e.g. 2026-10-15T14:32+05:30),
+# date (YYYY-MM-DD), ref (an item id, a role@version, or "owner"), enum, list, map.
+
+schema: item/v1
+
+required:
+  schema: {type: text, note: "this file's schema, e.g. task/v1"}
+  id: {type: id, note: "<TYPE>-<YYYYMMDD>-<HHMM>-<slug>; never changes"}
+  title: {type: text}
+  status: {type: enum, note: "values set by the extending schema"}
+  created: {type: datetime}
+  created_by: {type: ref, note: "role@version of the run, or owner"}
+
+optional:
+  spawned_from: {type: ref, note: "the item this one was created from"}
+  related: {type: list, of: ref}
+  claimed_by: {type: text, note: "run id working the item now"}
+  lease_until: {type: datetime, note: "the claim lapses after this"}
+  waiting_on: {type: text, note: "what the owner must do"}
+  approvals:
+    type: list
+    of:
+      file: {type: text, note: "the approved file, relative to the item folder"}
+      sha256: {type: text, note: "hash of that file when approved"}
+      by: {type: ref}
+      at: {type: datetime}
+  closed: {type: datetime}
+  friction: {type: text, note: "what the template lacked or had to be worked around"}
+
+required_when:
+  waiting_on: "status is awaiting_owner or needs_owner"
+  lease_until: "claimed_by is set"
+  closed: "status is a final status of the extending schema"
