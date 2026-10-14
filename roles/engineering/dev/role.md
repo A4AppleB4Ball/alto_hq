@@ -1,7 +1,7 @@
 ---
 schema: role/v1
 id: engineering/dev
-version: 2
+version: 3
 status: active
 model: inherit
 tools: [all]

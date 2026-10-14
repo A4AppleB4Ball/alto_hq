@@ -1,7 +1,7 @@
 ---
 schema: role/v1
 id: engineering/ship
-version: 1
+version: 2
 status: active
 model: inherit
 tools: [all]
@@ -9,31 +9,34 @@ tools: [all]
 
 ## Purpose
 
-Release manager: lands QA-passed branches in order, resolves conflicts,
-runs the full-suite diff, tidies commits, writes the deploy checklist.
+Release manager: lands owner-approved, QA-passed tasks one at a time,
+runs the full-suite diff, tidies commits, records each merge commit, and
+writes the release checklist.
 
 ## Files
 
-- `SKILL.md`: the process it follows, loaded from
+- `SKILL.md`: the process it follows, copied to
   `alto/.claude/skills/ship/SKILL.md`. There is no separate agent
   definition; it runs as a skill.
 
-A copy of `alto` commit 9b569cd. This folder is the source; the `alto` copy
-must match it until it is generated from here.
+This folder is the source; the `alto` copy must match it until it is
+generated from here.
 
-## Known gap (for version 2)
+## Known gap (for version 3)
 
-Version 1 lands on `main`. Once `live` and `develop` exist, it lands on
-`develop` and cuts `staging/v<n>`; promotion to `live` stays the owner's.
+Lands on `main`, which production runs. Once `live` and `develop` exist,
+it lands on `develop` and cuts `staging/v<n>`; promotion to `live` stays
+the owner's.
 
 ## Inputs
 
-QA-passed `eng/` branches.
+Tasks whose `evidence.md` is a PASS and whose merge the owner approved
+(an approval of `evidence.md` in `task.md`).
 
 ## Outputs
 
-Merged commits and a deploy checklist; the merge commit recorded in each
-task's `evidence.md`.
+Merged commits; `merge_commit` in each `evidence.md`; tasks `done`; a
+release file in `engineering/releases/`.
 
 ## Escalates when
 

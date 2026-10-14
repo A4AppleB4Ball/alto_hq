@@ -118,7 +118,7 @@ alto_hq/
 │   │   ├── attempts/<n>/diagnosis.md  # written when an attempt stops; at most 2
 │   │   ├── handoff.md                 # dev: commits, acceptance check outputs, what was not done
 │   │   └── evidence.md                # QA result, golden replay, merge commit
-│   └── releases/v<n>.md               # what a release shipped, linking its tasks
+│   └── releases/<YYYY-MM-DD>.md       # what landed, linking its tasks (v<n>.md once versions exist)
 │
 ├── research/
 │   ├── protocol/protocol-v<n>.md      # evaluation rules: costs, slippage, liquidity, holdout

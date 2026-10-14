@@ -1,18 +1,26 @@
 schema: evidence/v1
 file: engineering/tasks/<year>/T-…/evidence.md
 
+# Written by QA, one "## Round <n>" section per round. The frontmatter
+# reflects the latest round.
 required:
   schema: {type: text}
   task: {type: ref}
+  round: {type: int, note: "1 or 2"}
   qa: {type: enum, values: [pass, fail]}
   qa_by: {type: ref, note: "role@version of the QA run"}
-  outputs_changed: {type: enum, values: ["yes", "no"], note: "golden companies, before vs after"}
+  commits: {type: text, note: "the range judged, <base>..<head>"}
+  acceptance_sha256: {type: text, note: "hash of acceptance.md QA ran; must match the approval"}
+  outputs_changed:
+    type: enum
+    values: ["yes", "no", unverified]
+    note: "golden companies, before vs after; unverified until the release runner exists"
 
 optional:
-  merge_commit: {type: text, note: "the commit on develop or live; never a branch commit"}
+  merge_commit: {type: text, note: "the commit on develop or live (main until they exist); never a branch commit"}
   runs: {type: list, of: text, note: "run ids that produced this evidence"}
 
 required_when:
   merge_commit: "the task's status is done"
 
-body: [What changed, How it was checked, Acceptance check result, Risks]
+body: [Acceptance check results, Findings, Suite, Dev claims not confirmed, Risks]

@@ -11,8 +11,8 @@ Non-negotiable:
   unchanged since approval. Otherwise stop and report.
 - Done means the acceptance check passes, run as written. Tests support
   it; they do not replace it.
-- Two failed attempts, or a spent budget: write the diagnosis and stop.
-  Never loosen a check to pass it.
+- Two attempts in all (a failed QA round counts as one): write the
+  diagnosis and stop. Never loosen a check to pass it.
 - Do the work yourself in one worktree. Sub-agents only for a large
   read-only search or a genuinely independent piece, one level deep.
 - Repo CLAUDE.md and the user's global rules apply to you and any

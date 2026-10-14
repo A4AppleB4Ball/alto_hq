@@ -23,6 +23,10 @@ Claim it: set `status: in_progress`, `claimed_by: <run id>`,
 `lease_until:` (now + 1 day). Read `work/decisions.md` and
 `work/dev/notes.md` in `alto` once.
 
+**Round 2.** If `evidence.md` exists, QA failed round 1 and this is your
+second and last attempt. Answer every confirmed finding in `handoff.md`:
+fixed (commit), or disputed (evidence). Never silently skip one.
+
 ## Step 1 — Map and design: one page, before code
 
 Write `plan.md` in the task folder, at most one page:
@@ -85,14 +89,12 @@ No separate verifier sub-agents: QA is the independent check.
 
 ## Stop rule
 
-An **attempt** ends when a check in Step 3 fails and you cannot see why
-from its output. Then write `attempts/<n>/diagnosis.md`: what you tried,
-what failed (the output), what you now believe the cause is. After the
-second attempt, set `status: needs_owner` with `waiting_on:` and stop. Do
-not start a third attempt, and do not loosen a check to make it pass.
-
-Also stop, with the same diagnosis, when the task's budget (`task.md`, or
-`../alto_hq/org/policies/budgets.yaml`) is spent.
+A task gets two attempts in all. An **attempt** ends when a check in
+Step 3 fails and you cannot see why from its output, or when QA fails a
+round. Write `attempts/<n>/diagnosis.md`: what you tried, what failed
+(the output), what you now believe the cause is. After the second
+attempt, set `status: needs_owner` with `waiting_on:` and stop. Do not
+start a third attempt, and do not loosen a check to make it pass.
 
 ## Step 4 — Hand off
 

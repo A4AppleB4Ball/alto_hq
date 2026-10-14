@@ -1,5 +1,12 @@
 # engineering/dev
 
+## 3 — 2026-10-15 (minor: trust unchanged)
+
+- A failed QA round counts as one of the task's two attempts; round 2
+  answers every confirmed finding in `handoff.md`.
+- Budget stop removed: no budget an agent can measure exists until run
+  metering (`alto_runs/`) is built.
+
 ## 2 — 2026-10-15 (major: trust resets to propose-only)
 
 Why: version 1 was slow, fragmented and burned tokens on retries, and its
@@ -9,7 +16,7 @@ behaviour.
 - Starts only from an `alto_hq` task with an approved, unchanged
   `acceptance.md`. It no longer writes its own task or done-when.
 - Done means the acceptance check passes as written; tests support it.
-- Stop rule: two failed attempts or a spent budget → diagnosis, stop.
+- Stop rule: two failed attempts → diagnosis, stop. (A budget stop was in the first draft and removed in 3.)
 - Works itself in one worktree. Sub-agents only for a large read-only
   search or an independent piece over half a day, one level deep. Was:
   "lead, don't type", sub-agent trees, a worktree per piece.
