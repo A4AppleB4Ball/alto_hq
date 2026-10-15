@@ -45,6 +45,7 @@ release, and code branches never carry stale copies of the paperwork.
    | `D` | Owner decision | `org/decisions/` |
    | `A` | Audit | `audit/samples/` |
    | `P` | Process change to these conventions | `org/changes/` |
+   | `E` | Epic: a goal and its stories, before they are tasks | `org/epics/` |
    | `v<n>` | Product version | `product/versions/` |
 
 2. **The ID is the join key across repos.** Nothing links by path.
@@ -89,6 +90,7 @@ alto_hq/
 │   │   ├── trust.yaml                 # role@version → trust level, earned by outcomes
 │   │   └── budgets.yaml               # tokens/$ per role per day, per task
 │   ├── decisions/<year>/D-….md        # every owner decision: what, why, items covered
+│   ├── epics/<year>/E-….md            # high-level plans; stories become tasks only when next
 │   ├── changes/<year>/P-….md          # proposed changes to these conventions
 │   ├── schemas/<type>.v<n>.yaml       # the required fields of every file type; item.v1.yaml first
 │   └── CHANGELOG.md                   # convention versions (hq/v<n>) and what each changed
@@ -222,7 +224,7 @@ migration, the validator passing. Never by an employee's ad-hoc edit.
   existing file, and the validator must pass over the whole repo.
 - **On a schedule.** Weekly at first, monthly once settled.
 
-The current version is `hq/v1`.
+The current version is `hq/v2`.
 
 ## Edge cases
 

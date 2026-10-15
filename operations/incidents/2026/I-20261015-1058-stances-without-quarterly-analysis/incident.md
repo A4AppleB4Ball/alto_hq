@@ -8,7 +8,7 @@ created_by: owner
 detected_by: "owner, reading the 2026-10-15 proposal; confirmed by a read-only fleet scan (fleet_scan.py in this folder)"
 severity: wrong-output
 companies: [ARSSBL, CHANDAN, PNGSREVA, ABDL, EMUDHRA, FAIRCHEMOR, RAYMOND, SMCGLOBAL, TAC, KRISHNADEF]
-related: [T-20261015-1058-dagster-spike]
+related: [T-20261015-1058-dagster-spike, E-20261015-1140-orchestration-and-ops, E-20261015-1140-validation]
 ---
 
 ## What was seen

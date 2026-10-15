@@ -1,0 +1,17 @@
+schema: epic/v1
+extends: item/v1
+file: org/epics/<year>/E-….md
+
+# An epic is one file: a goal and its stories as one-liners. A story becomes
+# an item (a task, an experiment) only when it is next; until then it is a
+# line here. Follow-up stories come from what earlier ones found.
+
+required:
+  status: {type: enum, values: [open, done, dropped], final: [done, dropped]}
+  verticals: {type: list, of: text, note: "the verticals that own its stories"}
+
+optional:
+  depends_on: {type: list, of: ref, note: "other epics or items it waits on"}
+
+body: [Goal, Stories, Open questions]
+# Stories: one line each, "<n>. <headline> — idea | next | <item id> | done".

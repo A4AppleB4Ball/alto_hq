@@ -39,3 +39,6 @@ Done when each check passes, run by QA, with its output in evidence.md, and
    become: kept, moved, or retired, per job.
 6. Proposed follow-up tasks, each with a one-line acceptance check, in
    order. No more than needed for the next step.
+7. Run history: can Dagster's event log and compute logs replace the
+   per-company e2e log files (about 4–5k per run today)? What stays a
+   file, and with what retention?
