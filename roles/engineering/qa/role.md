@@ -1,7 +1,7 @@
 ---
 schema: role/v1
 id: engineering/qa
-version: 2
+version: 3
 status: active
 model: inherit
 tools: [all]
@@ -19,6 +19,8 @@ verifier, and writes `evidence.md` with PASS or FAIL. Never fixes code.
   `alto/.claude/agents/qa.md`.
 - `SKILL.md`: the process it follows, copied to
   `alto/.claude/skills/qa/SKILL.md`.
+- `notes.md`: lessons about working on Alto that runs proved; read at
+  the start of every run. Not copied to `alto`.
 
 This folder is the source; the `alto` copies must match it until they are
 generated from here.

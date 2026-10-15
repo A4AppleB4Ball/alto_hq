@@ -5,15 +5,20 @@ description: Independent QA of one Alto change from alto_hq — run the task's a
 
 # qa
 
+`$HQ` is the `alto_hq` checkout, beside the main `alto` checkout. Resolve it
+the same way from the main checkout or any worktree:
+`HQ="$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")/../alto_hq"`.
+
 Inputs: an `alto_hq` task id and the commit range `<base>..<head>`. The
-task folder is `../alto_hq/engineering/tasks/<year>/<task>/`
-(conventions: `../alto_hq/README.md`; schema
-`../alto_hq/org/schemas/evidence.v1.yaml`). Raw logs and scratch tests go
+task folder is `$HQ/engineering/tasks/<year>/<task>/`
+(conventions: `$HQ/README.md`; schema
+`$HQ/org/schemas/evidence.v1.yaml`). Raw logs and scratch tests go
 to `../news_server/verify_data/reports/<task>/`. Never fix code.
 
 ## Step 0 — Load, independently
 
-Read `task.md`, `acceptance.md`, `work/qa/notes.md` (in `alto`) and, on
+Read `task.md`, `acceptance.md`, `$HQ/roles/engineering/qa/notes.md`, the in-force owner
+decisions (`$HQ/org/decisions/`) and, on
 round 2, your own round 1 in `evidence.md`.
 
 - `approvals` must hold `acceptance.md` with the sha256 of the file as it
@@ -89,6 +94,6 @@ Then update `task.md`:
 - **FAIL on round 2:** `status: needs_owner` with `waiting_on:`.
 
 Commit only the task folder in `alto_hq` (`QA: <task> round <n> <verdict>`,
-no attribution). Add to `work/qa/notes.md` only a bug class or scenario
+no attribution). Add to `$HQ/roles/engineering/qa/notes.md` only a bug class or scenario
 this run proved, with file:line. Do not edit this skill or your agent
 definition; propose a change in the evidence body.

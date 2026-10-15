@@ -5,9 +5,13 @@ description: The procedure for one code change to Alto — start from an approve
 
 # dev
 
+`$HQ` is the `alto_hq` checkout, beside the main `alto` checkout. Resolve it
+the same way from the main checkout or any worktree:
+`HQ="$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")/../alto_hq"`.
+
 `<task>` is an `alto_hq` task id. Its folder is
-`../alto_hq/engineering/tasks/<year>/<task>/` (conventions:
-`../alto_hq/README.md`, schema `../alto_hq/org/schemas/task.v1.yaml`).
+`$HQ/engineering/tasks/<year>/<task>/` (conventions:
+`$HQ/README.md`, schema `$HQ/org/schemas/task.v1.yaml`).
 
 ## Step 0 — Check the task is ready (stop if not)
 
@@ -20,8 +24,8 @@ Read `task.md` and `acceptance.md`.
   yourself; propose a change to it in your report instead.
 
 Claim it: set `status: in_progress`, `claimed_by: <run id>`,
-`lease_until:` (now + 1 day). Read `work/decisions.md` and
-`work/dev/notes.md` in `alto` once.
+`lease_until:` (now + 1 day). Read the in-force owner decisions
+(`$HQ/org/decisions/`) and `$HQ/roles/engineering/dev/notes.md` once.
 
 **Round 2.** If `evidence.md` exists, QA failed round 1 and this is your
 second and last attempt. Answer every confirmed finding in `handoff.md`:
@@ -109,11 +113,12 @@ start a third attempt, and do not loosen a check to make it pass.
   `friction:` line if the process or a template got in the way.
 - Found something outside the task: a one-paragraph note under "Found" in
   `handoff.md`. Do not open or start other work.
-- `work/dev/notes.md`: add a fact only if this run proved it (with
-  file:line or a commit); fix an entry this run proved wrong. Do not
-  reorganise it.
+- `$HQ/roles/engineering/dev/notes.md`: add a lesson about working on
+  Alto only if this run proved it (with file:line or a commit); fix an
+  entry this run proved wrong. Do not reorganise it. A fact about the
+  product goes in the owning package's `docs/` instead.
 
 Do not edit this skill or your agent definition. Propose a change in
-`handoff.md`; the owner versions roles in `../alto_hq/roles/`.
+`handoff.md`; the owner versions roles in `$HQ/roles/`.
 
 Next step for the owner: QA on the commit range.

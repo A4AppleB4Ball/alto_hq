@@ -97,6 +97,7 @@ alto_hq/
 │   └── <vertical>/<role>/
 │       ├── role.md                    # definition; frontmatter: id, version, model, tools, budget
 │       ├── CHANGELOG.md               # why each version changed
+│       ├── notes.md                   # how this role works best: lessons runs proved, curated
 │       └── evals/                     # cases a new version must pass before use
 │
 ├── management/

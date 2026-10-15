@@ -5,6 +5,10 @@ description: Land owner-approved, QA-passed Alto tasks from alto_hq on main — 
 
 # ship
 
+`$HQ` is the `alto_hq` checkout, beside the main `alto` checkout. Resolve it
+the same way from the main checkout or any worktree:
+`HQ="$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")/../alto_hq"`.
+
 Inputs: the `alto_hq` tasks to land. A task may land only when:
 
 - `evidence.md` latest round is `qa: pass`, and its `acceptance_sha256`
@@ -13,7 +17,7 @@ Inputs: the `alto_hq` tasks to land. A task may land only when:
   with the sha256 of the file as it is now.
 
 Anything else: stop and report. Land money-path tasks first. Read
-`work/ship/notes.md` (in `alto`) first.
+`$HQ/roles/engineering/ship/notes.md` first.
 
 Until `live` and `develop` exist, the landing branch is `main`, which the
 main checkout runs in production.
@@ -51,14 +55,14 @@ Co-Authored-By or Claude attribution, anywhere.
 
 - Each task's `evidence.md`: `merge_commit:` the final commit on `main`.
 - Each `task.md`: `status: done`, `closed:`.
-- Release file `../alto_hq/engineering/releases/<YYYY-MM-DD>.md` (named by
+- Release file `$HQ/engineering/releases/<YYYY-MM-DD>.md` (named by
   `v<n>` once product versions exist): commits landed with hashes and
   task ids; what must be true on the server before deploy (files, env,
   logins); what will look different after deploy; checks still
   unverified; obsolete data the owner may delete (never delete it).
 
 Commit these in `alto_hq` (`Ship: <date> <task ids>`, no attribution). Add
-to `work/ship/notes.md` only a merge or deploy lesson this run proved.
+to `$HQ/roles/engineering/ship/notes.md` only a merge or deploy lesson this run proved.
 
 ## Step 5 — Push
 

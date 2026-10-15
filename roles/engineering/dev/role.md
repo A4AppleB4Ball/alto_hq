@@ -1,7 +1,7 @@
 ---
 schema: role/v1
 id: engineering/dev
-version: 3
+version: 4
 status: active
 model: inherit
 tools: [all]
@@ -18,6 +18,8 @@ in one worktree, the acceptance check proven, local commits and a hand-off.
   `alto/.claude/agents/dev.md`.
 - `SKILL.md`: the process it follows, copied to
   `alto/.claude/skills/dev/SKILL.md`.
+- `notes.md`: lessons about working on Alto that runs proved; read at
+  the start of every run. Not copied to `alto`.
 
 This folder is the source; the `alto` copies must match it until they are
 generated from here.
