@@ -13,5 +13,9 @@ required:
 optional:
   depends_on: {type: list, of: ref, note: "other epics or items it waits on"}
 
-body: [Goal, Stories, Open questions]
+body: [Goal, Stories, Open questions, Findings]
 # Stories: one line each, "<n>. <headline> — idea | next | <item id> | done".
+# Findings (optional): facts an investigation proved, each with the file:line,
+# command or measurement it came from and its date, so the worker who picks
+# up a story starts from them. Longer evidence goes in a sibling file
+# `E-….<topic>.md` with its script beside it.
