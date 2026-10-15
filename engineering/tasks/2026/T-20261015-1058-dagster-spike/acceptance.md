@@ -42,3 +42,8 @@ Done when each check passes, run by QA, with its output in evidence.md, and
 7. Run history: can Dagster's event log and compute logs replace the
    per-company e2e log files (about 4–5k per run today)? What stays a
    file, and with what retention?
+8. Verdict validity: can an asset check's result record the fingerprint of
+   the records it read (and the check's version), so a later run can tell a
+   still-valid result from a stale one? Show it for the completeness check:
+   change nothing and the result stays valid; touch one ARSSBL input in a
+   copy and it reads stale. (E-20261015-1140-validation, drift table.)

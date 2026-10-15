@@ -28,6 +28,7 @@ brief, incidents and proposed fixes for the owner to review
 ## Open questions
 
 - Company-based vs stage-based pipeline: spike's findings, question B1.
+- How the ops agent sees server-side logs (systemd journal, server scheduler, execution runner), which live only on the server.
 
 ## Findings
 
@@ -81,3 +82,22 @@ log files were created in the last 7 days.
 read from the root `.env`, and a missing or unreadable `.env` means "local
 machine". On the server an unreadable `.env` would enable the compute jobs.
 This is a fallback where the rules require an error.
+
+**How the ops agent reads a growing store** (design for story 5, session
+2026-10-15): it never walks files. It reads, in order: run status per
+company from Dagster; the day's verdict table (about 2000 companies × ~10
+checks = 20k rows, queried with duckdb); the diff against yesterday grouped
+by (check, reason), usually 5–20 lines; and evidence files only through a
+failing verdict's pointer. Each (check, reason) group maps to one incident,
+so a repeat appends instead of opening a new one. What it reads grows with
+failures, not files. Requires: every job writes per-company outcomes with
+fixed reason codes (story 2); every finding has a stable id and an evidence
+pointer; retention bounds the evidence (data-storage epic).
+
+**Logstash / ELK: not adopted** (session, 2026-10-15). It ships and
+searches log text; our outcomes must be written as structured state by the
+jobs, not parsed back from logs. Logs are 0.18 GB; the growth is raw
+sources, scratch and git. JVM services are heavy for one Mac. If server
+logs must reach the ops agent, prefer a structured status file returned
+through git, then a light shipper (Vector, Fluent Bit) — open question.
+
