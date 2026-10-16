@@ -1,4 +1,4 @@
-# Acceptance: dagster-chain-wrap (DRAFT, not approved)
+# Acceptance: dagster-chain-wrap (approved)
 
 Depends on completeness-check and dagster-environment. A pilot first: two
 companies, then the owner decides the fleet. No LLM run beyond the pilot

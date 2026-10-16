@@ -2,13 +2,17 @@
 schema: task/v1
 id: T-20261016-1718-dagster-environment
 title: "Dagster in its own environment with launchd daemon and webserver"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
 spawned_from: T-20261015-1058-dagster-spike
 related: [T-20261015-1058-dagster-spike, E-20261015-1140-orchestration-and-ops]
-waiting_on: "Read and approve acceptance.md"
+approvals:
+  - file: acceptance.md
+    sha256: 3936b74360cb01eb8387c220641d972b84f014199d5c5a0e5b2284a74bd5bac9
+    by: owner
+    at: 2026-10-16T18:55+05:30
 branch: eng/T-20261016-1718-dagster-environment
 ---
 

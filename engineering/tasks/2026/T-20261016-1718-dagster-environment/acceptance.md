@@ -1,4 +1,4 @@
-# Acceptance: dagster-environment (DRAFT, not approved)
+# Acceptance: dagster-environment (approved)
 
 Some steps need the owner's Mac (sleep, reboot); QA lists them as owner
 steps and records the owner's confirmation.

@@ -2,13 +2,17 @@
 schema: task/v1
 id: T-20261016-1718-lib-regroup
 title: "Regroup backend/lib into quarters/, filings/, prices/, resolvers/"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
 spawned_from: T-20261015-1058-dagster-spike
 related: [T-20261016-1718-completeness-check]
-waiting_on: "Read and approve acceptance.md"
+approvals:
+  - file: acceptance.md
+    sha256: 6bd85602eb8be8df29aac1dc003dea918f12b151726a573c8e60da13c6345372
+    by: owner
+    at: 2026-10-16T18:55+05:30
 branch: eng/T-20261016-1718-lib-regroup
 ---
 

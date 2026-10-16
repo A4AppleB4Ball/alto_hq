@@ -1,4 +1,4 @@
-# Acceptance: results-calendar-to-stance (spike, DRAFT, not approved)
+# Acceptance: results-calendar-to-stance (spike, approved)
 
 Output is `findings.md` in the task folder, read-only on product data, no
 product code changed on main, no LLM run.

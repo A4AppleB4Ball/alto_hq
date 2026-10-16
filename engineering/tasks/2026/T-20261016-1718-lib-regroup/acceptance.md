@@ -1,4 +1,4 @@
-# Acceptance: lib-regroup (DRAFT, not approved)
+# Acceptance: lib-regroup (approved)
 
 No behaviour change. Run when nothing else is mid-flight (owner's call on
 timing).

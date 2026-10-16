@@ -1,4 +1,4 @@
-# Acceptance: proposal-gate (DRAFT, not approved)
+# Acceptance: proposal-gate (approved)
 
 Money path: every check compares old and new numbers on the same input.
 Depends on T-20261016-1718-completeness-check merged. Read-only on product
