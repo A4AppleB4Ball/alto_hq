@@ -16,6 +16,10 @@ approvals:
     sha256: ff3137bec0a1baefe2973b78cc6f15958d74a32d66260660dd6c0799067615ed
     by: owner
     at: 2026-10-16T19:40+05:30
+  - file: evidence.md
+    sha256: d0e260bbdf493aa1b67e840cbaf4a40ec6d0d8e57fcfdb3cfb740fbd82771ed1
+    by: owner
+    at: 2026-10-16T23:30+05:30
 branch: eng/T-20261016-1928-scenario-selection
 ---
 

@@ -13,6 +13,10 @@ approvals:
     sha256: 689d3cff8618237d8d576a0d8fd9eae8681cbedc668d40272aeccfe1b3dfb9d5
     by: owner
     at: 2026-10-16T19:40+05:30
+  - file: evidence.md
+    sha256: 2a3896e19f94cebe061b97d15ba15d25ef8c66a8553c9b8aa44c8321161f09f3
+    by: owner
+    at: 2026-10-16T23:30+05:30
 branch: eng/T-20261016-1928-scenario-contract
 ---
 
