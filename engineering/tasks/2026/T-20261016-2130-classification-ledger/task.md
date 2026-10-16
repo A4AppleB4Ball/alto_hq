@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261016-2130-classification-ledger
 title: "Log every materiality classification, immaterial ones included, in the stance store"
-status: in_progress
+status: ready
 created: 2026-10-16T21:30+05:30
 created_by: owner
 kind: internal
@@ -12,8 +12,9 @@ approvals:
     sha256: 5e36723fc4d56bb48cb59842ee920577296cca97cb593309ef595d19d7370238
     by: owner
     at: 2026-10-16T23:00+05:30
-claimed_by:
-lease_until: 2026-10-17T22:00+05:30
+claimed_by: claude-main-20261016-1900
+lease_until: 2026-10-17T21:20+05:30
+waiting_on: "owner ruling on check 7 (four edited tests); dev to remove chart_profiles.duckdb"
 branch: eng/T-20261016-2130-classification-ledger
 ---
 
