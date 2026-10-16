@@ -30,3 +30,36 @@ The worktree has an untracked `.alto_checkout.yaml` (mode sandbox). I wrote no p
 ## Found
 - `PriceSource` (harness.py:52) does not name `DailyPriceWindow` or `CachedDailySeries`. This is a type annotation only.
 - `price_feed/tests/test_dhan_daily_store.py::test_cache_past_t_is_still_checked` already fails on main.
+
+## Round 2 (after QA round 1 FAIL; Amendment 3)
+
+Branch `eng/T-20261016-2336-daily-price-store-everywhere`, base 0d07e40 (main has not moved), round-1 head 6eba391, round-2 commits 6a28349, 3becf29.
+
+### Findings
+- **F1 fixed (6a28349).** `cached_daily_series.require_current(symbol, series, end, holidays)` is the one currency check. `CachedDailySeries` (AsOfLedger path) and the new `CachedDailyPrices` (fed to `DailyPriceWindow` by `broker_factory/prices._shared_cache_window`) both call it. A stale cache raises `CachedPriceMissing` naming the symbol and the first missing day. A missing symbol on the factory path now raises `CachedPriceMissing` (it used to be `FileNotFoundError`). Tests: `test_dhan_user_in_a_sandbox_raises_for_a_stale_cache_naming_symbol_and_date`, `..._for_a_missing_trading_day`, `test_both_sandbox_paths_share_one_currency_check`. All three fail before the fix.
+- **F2 fixed (3becf29).** `require_15min_prices` raises `SandboxPriceRefsUnavailable` for any user in a sandbox, before any store is built. Test: `test_dhan_rebuild_refs_in_a_sandbox_raises_a_clear_error_and_builds_no_store`.
+- **F3 fixed (6a28349).** In a sandbox, the NSE-only exchange check reads the user's stored instrument master, `WorkspacePaths(user).system_dir/dhan_instruments.json` (this is where live already caches it), through `DhanInstrumentMapper.load_stored()`. That read accepts a copy of any date, never fetches, and raises naming the path when the copy is missing or incomplete. Tests cover the missing copy, a correct mapping read from the stored master with the fetch patched to fail, and a BSE_EQ mismatch. They also check the file bytes are unchanged.
+  - A sandbox only has this file if it is seeded into its workspace. Today it is not seeded, so NSE-only reads raise naming the path.
+- **F4 NOT fixed, BLOCKED: owner decision.** No stored NSE holiday calendar exists anywhere in production.
+  - Searched: `news_server/data` (to depth 4), `~/NSE_BSE_Data` and `backend/config`. Live calls NSE on every use (`backend/lib/market_calendar/nse_holidays.py:13`).
+  - `paths.PAPER_HOLIDAYS_FILE` (`paper_broker/nse_holidays.json`) is a sandbox-only input. It does not exist in the production root or in this sandbox.
+  - As instructed, I did not invent one. Both sandbox paths still call `nse_trading_holidays` (a network call to NSE) when, and only when, the cache ends before `end`. A year NSE does not list raises `ValueError`.
+  - Owner's choice: (a) a live job that stores NSE's list per year under a `backend.config.paths` constant, with sandboxes reading it, or (b) reuse `PAPER_HOLIDAYS_FILE` and define who fills it.
+- **Check 12 fixed (3becf29).** `daily_price_service.adjusted_closes` uses `create_symbol_daily_series`. A test pins that live builds the same `DhanDailyStore("scienceamit1", SYMBOL, HISTORY_START, end)`, and a sandbox reads the cache without building one. The existing tests in `api/services/tests/test_daily_price_service.py` now patch `create_symbol_daily_series` instead of `DhanDailyStore`. The assertions are unchanged.
+
+### Acceptance
+- 1, 2': the grep for `DhanPriceStore(` outside tests, broker_factory and price_feed returns only the 7 named files. There is no `DhanDailyStore(` outside the factory or price_feed.
+- 3, 6, 7, 9, 10, 12: pinned by tests in `backend/executor/broker_factory/tests/` (39 passed).
+- 11: instrument master half done; holiday calendar **not met** (F4).
+- 4: entry points import (main_cockpit, local, app_factory, e2e.lanes, harness, rebuild_price_refs, price_chart_service, daily_price_service, asof, intake.runner, stance.runner, workflow.cli). `stores/tests/test_boundaries.py`: 2 passed.
+- Suite: head 95 failed / 1618 passed / 8 errors. Base is the sandbox worktree T2336-qabase at 0d07e40: 95 failed / 1590 passed / 8 errors. `comm -23 new base` is empty.
+  - A base resolving the production root showed about 40 extra data-root failures, so it is not comparable.
+- QA's `/tmp/qa2336/test_qa_adv.py::test_stale_cache_store_raises` now raises instead of returning 105.0.
+- 8: no LLM run.
+
+### Not done
+- F4 / check 11 holiday half: `backend/executor/broker_factory/prices.py` (`_shared_cache_window`) and `backend/executor/broker_factory/daily_series.py` still pass `nse_trading_holidays`.
+- `require_current` checks only the tail of the cache. A gap inside the series (for example ACME has no bar on 10-06 in the fixture) is not checked on either path, the same as round 1.
+
+### Found
+`price_feed/tests/test_dhan_daily_store.py::test_cache_past_t_is_still_checked` also fails at base 0d07e40. It is outside this task.

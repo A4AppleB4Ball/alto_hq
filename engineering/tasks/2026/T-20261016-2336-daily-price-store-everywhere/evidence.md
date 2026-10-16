@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2336-daily-price-store-everywhere
-round: 1
-qa: fail
+round: 2
+qa: pass
 qa_by: qa@alto_hq
-commits: 0d07e40..6eba391
-acceptance_sha256: b99f29aafe882f6ac4f333048f2b550df6668075e4f6fbc6a19dde11e5d19101
+commits: 0d07e40..3becf29
+acceptance_sha256: 38c4da22fb594140d8ec136e04062d6108e2f92ae84a03b32a27d964561046a5
 outputs_changed: unverified
 ---
 
@@ -61,3 +61,50 @@ QA ran from its own sandbox worktrees: `.claude/worktrees/T2336-qa` at 6eba391 a
 
 ### Check that would catch this class
 An invariant test: every price store a sandbox can build either raises or covers the last regular trading day through `end`. Parametrize it over every factory return type.
+
+## Round 2
+
+The approval sha256 38c4da22... matches acceptance.md as it is now (amendments 1-3). QA ran at 3becf29 in its sandbox worktree `.claude/worktrees/T2336-qa`, with `.alto_checkout.yaml` set to mode sandbox and the data root `alto_sandboxes/T2336-qa`. The base was the sandbox worktree `T2336-qabase` at 0d07e40. HTTP(S)_PROXY pointed at a dead port (127.0.0.1:9), and `requests.Session.request` was patched to raise in the repros. QA made no Dhan or NSE calls, no LLM calls, no credential reads, no orders and no production writes. `~/NSE_BSE_Data/dhan_cache` (5688 files) has the same name+size+mtime hash as in round 1, `d10ba26e...c1036`. Logs and the repro file are in `news_server/verify_data/reports/T-20261016-2336-daily-price-store-everywhere/` (`r2_suite_*.log`, `test_qa_r2.py`).
+
+**Owner decision (relayed by the caller):** the NSE holiday half of check 11 (F4) moves to a separate follow-up task, a live job that stores NSE's holiday list per year under a `backend.config.paths` constant. That half is **PENDING on the follow-up task**, not judged here. Every other check was run and judged.
+
+### Acceptance checks
+1. PASS. Unchanged since round 1 (grep).
+2'. PASS. `grep -rln "DhanPriceStore(" backend | grep -v /tests/ | grep -v broker_factory | grep -v price_feed` returns exactly the 7 named files. `DhanDailyStore(` is built only in `broker_factory/daily_series.py:17` and in `price_feed`.
+3. PASS. The live pins pass in `broker_factory/tests` (test_sandbox_shared_cache, test_price_store_sites).
+4. PASS.
+   - Full suite: head has 98 failed / 1615 passed / 8 errors; base has 98 failed / 1587 passed / 8 errors. `comm -23 new base` is empty (107 lines on each side).
+   - `test_boundaries.py` passes.
+   - These entry points import: main_cockpit, local, app_factory, e2e.lanes, harness, rebuild_price_refs, price_chart_service, daily_price_service.
+5. PASS (round 1).
+6. PASS. F1 is fixed:
+   - With a stale cache, `create_daily_price_store` for a dhan user in the sandbox raises `CachedPriceMissing: No cached daily price for ACME on 2026-10-08 (cache ends 2026-10-07, read needs through 2026-10-16)` (`test_qa_r2.py::test_F1_stale_store_raises`).
+   - A missing symbol raises `CachedPriceMissing` naming NOPE.
+   - No client is built and no credentials are read (`load_credentials` was patched to raise).
+7. PASS. `series()` ends at or before `end` (`test_F1_current_store_ok_no_lookahead` and the dev tests).
+8. N/A. No LLM run.
+9. PASS. Both paths call the one `require_current` (cached_daily_series.py:37). The AsOfLedger path and the factory path raise naming the symbol and the date, in QA repros and dev tests.
+10. PASS. A dhan user in a sandbox gets `SandboxPriceRefsUnavailable` (`test_F2_rebuild_refs_dhan_sandbox`).
+11. Instrument master half: PASS.
+    - `load_stored` reads `WorkspacePaths(user).system_dir/dhan_instruments.json` and never fetches.
+    - A missing copy raises `FileNotFoundError` naming the path. A copy missing keys raises `ValueError ... lacks [...]`. A stored copy maps ACME to NSE_EQ (`test_F3_stored_master`).
+    - Holiday half: **PENDING** on the follow-up task. Both sandbox paths still call `nse_trading_holidays`, a live NSE request, whenever the cache ends before `end`.
+12. PASS.
+    - `adjusted_closes` goes through `create_symbol_daily_series`. The live arguments `("scienceamit1", SYMBOL, HISTORY_START, end)` are pinned by test.
+    - In a sandbox it reads the cache and raises `CachedPriceMissing` when the cache is stale (`test_12_daily_price_service_sandbox`).
+
+`test_qa_r2.py`: 6 passed.
+
+### Findings (each confirmed by the verifier; all ALERT, no BLOCK)
+- **A1 ALERT, backend/executor/broker_factory/daily_series.py:36.** It reads the private attribute `mapper._loaded` of DhanInstrumentMapper from another module. Style only.
+- **A2 ALERT (operational), daily_series.py:30-39 with dhan_instruments.py:75-77.** No sandbox has a stored instrument master, and nothing installs one. `alto_sandboxes/T2336-qa/.../workspace/scienceamit1/system` does not exist. So every NSE-only check on the sandbox AsOfLedger path raises `FileNotFoundError` until a copy is seeded. Raising is honest, but the sandbox stance run stays incomplete for those companies. Dev disclosed this.
+- **A3 ALERT, dhan_instruments.py:69-80.** `load_stored` accepts a master of any date. An unknown symbol raises (`get_exchange` :109-128). A symbol whose exchange listing changed after the stored copy's date returns the old segment without raising.
+- Carried over, disclosed by dev: `require_current` checks only the tail of the series, not gaps inside it.
+
+### Dev claims not confirmed
+- The suite counts differ: QA saw 98 failed / 1615 passed at head and 98 failed / 1587 passed at base; dev reported 95 / 1618 at head and 95 / 1590 at base. The new-failure diff is empty either way.
+- Every other claim was confirmed.
+
+### Check that would catch this class
+- A sandbox-hermeticity test that runs each sandbox factory return type with sockets disabled.
+- A seeding step (or check) that `new_sandbox_worktree` installs the stored instrument master and the holiday file.

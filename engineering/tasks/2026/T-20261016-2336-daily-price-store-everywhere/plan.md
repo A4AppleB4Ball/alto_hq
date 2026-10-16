@@ -31,3 +31,10 @@ reported if it fails.
 - 6/7: `paths.DHAN_CACHE_DIR` / `DHAN_CACHE_DAILY_DIR` (same value as the old CACHE_ROOT; dhan_price_store imports it). New read-only `backend/price_feed/cached_daily_series.py` (clamps <= end, raises naming symbol+date when the cache lacks a regular trading day up to end, never writes, no client). New `broker_factory/daily_series.create_symbol_daily_series`: live -> DhanDailyStore (unchanged args), sandbox -> cached series. AsOfLedger._store uses it. `create_daily_price_store`: sandbox + non-paper user -> DailyPriceWindow over the shared cache.
 - Not money path beyond price reads; live arguments pinned by tests.
 - Checks: pytest on broker_factory/tests, lib/tests asof, price_feed/tests; suite base vs new.
+
+## Round 2 (Amendment 3)
+- 9/F1: `backend/price_feed/cached_daily_series.py` gets `read_cached_daily` + `require_current` (one function); `CachedDailySeries` (AsOfLedger) and new `CachedDailyPrices` (fed to `DailyPriceWindow` by `broker_factory/prices._shared_cache_window`) both call it.
+- 10/F2: `rebuild_price_refs.require_15min_prices` raises `SandboxPriceRefsUnavailable` for any user when `checkout_mode()=="sandbox"`.
+- 11/F3: `DhanInstrumentMapper.load_stored()` reads `WorkspacePaths(user).system_dir/dhan_instruments.json` of any date, never fetches, raises naming the path; `broker_factory/daily_series` injects it as `exchange_of`. 11/F4 (holiday calendar): no stored calendar exists in production; blocked, owner's call.
+- 12: `daily_price_service.adjusted_closes` -> `create_symbol_daily_series` (live builds the same `DhanDailyStore(PRICE_USER_ID, SYMBOL, HISTORY_START, end)`).
+- Run: targeted tests in executor/broker_factory/tests, api/services/tests; full suite vs a sandbox baseline at 0d07e40.

@@ -2,9 +2,10 @@
 schema: task/v1
 id: T-20261016-2336-daily-price-store-everywhere
 title: "Every daily price read goes through the checkout-gated price store"
-status: ready
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge (check 11 holiday half pending on the NSE holiday follow-up task)"
 lease_until: 2026-10-18T12:00+05:30
-friction: acceptance 2's scope (all of backend) is wider than the Goal's three sites; the mismatch was visible only after a grep
+friction: the full-suite baseline must be a sandbox worktree when the head is one (a production-root base differs by ~40 data-root failures); acceptance 2's scope (all of backend) is wider than the Goal's three sites; the mismatch was visible only after a grep
 created: 2026-10-16T23:36+05:30
 created_by: owner
 kind: internal
