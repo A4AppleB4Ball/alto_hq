@@ -5,6 +5,7 @@ round: 2
 qa: pass
 qa_by: qa@v1
 commits: 1665a1c..25a9b8d
+merge_commit: a6d2315
 acceptance_sha256: 7f537bc157acc293cfe5937fc7006fc5085e82b2f7302cf9f9d3961c42ba7e73
 outputs_changed: unverified
 ---

@@ -2,8 +2,8 @@
 schema: task/v1
 id: T-20261016-2235-checks-stance-inputs-asof
 title: "Stage check: no stance link used an input dated after its as-of"
-status: awaiting_owner
-waiting_on: "ship: owner approved the merge 2026-10-17"
+status: done
+closed: 2026-10-17
 friction: "sandbox checkouts lack production-only state (alto_data/system/legacy_chain_starts.json), so 39 validation/stance tests fail there at base until it is copied in; no case-to-sandbox installer existed (added here)"
 created: 2026-10-16T22:35+05:30
 created_by: owner
