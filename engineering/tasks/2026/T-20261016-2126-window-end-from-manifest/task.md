@@ -2,12 +2,16 @@
 schema: task/v1
 id: T-20261016-2126-window-end-from-manifest
 title: "Scenario window end comes from the case manifest's freeze date, not a constant"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T21:26+05:30
 created_by: owner
 kind: internal
 related: [E-20261015-1140-validation, T-20261016-1928-scenario-contract, T-20261016-1928-case-freezer]
-waiting_on: "Approve acceptance.md"
+approvals:
+  - file: acceptance.md
+    sha256: b79dc63f54c78cb3beee40105f5b7d6362eb134a173c520b6ad8249bbcc847ec
+    by: owner
+    at: 2026-10-16T21:30+05:30
 branch: eng/T-20261016-2126-window-end-from-manifest
 ---
 
