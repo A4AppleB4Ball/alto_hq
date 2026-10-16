@@ -8,7 +8,7 @@ friction: "acceptance 6 find -newer on the whole data root catches live API/scra
 lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30
 created_by: owner
-closed: 2026-10-17T00:20+05:30
+closed: 2026-10-16T21:11+05:30
 merge_commit: 1d555be
 kind: internal
 related: [E-20261015-1140-validation, T-20261016-1718-completeness-check]
@@ -16,11 +16,11 @@ approvals:
   - file: acceptance.md
     sha256: ff3137bec0a1baefe2973b78cc6f15958d74a32d66260660dd6c0799067615ed
     by: owner
-    at: 2026-10-16T19:40+05:30
+    at: 2026-10-16T20:06+05:30
   - file: evidence.md
     sha256: d0e260bbdf493aa1b67e840cbaf4a40ec6d0d8e57fcfdb3cfb740fbd82771ed1
     by: owner
-    at: 2026-10-16T23:30+05:30
+    at: 2026-10-16T21:00+05:30
 branch: eng/T-20261016-1928-scenario-selection
 ---
 

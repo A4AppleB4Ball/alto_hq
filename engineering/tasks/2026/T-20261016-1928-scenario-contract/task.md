@@ -5,7 +5,7 @@ title: "Scenario contract (scenario/v1, edits, timeline, expected verdicts) and 
 status: done
 created: 2026-10-16T19:28+05:30
 created_by: owner
-closed: 2026-10-17T00:20+05:30
+closed: 2026-10-16T21:11+05:30
 merge_commit: 8bd1c6c
 kind: internal
 related: [E-20261015-1140-validation, T-20261016-1928-case-freezer]
@@ -13,11 +13,11 @@ approvals:
   - file: acceptance.md
     sha256: 689d3cff8618237d8d576a0d8fd9eae8681cbedc668d40272aeccfe1b3dfb9d5
     by: owner
-    at: 2026-10-16T19:40+05:30
+    at: 2026-10-16T20:06+05:30
   - file: evidence.md
     sha256: 2a3896e19f94cebe061b97d15ba15d25ef8c66a8553c9b8aa44c8321161f09f3
     by: owner
-    at: 2026-10-16T23:30+05:30
+    at: 2026-10-16T21:00+05:30
 branch: eng/T-20261016-1928-scenario-contract
 ---
 

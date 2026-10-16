@@ -5,18 +5,18 @@ title: "Investigate how splits and bonuses flow through prices, stance and posit
 status: done
 created: 2026-10-16T19:28+05:30
 created_by: owner
-closed: 2026-10-17T00:20+05:30
+closed: 2026-10-16T21:11+05:30
 kind: internal
 related: [E-20261015-1140-validation]
 approvals:
   - file: acceptance.md
     sha256: a7fec9d0d198dc0a71fffca3d3c176ad88e10c52bfcfe1211286f38c289eb6a8
     by: owner
-    at: 2026-10-16T19:40+05:30
+    at: 2026-10-16T20:06+05:30
   - file: evidence.md
     sha256: 15adb4a83756ea4e4498ab57766097b3fc5ecb3a5f2d38a2702d6b1929bf4836
     by: owner
-    at: 2026-10-16T23:30+05:30
+    at: 2026-10-16T21:00+05:30
 ---
 
 ## Goal
