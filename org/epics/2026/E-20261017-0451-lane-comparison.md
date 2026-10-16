@@ -60,7 +60,7 @@ experiments; Product (champion vs challengers) reads it for promotion.
 
 ## Findings
 
-Spike 2026-10-17 (throwaway scripts in `/tmp/spike`, not kept), alto `9a97ee1`,
+Spike 2026-10-17 (scripts kept as sidecars, see `E-20261017-0451-lane-comparison.spike-artifacts.md`; throwaway, read for method only), alto `9a97ee1`,
 account scienceamit1, window 2026-09-15 to 2026-10-15.
 
 - Rebuilt real cash from the Dhan ledger ends at ₹126,863.02; the funds API

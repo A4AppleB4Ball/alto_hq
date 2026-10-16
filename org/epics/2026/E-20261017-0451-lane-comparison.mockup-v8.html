@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="utf-8"><title>Alto · Lane comparison</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+:root, :root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10); --wash: rgba(11,11,11,0.04);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #9d4edd; --bar: #898781; --bar-soft: #d6d5ce;
+  --pos: #006300; --neg: #d03b3b; --accent: #2a78d6;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10); --wash: rgba(255,255,255,0.05);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #b27af0; --bar: #898781; --bar-soft: #383835;
+  --pos: #0ca30c; --neg: #e66767; --accent: #3987e5;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--ink);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.page { max-width: 1320px; margin: 0 auto; padding: 28px 28px 80px; }
+h1 { font-size: 22px; font-weight: 650; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 15px; font-weight: 650; margin: 0; }
+h3 { font-size: 12px; font-weight: 600; color: var(--ink2); margin: 0 0 8px; text-transform: uppercase; letter-spacing: .06em; }
+.sub { color: var(--ink2); font-size: 13px; }
+.muted { color: var(--muted); }
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 14px; }
+.stamps { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.stamp { font-size: 12px; color: var(--ink2); border: 1px solid var(--ring); border-radius: 999px; padding: 3px 10px; background: var(--surface); }
+.stamp b { color: var(--ink); font-weight: 600; }
+.filters { display: flex; align-items: center; gap: 8px; margin: 14px 0 18px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--ring); background: var(--surface); color: var(--ink);
+  padding: 6px 12px; border-radius: 8px; font: inherit; font-size: 13px; cursor: pointer; }
+.chip:hover { background: var(--wash); }
+.chip[aria-pressed="false"] { color: var(--muted); }
+.chip[aria-pressed="false"] .key { opacity: .3; }
+.chip.ghost { border-style: dashed; color: var(--muted); cursor: default; }
+.chip.ghost:hover { background: var(--surface); }
+.key { width: 18px; height: 0; border-top: 3px solid; border-radius: 2px; }
+.sep { width: 1px; height: 22px; background: var(--ring); margin: 0 6px; }
+.btn { white-space: nowrap; border: 1px solid var(--ring); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+.btn:hover { background: var(--wash); }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 14px; padding: 18px 20px; }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g-7-5 { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.g-5-7 { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.mt { margin-top: 16px; }
+@media (max-width: 980px) { .g2, .g-7-5, .g-5-7 { grid-template-columns: 1fr; } .page { padding: 16px; } }
+.banner { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--ring); background: var(--wash); border-radius: 12px; padding: 12px 16px; font-size: 13px; color: var(--ink2); margin-bottom: 16px; }
+.banner .ico { flex: none; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--ink2); text-align: center; font-size: 11px; line-height: 14px; font-weight: 700; margin-top: 1px; }
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(280px, 4fr) minmax(0, 8fr); gap: 32px; align-items: center; }
+.hero .big { font-size: 64px; font-weight: 650; letter-spacing: -0.03em; line-height: 1; }
+.hero .big small { font-size: 22px; font-weight: 600; color: var(--ink2); margin-left: 6px; letter-spacing: 0; }
+.hero .pair { display: flex; gap: 22px; margin-top: 14px; }
+.hero .pair div { font-size: 13px; color: var(--ink2); }
+.hero .pair b { display: block; font-size: 20px; color: var(--ink); font-weight: 650; }
+@media (max-width: 980px) { .hero { grid-template-columns: 1fr; } }
+.wf-row { display: grid; grid-template-columns: 190px minmax(0, 1fr) 70px; align-items: center; gap: 12px; padding: 5px 0; font-size: 13px; }
+.wf-row .lab { color: var(--ink2); }
+.wf-row .lab small { display: block; color: var(--muted); font-size: 11px; }
+.wf-track { position: relative; height: 18px; }
+.wf-axis { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--axis); }
+.wf-bar { position: absolute; top: 2px; height: 14px; background: var(--bar); }
+.wf-bar.total { background: var(--ink); }
+.wf-val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.wf-row.total { border-top: 1px solid var(--ring); margin-top: 6px; padding-top: 10px; }
+/* tables */
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { text-align: right; font-weight: 600; color: var(--ink2); padding: 7px 8px; border-bottom: 1px solid var(--axis); font-size: 12px; }
+th:first-child, td:first-child { text-align: left; }
+td { padding: 6px 8px; border-bottom: 1px solid var(--grid); text-align: right; font-variant-numeric: tabular-nums; }
+tr.grp td { padding-top: 14px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--axis); font-weight: 600; }
+td.lab { color: var(--ink2); }
+td .hint { color: var(--muted); font-size: 11px; display: block; }
+td.na, .na { color: var(--muted); }
+.lanehead { display: inline-flex; align-items: center; gap: 8px; }
+/* tiles */
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--ring); border-radius: 12px; padding: 12px 14px; }
+.tile .l { font-size: 12px; color: var(--ink2); }
+.tile .v { font-size: 26px; font-weight: 650; letter-spacing: -0.02em; margin-top: 2px; }
+.tile .d { font-size: 12px; color: var(--muted); margin-top: 2px; }
+/* charts */
+.chart-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.chart-head .sub { font-size: 12px; }
+.legend { display: flex; gap: 14px; font-size: 12px; color: var(--ink2); flex-wrap: wrap; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.chart { position: relative; width: 100%; }
+.chart:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+svg text { font-family: inherit; }
+.t { fill: var(--muted); font-size: 11px; }
+.t-ink { fill: var(--ink2); font-size: 11px; }
+.gl { stroke: var(--grid); stroke-width: 1; }
+.ax { stroke: var(--axis); stroke-width: 1; }
+.ln { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.c-real { stroke: var(--s1); } .c-rep { stroke: var(--s2); }
+.f-real { fill: var(--s1); } .f-rep { fill: var(--s2); }
+.ring { stroke: var(--surface); stroke-width: 2; }
+.cur-h { stroke: var(--ink2); stroke-width: 1; opacity: .5; }
+.cur-s { stroke: var(--ink); stroke-width: 1; opacity: .9; }
+.bar-n { fill: var(--bar); } .bar-soft { fill: var(--bar-soft); } .bar-ink { fill: var(--ink); }
+.dep { fill: var(--ink); }
+#tip { position: fixed; z-index: 50; pointer-events: none; background: var(--surface); border: 1px solid var(--ring);
+  box-shadow: 0 6px 24px rgba(0,0,0,.16); border-radius: 10px; padding: 9px 12px; font-size: 12px; min-width: 150px; display: none; }
+#tip .th { color: var(--ink2); margin-bottom: 5px; font-weight: 600; }
+#tip .tr { display: flex; align-items: center; gap: 8px; padding: 1.5px 0; }
+#tip .tr .k { width: 12px; border-top: 3px solid; border-radius: 2px; flex: none; }
+#tip .tr .n { color: var(--ink2); flex: 1; }
+#tip .tr .vv { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
+#trace table { font-size: 12px; } #trace th:nth-child(2), #trace th:nth-child(4), #trace th:nth-child(6) { text-align: left; }
+/* inspector */
+.dayhead { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.dayhead .date { font-size: 20px; font-weight: 650; min-width: 130px; }
+.split2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 980px) { .split2 { grid-template-columns: 1fr; } }
+.butter { display: grid; grid-template-columns: 1fr 90px 1fr; gap: 8px 8px; align-items: center; font-size: 12px; }
+.butter .bl { display: flex; justify-content: flex-end; align-items: center; gap: 6px; }
+.butter .br { display: flex; justify-content: flex-start; align-items: center; gap: 6px; }
+.butter .nm { text-align: center; color: var(--ink2); font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.butter .bx { height: 12px; border-radius: 4px; }
+.butter .v { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 34px; }
+.tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--ring); color: var(--ink2); margin-left: 4px; }
+.list td, .list th { padding: 5px 6px; }
+.small { font-size: 12px; }
+.row-bar { display: inline-block; height: 8px; background: var(--bar); border-radius: 3px; vertical-align: middle; }
+.todo { margin: 0; padding: 0; list-style: none; }
+.todo li { display: flex; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--grid); font-size: 13px; color: var(--ink2); }
+.todo li:last-child { border-bottom: 0; }
+.todo .st { flex: none; font-size: 11px; border-radius: 999px; padding: 1px 8px; border: 1px solid var(--ring); height: 20px; margin-top: 1px; }
+.lanecard { border: 1px solid var(--ring); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.lanecard.ghost { border-style: dashed; color: var(--muted); }
+.lanecard .nm { font-weight: 650; display: flex; align-items: center; gap: 8px; }
+.lanecard dl { display: grid; grid-template-columns: 120px 1fr; gap: 3px 10px; margin: 8px 0 0; font-size: 12px; color: var(--ink2); }
+.lanecard dt { color: var(--muted); }
+.lanecard dd { margin: 0; }
+details summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--ink2); }
+
+.sel { border:1px solid var(--ring); background:var(--surface); color:var(--ink); border-radius:8px; padding:6px 10px; font:inherit; font-size:13px; }
+.sm { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+@media (max-width:980px){ .sm{grid-template-columns:repeat(2,minmax(0,1fr));} }
+.smc { border:1px solid var(--ring); border-radius:12px; padding:10px 12px; }
+.smc .nm { font-size:12px; font-weight:650; display:flex; gap:6px; align-items:center; }
+.smc .v { font-size:20px; font-weight:650; margin:2px 0 4px; }
+tr.ref td { background: var(--wash); }
+td.l, th.l { text-align:left; }
+.copy { font-size:11px; border:1px dashed var(--axis); color:var(--muted); border-radius:999px; padding:0 7px; margin-left:6px; }
+.cell { display:inline-block; min-width:44px; padding:3px 6px; border-radius:6px; text-align:center; }
+</style></head><body><div class="page">
+ <div class="top"><div><h1>Lane comparison</h1><div class="sub" id="winsub"></div><div class="stamps" id="stamps"></div></div>
+ <button class="btn" id="theme" type="button">Dark mode</button></div>
+ <div class="filters" id="filters"></div>
+ <div class="banner"><div class="ico">i</div><div id="bannertext"></div></div>
+
+ <div class="card"><div class="chart-head"><div><h2>1 · Leaderboard</h2><div class="sub">One row per lane. Gaps and tracking numbers are measured against the reference lane (shaded row). Click a row to show or hide the lane in the charts.</div></div></div><div id="board" style="overflow:auto"></div></div>
+ <div class="card mt"><div class="chart-head"><div><h2>Cumulative return, one panel per lane</h2><div class="sub">Time-weighted. Grey line is the reference lane.</div></div></div><div class="sm" id="sm"></div></div>
+
+ <div class="card mt"><div class="chart-head"><div><h2>2 · Account value</h2><div class="sub">Rupees after charges. Same start cash and dated deposits in every lane. Shadows are dashed so lanes lying on top of each other stay visible.</div></div><div class="legend" id="leg"></div></div><div class="chart" id="ch-val"></div></div>
+ <div class="grid g2 mt">
+  <div class="card"><div class="chart-head"><div><h2>Cumulative return</h2><div class="sub">Time-weighted.</div></div></div><div class="chart" id="ch-cum"></div></div>
+  <div class="card"><div class="chart-head"><div><h2>Gap to reference</h2><div class="sub">Account value minus the reference, in rupees.</div></div></div><div class="chart" id="ch-gap"></div></div>
+  <div class="card"><div class="chart-head"><div><h2>Drawdown</h2><div class="sub">Below the running peak.</div></div></div><div class="chart" id="ch-dd"></div></div>
+  <div class="card"><div class="chart-head"><div><h2>Capital deployed</h2><div class="sub">Equity as % of account value.</div></div></div><div class="chart" id="ch-inv"></div></div>
+ </div>
+ <div class="grid g-7-5 mt">
+  <div class="card"><h3>Why each lane differs from the reference</h3><div class="sub small" style="margin-bottom:8px">Exact rupee split of the final account-value gap. Execution only exists between a real account and its replay.</div><div id="decomp"></div></div>
+  <div class="card"><h3>Book overlap between lanes</h3><div class="sub small" style="margin-bottom:8px">Sum of the smaller weight per name, on the selected day below.</div><div id="ovl"></div></div>
+ </div>
+
+ <div class="card mt" id="inspector">
+  <div class="dayhead"><button class="btn" id="prev" type="button">‹</button><div class="date" id="insp-date"></div><button class="btn" id="next" type="button">›</button><span class="sub">3 · Day inspector · click a chart or use ← → keys</span></div>
+  <div id="insp-lanes"></div>
+  <div class="mt"><h3>Holdings by lane · weight in account</h3><div id="hold" style="overflow:auto"></div></div>
+  <div class="split2 mt"><div><h3>Real fills</h3><div id="insp-real"></div></div><div><h3>Production replay orders</h3><div id="insp-rep"></div></div></div>
+  <div class="mt"><h3>Decision trace · production vs real</h3><div class="sub small" id="trace-note" style="margin-bottom:8px"></div><div id="trace" style="overflow:auto"></div></div>
+ </div>
+ <div class="grid g2 mt">
+  <div class="card"><h3>Lanes and provenance</h3><div id="lanes"></div></div>
+  <div class="card"><h3>What this page cannot show yet</h3><ul class="todo" id="todo"></ul></div>
+ </div>
+</div>
+<div id="tip"></div>
+<script>
+window.DATA = /*DATA*/null;
+(function(){
+const D=window.DATA, days=D.days, N=days.length, last=N-1, MINUS='−';
+const num=(v,d=1)=>(v<0?MINUS:'')+Math.abs(v).toFixed(d), sgn=(v,d=1)=>(v>0?'+':v<0?MINUS:'')+Math.abs(v).toFixed(d);
+const pct=(v,d=1)=>v==null?'–':num(v*100,d)+'%', spct=(v,d=1)=>sgn(v*100,d)+'%', pp=(v,d=1)=>sgn(v*100,d)+' pp';
+const inr=v=>'₹'+Math.round(v).toLocaleString('en-IN'), inrs=v=>(v>0?'+':v<0?MINUS:'')+'₹'+Math.abs(Math.round(v)).toLocaleString('en-IN');
+const lakh=v=>(v<0?MINUS:'')+(Math.abs(v)>=1e5?(Math.abs(v)/1e5).toFixed(Math.abs(v)>=1e6?0:1)+'L':Math.abs(v)>=1e3?(Math.abs(v)/1e3).toFixed(0)+'k':String(Math.round(Math.abs(v))));
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const dl=d=>parseInt(d.slice(8),10)+' '+MON[parseInt(d.slice(5,7),10)-1];
+const dlong=d=>new Date(d+'T00:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+function h(tag,cls,text,kids){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;(kids||[]).forEach(k=>k&&e.appendChild(k));return e;}
+const NS='http://www.w3.org/2000/svg';
+function s(tag,a,p){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function clear(e){while(e.firstChild)e.removeChild(e.firstChild);}
+
+const LANES=[
+ {id:'real',name:'Real account',short:'Real',kind:'real',ver:'Dhan',data:D.real,m:D.metrics.real,color:'var(--s1)',dash:''},
+ {id:'prod',name:'Production replay',short:'Production',kind:'production',ver:'v2 · '+D.stamp.commit,data:D.rep,m:D.metrics.rep,color:'var(--s2)',dash:''},
+ {id:'v1',name:'Shadow v1',short:'Shadow v1',kind:'shadow',ver:'v1',copy:true,data:D.rep,m:D.metrics.rep,color:'var(--s3)',dash:'6 4'},
+ {id:'v2',name:'Shadow v2',short:'Shadow v2',kind:'shadow',ver:'v2',copy:true,data:D.rep,m:D.metrics.rep,color:'var(--s4)',dash:'2 4'},
+];
+const on={real:true,prod:true,v1:true,v2:true}; let ref='prod', cur=last;
+const active=()=>LANES.filter(l=>on[l.id]), R=()=>LANES.find(l=>l.id===ref);
+const std=a=>{const m=a.reduce((x,y)=>x+y,0)/a.length;return Math.sqrt(a.reduce((x,y)=>x+(y-m)**2,0)/(a.length-1));};
+const rets=L=>L.data.slice(1).map(r=>r.ret);
+function vs(L){const a=rets(L),b=rets(R()),d=a.map((x,i)=>x-b[i]);const ma=a.reduce((x,y)=>x+y,0)/a.length,mb=b.reduce((x,y)=>x+y,0)/b.length;
+ const cov=a.reduce((t,x,i)=>t+(x-ma)*(b[i]-mb),0)/(a.length-1);
+ return{te:std(d)*Math.sqrt(252),corr:cov/(std(a)*std(b)),gap:L.data[last].nav-R().data[last].nav};}
+
+/* header */
+document.getElementById('winsub').textContent=dlong(days[0])+' to '+dlong(days[last])+' · '+N+' trading days · account scienceamit1';
+const st=D.stamp,sp=document.getElementById('stamps');
+[['Real','Dhan ledger + '+st.fills+' fills'],['Production','preset '+st.preset+' · commit '+st.commit],['Stance data','#'+st.stance_hash+' · '+st.signals.toLocaleString('en-IN')+' rows'],['Slippage',st.slippage_bps+' bps'],['Funding','same start + '+Object.keys(D.deposits).length+' dated deposits']].forEach(([a,b])=>{const p=h('span','stamp');p.appendChild(h('b',null,a+' '));p.appendChild(document.createTextNode(b));sp.appendChild(p);});
+document.getElementById('bannertext').textContent='Shadow v1 and v2 are placeholders: exact copies of the production replay, so their numbers and lines equal production and every gap to production is zero by construction. They exist to prove the layout holds four lanes. Only '+D.metrics.real.n_days+' daily returns: Sharpe has a standard error near ±'+num(D.metrics.real.sharpe_se,1)+', so lanes cannot be ranked on it yet.';
+const fl=document.getElementById('filters');
+fl.appendChild(h('span','sub','Reference'));
+const sel=h('select','sel');LANES.forEach(l=>{const o=h('option',null,l.name);o.value=l.id;if(l.id===ref)o.selected=true;sel.appendChild(o);});
+sel.onchange=()=>{ref=sel.value;renderAll();};fl.appendChild(sel);fl.appendChild(h('span','sep'));fl.appendChild(h('span','sub','Lanes'));
+LANES.forEach(L=>{const b=h('button','chip');b.type='button';b.setAttribute('aria-pressed','true');const k=h('span','key');k.style.borderColor=L.color;if(L.dash)k.style.borderTopStyle='dashed';b.appendChild(k);b.appendChild(document.createTextNode(L.short));
+ b.onclick=()=>{if(on[L.id]&&active().length===1)return;on[L.id]=!on[L.id];b.setAttribute('aria-pressed',String(on[L.id]));renderAll();};fl.appendChild(b);});
+const tb=document.getElementById('theme');tb.onclick=()=>{const r=document.documentElement,d=r.getAttribute('data-theme')==='dark';r.setAttribute('data-theme',d?'light':'dark');tb.textContent=d?'Dark mode':'Light mode';};
+
+/* line chart */
+const tip=document.getElementById('tip');
+function lineChart(host,o){ // o: series [{L,vals}], fmt, yfmt, zero, h
+ clear(host);const W=host.clientWidth||600,H=o.h||230,m={l:48,r:12,t:10,b:24},iw=W-m.l-m.r,ih=H-m.t-m.b;
+ const all=o.series.flatMap(x=>x.vals);let lo=Math.min(...all,o.zero?0:Infinity),hi=Math.max(...all,o.zero?0:-Infinity);if(lo===hi){lo-=1;hi+=1;}const pad=(hi-lo)*.06;lo-=pad;hi+=pad;
+ const X=i=>m.l+iw*i/(N-1),Y=v=>m.t+ih*(1-(v-lo)/(hi-lo));
+ const svg=s('svg',{viewBox:`0 0 ${W} ${H}`,width:W,height:H},host);
+ for(let k=0;k<=4;k++){const v=lo+(hi-lo)*k/4;s('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),class:'gl'},svg);const t=s('text',{x:m.l-6,y:Y(v)+4,'text-anchor':'end',class:'t'},svg);t.textContent=o.yfmt(v);}
+ if(o.zero)s('line',{x1:m.l,x2:W-m.r,y1:Y(0),y2:Y(0),class:'ax'},svg);
+ [0,Math.floor(last/3),Math.floor(2*last/3),last].forEach(i=>{const t=s('text',{x:X(i),y:H-6,'text-anchor':i==0?'start':i==last?'end':'middle',class:'t'},svg);t.textContent=dl(days[i]);});
+ o.series.forEach(x=>{const p=x.vals.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join('');const e=s('path',{d:p,class:'ln',stroke:x.color||x.L.color},svg);const dsh=x.dash!=null?x.dash:x.L.dash;if(dsh)e.setAttribute('stroke-dasharray',dsh);if(x.w)e.setAttribute('stroke-width',x.w);});
+ const cl=s('line',{y1:m.t,y2:m.t+ih,class:'cur-s'},svg),cs=s('line',{y1:m.t,y2:m.t+ih,class:'cur-h'},svg);
+ const place=()=>{cs.setAttribute('x1',X(cur));cs.setAttribute('x2',X(cur));};place();cl.style.display='none';
+ const ov=s('rect',{x:m.l,y:m.t,width:iw,height:ih,fill:'transparent'},svg);
+ const idx=e=>{const r=svg.getBoundingClientRect();const x=(e.clientX-r.left)*W/r.width;return Math.max(0,Math.min(last,Math.round((x-m.l)/iw*last)));};
+ ov.onmousemove=e=>{const i=idx(e);cl.setAttribute('x1',X(i));cl.setAttribute('x2',X(i));cl.style.display='';clear(tip);tip.appendChild(h('div','th',dlong(days[i])));
+  o.series.filter(x=>!x.noTip).forEach(x=>{const r=h('div','tr');const k=h('span','k');k.style.borderColor=x.color||x.L.color;r.appendChild(k);r.appendChild(h('span','n',x.label||x.L.short));r.appendChild(h('span','vv',o.fmt(x.vals[i])));tip.appendChild(r);});
+  tip.style.display='block';tip.style.left=Math.min(e.clientX+14,innerWidth-200)+'px';tip.style.top=(e.clientY+14)+'px';};
+ ov.onmouseleave=()=>{cl.style.display='none';tip.style.display='none';};
+ ov.onclick=e=>{cur=idx(e);renderInspector();document.querySelectorAll('.chart').forEach(c=>{});};
+}
+function legend(){const g=document.getElementById('leg');clear(g);active().forEach(L=>{const sp=h('span');const k=h('span','key');k.style.borderColor=L.color;if(L.dash)k.style.borderTopStyle='dashed';sp.appendChild(k);sp.appendChild(document.createTextNode(L.short));g.appendChild(sp);});}
+
+/* leaderboard */
+function renderBoard(){
+ const host=document.getElementById('board');clear(host);const t=h('table');
+ const cols=['Lane','Kind','Version','XIRR','Sharpe ± se','Sortino','Return','Max DD','Vol','TE vs ref','Corr vs ref','Value vs ref','Turnover','Friction','Deployed'];
+ const hd=h('tr');cols.forEach((c,i)=>hd.appendChild(h('th',i<3?'l':'',c)));t.appendChild(hd);
+ LANES.forEach(L=>{const r=h('tr',L.id===ref?'ref':'');r.style.cursor='pointer';r.style.opacity=on[L.id]?1:.45;
+  const isR=L.id===ref,v=isR?null:vs(L),m=L.m;
+  const c0=h('td','l');const w=h('span','lanehead');const k=h('span','key');k.style.borderColor=L.color;if(L.dash)k.style.borderTopStyle='dashed';w.appendChild(k);w.appendChild(document.createTextNode(L.name));if(L.copy)w.appendChild(h('span','copy','copy of production'));if(isR)w.appendChild(h('span','tag','reference'));c0.appendChild(w);r.appendChild(c0);
+  r.appendChild(h('td','l',L.kind));r.appendChild(h('td','l',L.ver));
+  [pct(m.xirr,1),num(m.sharpe,2)+' ± '+num(m.sharpe_se,1),m.sortino==null?'–':num(m.sortino,2),spct(m.cum,2),pct(m.mdd,1),pct(m.vol,1),
+   isR?'–':pct(v.te,1),isR?'–':num(v.corr,2),isR?'–':inrs(v.gap),num(m.turnover,1)+'×',inr(m.friction),pct(m.avg_invested,0)].forEach(x=>r.appendChild(h('td',x==='–'?'na':'',x)));
+  r.onclick=()=>{if(on[L.id]&&active().length===1)return;on[L.id]=!on[L.id];document.querySelectorAll('.filters .chip')[LANES.indexOf(L)].setAttribute('aria-pressed',String(on[L.id]));renderAll();};
+  t.appendChild(r);});
+ host.appendChild(t);
+}
+function spark(L,w,hh){const v=L.data.map(r=>r.cum),rv=R().data.map(r=>r.cum),all=v.concat(rv),lo=Math.min(...all),hi=Math.max(...all),X=i=>2+(w-4)*i/(N-1),Y=x=>hh-3-(hh-6)*(x-lo)/((hi-lo)||1);
+ const svg=s('svg',{viewBox:`0 0 ${w} ${hh}`,width:'100%',height:hh});
+ s('line',{x1:0,x2:w,y1:Y(0),y2:Y(0),class:'gl'},svg);
+ if(L.id!==ref)s('path',{d:rv.map((x,i)=>(i?'L':'M')+X(i)+' '+Y(x)).join(''),class:'ln',stroke:'var(--axis)','stroke-width':1.5},svg);
+ const p=s('path',{d:v.map((x,i)=>(i?'L':'M')+X(i)+' '+Y(x)).join(''),class:'ln',stroke:L.color},svg);if(L.dash)p.setAttribute('stroke-dasharray',L.dash);return svg;}
+function renderSM(){const host=document.getElementById('sm');clear(host);LANES.forEach(L=>{const c=h('div','smc');const n=h('div','nm');const k=h('span','key');k.style.borderColor=L.color;if(L.dash)k.style.borderTopStyle='dashed';n.appendChild(k);n.appendChild(document.createTextNode(L.name));c.appendChild(n);c.appendChild(h('div','v',spct(L.m.cum,2)));c.appendChild(spark(L,260,70));host.appendChild(c);});}
+
+/* decomposition */
+function renderDecomp(){const host=document.getElementById('decomp');clear(host);const t=h('table');const hd=h('tr');['Lane vs reference','Start','Exposure','Selection','Execution','Total'].forEach((c,i)=>hd.appendChild(h('th',i?'':'l',c)));t.appendChild(hd);
+ LANES.filter(l=>l.id!==ref).forEach(L=>{const r=h('tr');r.appendChild(h('td','l',L.short+' − '+R().short));
+  const real=[L.id,ref].includes('real')&&[L.id,ref].includes('prod');
+  if(real){const sg=L.id==='real'?1:-1,g=D.nav_gap;[g.start,g.exposure,g.selection,g.execution,g.total].forEach(x=>r.appendChild(h('td',null,inrs(sg*x))));}
+  else if(L.copy&&R().copy||L.copy&&ref==='prod'||L.id==='prod'&&R().copy){[0,0,0,0,0].forEach(x=>r.appendChild(h('td','na',inrs(x))));}
+  else{const td=h('td','na','not computed for this pair yet');td.colSpan=5;r.appendChild(td);}
+  t.appendChild(r);});host.appendChild(t);}
+function renderOvl(){const host=document.getElementById('ovl');clear(host);const t=h('table');const hd=h('tr');hd.appendChild(h('th','l',''));LANES.forEach(l=>hd.appendChild(h('th',null,l.short)));t.appendChild(hd);
+ LANES.forEach(a=>{const r=h('tr');r.appendChild(h('td','l',a.short));LANES.forEach(b=>{const wa=a.data[cur].w,wb=b.data[cur].w;let o=0;new Set([...Object.keys(wa),...Object.keys(wb)]).forEach(k=>o+=Math.min(wa[k]||0,wb[k]||0));
+  const td=h('td');const c=h('span','cell',a===b?'–':pct(o,0));if(a!==b)c.style.background=`color-mix(in srgb, var(--s1) ${Math.round(o*70)}%, transparent)`;td.appendChild(c);r.appendChild(td);});t.appendChild(r);});host.appendChild(t);}
+
+/* inspector */
+function tradesTable(rows,real){const t=h('table','list');if(!rows.length){return h('div','sub small','No orders.');}
+ const hd=h('tr');['Name','Side','Shares','Price','Notional',real?'Time':'Reason'].forEach((c,i)=>hd.appendChild(h('th',i<2||i==5?'l':'',c)));t.appendChild(hd);
+ rows.forEach(x=>{const r=h('tr');r.appendChild(h('td','l',x.symbol));r.appendChild(h('td','l',x.side));r.appendChild(h('td',null,Math.round(x.shares).toLocaleString('en-IN')));r.appendChild(h('td',null,num(x.px,2)));r.appendChild(h('td',null,inr(x.notional)));r.appendChild(h('td','l',real?x.time:(x.reason||'')));t.appendChild(r);});return t;}
+function renderInspector(){
+ const d=days[cur];document.getElementById('insp-date').textContent=dlong(d);
+ const host=document.getElementById('insp-lanes');clear(host);const g=h('div','tiles');g.style.gridTemplateColumns='repeat(4,minmax(0,1fr))';
+ LANES.forEach(L=>{const r=L.data[cur];const t=h('div','tile');t.appendChild(h('div','l',L.name));t.appendChild(h('div','v',inr(r.nav)));t.appendChild(h('div','d','day '+spct(r.ret,2)+' · '+Math.round(r.invested*100)+'% deployed · '+r.n+' names'+(r.flow?' · deposit '+inr(r.flow):'')));g.appendChild(t);});host.appendChild(g);
+ const names=[...new Set(LANES.flatMap(L=>Object.keys(L.data[cur].w)))].sort((a,b)=>Math.max(...LANES.map(L=>L.data[cur].w[b]||0))-Math.max(...LANES.map(L=>L.data[cur].w[a]||0)));
+ const hh=document.getElementById('hold');clear(hh);const t=h('table','list');const hd=h('tr');hd.appendChild(h('th','l','Name'));LANES.forEach(L=>hd.appendChild(h('th',null,L.short)));t.appendChild(hd);
+ names.forEach(n=>{const r=h('tr');r.appendChild(h('td','l',n));LANES.forEach(L=>{const w=L.data[cur].w[n];r.appendChild(h('td',w?'':'na',w?pct(w,1):'·'));});t.appendChild(r);});hh.appendChild(t);
+ const tr=D.trades[d];const a=document.getElementById('insp-real'),b=document.getElementById('insp-rep');clear(a);clear(b);a.appendChild(tradesTable(tr.real,true));b.appendChild(tradesTable(tr.rep,false));
+ const T=D.trace[d],th=document.getElementById('trace');clear(th);document.getElementById('trace-note').textContent=T.has_prod?'Production book from '+T.prod_file+' (before rationing); replay target is what the replay engine wanted.':'No saved production book for this day (saved from 25 Sep).';
+ const tt=h('table','list');const hr=h('tr');['Name','Stance','Conviction','Prod target','Replay target','Replay reason','Real w','Replay w'].forEach((c,i)=>hr.appendChild(h('th',i>0&&i<3||i==5?'l':'',c)));tt.appendChild(hr);
+ T.rows.sort((x,y)=>Math.max(y.real_w,y.rep_w,y.prod_target||0,y.rep_target||0)-Math.max(x.real_w,x.rep_w,x.prod_target||0,x.rep_target||0)).forEach(x=>{const r=h('tr');
+  [x.symbol,x.stance||'–',x.conviction==null?'–':String(x.conviction),x.prod_target==null?'–':pct(x.prod_target,1),x.rep_target==null?'–':pct(x.rep_target,1),x.rep_reason||'–',x.real_w?pct(x.real_w,1):'·',x.rep_w?pct(x.rep_w,1):'·'].forEach((v,i)=>r.appendChild(h('td',i>0&&i<3||i==5?'l':'',v)));tt.appendChild(r);});th.appendChild(tt);
+ renderOvl();}
+function renderCharts(){
+ const A=active();legend();
+ const mk=f=>A.map(L=>({L,vals:L.data.map(f)}));
+ lineChart(document.getElementById('ch-val'),{series:mk(r=>r.nav),fmt:inr,yfmt:lakh,h:260});
+ lineChart(document.getElementById('ch-cum'),{series:mk(r=>r.cum*100),fmt:v=>sgn(v,2)+'%',yfmt:v=>num(v,0)+'%',zero:true});
+ lineChart(document.getElementById('ch-gap'),{series:A.filter(L=>L.id!==ref).map(L=>({L,vals:L.data.map((r,i)=>r.nav-R().data[i].nav)})),fmt:inrs,yfmt:lakh,zero:true});
+ lineChart(document.getElementById('ch-dd'),{series:mk(r=>r.dd*100),fmt:v=>num(v,2)+'%',yfmt:v=>num(v,0)+'%',zero:true});
+ lineChart(document.getElementById('ch-inv'),{series:mk(r=>r.invested*100),fmt:v=>num(v,0)+'%',yfmt:v=>num(v,0)+'%'});
+}
+function renderStatic(){
+ const ln=document.getElementById('lanes');clear(ln);LANES.forEach(L=>{const c=h('div','lanecard'+(L.copy?' ghost':''));const n=h('div','nm');const k=h('span','key');k.style.borderColor=L.color;n.appendChild(k);n.appendChild(document.createTextNode(L.name));c.appendChild(n);
+  const dl_=h('dl');[['Kind',L.kind],['Version',L.ver],['Source',L.id==='real'?'Dhan ledger and fills, marked at daily closes':L.copy?'placeholder: duplicate of the production replay':'backtest replay, preset v2, 10 bps slippage']].forEach(([a,b])=>{dl_.appendChild(h('dt',null,a));dl_.appendChild(h('dd',null,b));});c.appendChild(dl_);ln.appendChild(c);});
+ const td=document.getElementById('todo');['Production desired book is saved only from 25 Sep and before rationing.','Human approve/decline decisions are not kept.','Filled orders carry no decision price.','Nifty 50 benchmark fetch fails, so no market line.','Shadows are copies; real experiment runs are not registered yet.','Gap split beyond real vs production is not computed.'].forEach(x=>td.appendChild(h('li',null,x)));}
+function renderAll(){renderBoard();renderSM();renderCharts();renderDecomp();renderInspector();}
+renderStatic();renderAll();
+document.getElementById('prev').onclick=()=>{cur=Math.max(0,cur-1);renderInspector();};document.getElementById('next').onclick=()=>{cur=Math.min(last,cur+1);renderInspector();};
+addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){cur=Math.max(0,cur-1);renderInspector();}if(e.key==='ArrowRight'){cur=Math.min(last,cur+1);renderInspector();}});
+addEventListener('resize',renderCharts);
+})();
+</script></body></html>

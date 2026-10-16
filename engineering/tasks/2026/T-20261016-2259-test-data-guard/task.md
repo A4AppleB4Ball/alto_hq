@@ -2,8 +2,9 @@
 schema: task/v1
 id: T-20261016-2259-test-data-guard
 title: "Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard"
-status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+status: done
+closed: 2026-10-17
+merge_commit: 2b1d657
 created: 2026-10-16T22:59+05:30
 created_by: claude-main
 kind: internal
@@ -26,6 +27,10 @@ approvals:
     sha256: d68cdb12f37721583bd1f5ba6fef6fe92906e8ceb346a9c0adaec997f4c964a8
     by: owner
     at: 2026-10-17T04:30+05:30
+  - file: evidence.md
+    sha256: 64a306b33cdf12dcf0ccc6c1ff1550ba08f69cdbc6096330c2522eb794762f8f
+    by: owner
+    at: 2026-10-17
 ---
 
 ## Goal
