@@ -2,10 +2,10 @@
 schema: task/v1
 id: T-20261017-1300-sandbox-dhan-instrument-master
 title: "A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date"
-status: in_progress
-waiting_on:
-claimed_by: dev-T1300-r2
-lease_until: 2026-10-18T23:59+05:30
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
+claimed_by:
+lease_until:
 friction: check 7's CLI form cannot run before merge (the CLI requires the live main checkout, which has the old code); ran create() from the branch against main instead.
 created: 2026-10-17T13:00+05:30
 created_by: claude-main
