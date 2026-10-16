@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261016-2200-completeness-awaiting-state
 title: "Completeness: a due quarter with no documents is Awaiting and does not block"
-status: ready
+status: in_progress
 created: 2026-10-16T22:00+05:30
 created_by: owner
 kind: internal
