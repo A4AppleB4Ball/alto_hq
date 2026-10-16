@@ -1,4 +1,4 @@
-# Acceptance: checks-stance-chain (draft)
+# Acceptance: checks-stance-chain (v2, amended by owner 2026-10-16)
 
 Read-only on product data.
 
@@ -10,9 +10,16 @@ Read-only on product data.
    the link's `as_of` each fail naming the link; a cold-start link is not a gap.
 3. **One rule.** `stance/reconcile.py` and `stance_chain` call the same
    function; `stance/reconcile.py`'s own tests pass unchanged.
-4. **Unresolvable input raises.** A recorded id absent from the index is a
+4. **One resolution path, both exchanges.** Every input (quarterly
+   analysis, annual report, trigger announcement) is resolved and dated only
+   through `lib` DataAccess / the AsOfLedger and the company resolver, the
+   way the stance worker reads them; the check reads no index file or
+   exchange day file itself (AST test). It runs on NSE-only and BSE-only
+   companies: `stance_inputs_asof` passes or fails with named inputs on
+   ARSSBL, CHANDAN and 511144, never raising for the exchange.
+5. **Unresolvable input fails.** A recorded id absent from the index is a
    failure with reason `input_not_in_index`, never skipped.
-5. **Verdict contract** as in the completeness check (id, version,
+6. **Verdict contract** as in the completeness check (id, version,
    fingerprint).
-6. **Suite.** `pytest backend/validation backend/stance` pass; full suite no
+7. **Suite.** `pytest backend/validation backend/stance` pass; full suite no
    new failure; boundary test passes.
