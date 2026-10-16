@@ -1,10 +1,10 @@
 ---
 schema: evidence/v1
 task: T-20261017-0130-cockpit-dagster-link
-round: 1
-qa: fail
+round: 2
+qa: pass
 qa_by: qa@sonnet-5.5
-commits: 9a97ee1..2abb419
+commits: 9a97ee1..4cec56d
 acceptance_sha256: 1755eedba85e1a4822c245c5f09e5de39b8687e4b563f7c7ef83e97e9ab8fc61
 outputs_changed: unverified
 ---
