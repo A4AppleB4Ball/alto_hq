@@ -15,6 +15,10 @@ approvals:
     sha256: 91b9f0009c780efcdaed2739091ee21f36acfaf55a145680a9071eea65fd90f4
     by: owner
     at: 2026-10-16T23:40+05:30
+  - file: evidence.md
+    sha256: 9fe0c473e493f6e08d1dfa496dea8b37ea033a71c47d334edc8555d11573a773
+    by: owner
+    at: 2026-10-17T00:05+05:30
 branch: eng/T-20261016-1928-case-freezer
 friction: acceptance 4's literal `find -newer` cannot be empty on a live data root (the API process writes book snapshots and dashboard chat continuously); a check scoped to the freeze's read set, or a quiet window, is needed.
 ---
