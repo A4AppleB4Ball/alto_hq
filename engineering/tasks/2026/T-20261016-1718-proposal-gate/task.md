@@ -13,6 +13,8 @@ approvals:
     sha256: 96d8d825f250802e302482ae8d623022a548566ae6463770b702b5c0cf1868c8
     by: owner
     at: 2026-10-16T18:55+05:30
+claimed_by: claude-main-20261016-1900
+lease_until: 2026-10-17T19:00+05:30
 branch: eng/T-20261016-1718-proposal-gate
 ---
 

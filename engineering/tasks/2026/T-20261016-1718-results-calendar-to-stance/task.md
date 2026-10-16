@@ -13,6 +13,8 @@ approvals:
     sha256: 9a9090124cd9e4d8be4afc8a47f3b966417dda24e2fef0b54e562698cb5a05b0
     by: owner
     at: 2026-10-16T18:55+05:30
+claimed_by: claude-main-20261016-1900
+lease_until: 2026-10-17T19:00+05:30
 branch: eng/T-20261016-1718-results-calendar-to-stance
 ---
 
