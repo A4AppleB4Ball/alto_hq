@@ -14,6 +14,10 @@ approvals:
     sha256: 61464ed90664af481852e84b89d31e5f6340629b2cefec9f8d7176153288750c
     by: owner
     at: 2026-10-16T18:10+05:30
+  - file: evidence.md
+    sha256: 36435bbd3108801abf480873b9c0351405f72a6edf4542bd0ab9ce177d601e3a
+    by: owner
+    at: 2026-10-16T18:40+05:30
 branch: eng/T-20261016-1718-completeness-check
 friction: acceptance 7 as written (`python -I -c "import backend..."`) cannot run in any environment: -I drops cwd and PYTHONPATH and backend is not installed; ran with sys.path.insert under -I instead.
 ---
