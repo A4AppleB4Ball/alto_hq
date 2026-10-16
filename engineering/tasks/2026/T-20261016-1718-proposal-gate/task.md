@@ -2,12 +2,13 @@
 schema: task/v1
 id: T-20261016-1718-proposal-gate
 title: "Rebalance proposal refuses a stance whose latest quarter has no valid analysis"
-status: draft
+status: awaiting_owner
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
 spawned_from: T-20261015-1058-dagster-spike
 related: [T-20261016-1718-completeness-check]
+waiting_on: "Read and approve acceptance.md"
 branch: eng/T-20261016-1718-proposal-gate
 ---
 
