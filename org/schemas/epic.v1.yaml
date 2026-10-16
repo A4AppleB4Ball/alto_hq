@@ -1,6 +1,7 @@
 schema: epic/v1
 extends: item/v1
 file: org/epics/<year>/E-….md
+sidecar: org/epics/<year>/E-….<topic>.md
 
 # An epic is one file: a goal and its stories as one-liners. A story becomes
 # an item (a task, an experiment) only when it is next; until then it is a

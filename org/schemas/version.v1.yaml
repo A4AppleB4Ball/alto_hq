@@ -1,8 +1,10 @@
 schema: version/v1
+extends: item/v1
 file: product/versions/v<n>/version.md
 
 # A version id is v<n> or v<n>.<m> (hotfix), not a time-based id, because it
-# is also the git tag and the stamp on every stance.
+# is also the git tag and the stamp on every stance. The other item/v1 fields
+# (title, created_by, approvals, closed, ...) apply as for every item.
 required:
   schema: {type: text}
   id: {type: text, note: "v<n> or v<n>.<m>"}
