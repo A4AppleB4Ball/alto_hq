@@ -1,0 +1,23 @@
+---
+schema: task/v1
+id: T-20261016-2252-hq-generated-views
+title: "alto_hq generated views: tasks by status and the owner's approval queue"
+status: awaiting_owner
+waiting_on: "approve acceptance.md"
+created: 2026-10-16T22:52+05:30
+created_by: owner
+kind: internal
+related: []
+---
+
+## Goal
+
+A command in alto_hq rebuilds `_generated/by_status.md` (every item grouped by status, with title and link) and `engineering/_generated/approvals.md` (every item with status awaiting_owner or needs_owner and its `waiting_on`) from the item files' frontmatter, per README rules 3–4. Items never move.
+
+## Why
+
+Owner 2026-10-16: tasks should be organised; folders stay put, so a generated view does it.
+
+## Out of scope
+
+Moving items; editing items; a UI.
