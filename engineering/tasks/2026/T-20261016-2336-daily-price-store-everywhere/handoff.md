@@ -63,3 +63,17 @@ Branch `eng/T-20261016-2336-daily-price-store-everywhere`, base 0d07e40 (main ha
 
 ### Found
 `price_feed/tests/test_dhan_daily_store.py::test_cache_past_t_is_still_checked` also fails at base 0d07e40. It is outside this task.
+
+## Round 3 (rebase onto local main; owner decision, no code change)
+
+- Rebased `eng/T-20261016-2336-daily-price-store-everywhere` onto local main **1665a1c** (main as of the start and the end of this round; no T-2235 ship landed in between). Old range 0d07e40..3becf29. **New range 1665a1c..58e69ed**, 10 commits: 6668565, 3b76a1d, 6195c30, d2af601, cdf574c, 3e143d4, fc0f20c, 0339c05, 727b697, 58e69ed.
+- The only conflicts came from 400c845 (`DHAN_CACHE_DIR` in paths.py and dhan_price_store.py). I kept main's versions of both hunks (`DHAN_CACHE_ROOT`/`_15MIN_DIR`/`_DAILY_DIR`/`_INDEX_DIR` from 4a75794). The commit became empty, so git dropped it. `DHAN_CACHE_DIR` and `CACHE_ROOT` no longer appear anywhere under backend/. The branch's later code uses only `paths.DHAN_CACHE_DAILY_DIR`, which has the same name and value on main. No other conflicts.
+- Main's 354cbda (DhanDailyStore reads the cache without credentials and raises PriceCacheMissError) sits beside this task's sandbox path, and neither replaces the other. In a sandbox, `create_symbol_daily_series` still returns `CachedDailySeries`, and in a live checkout it still returns `DhanDailyStore`. I made no design change here. The owner or a follow-up may want to merge the two cache-read paths.
+
+### Checks (sandbox worktrees from new_sandbox_worktree: head `.claude/worktrees/T2336-r3` at 58e69ed, base `.claude/worktrees/T2336-r3base` at 1665a1c)
+- 1, 2': a grep for `DhanPriceStore(` outside tests/broker_factory/price_feed returns only the 7 named files. There is no `DhanDailyStore(` outside them. The AST guard test passes.
+- 3, 5, 6, 7, 9, 10, 12: broker_factory/tests, price_feed/tests, lib/tests/test_asof_prices.py, api/services/tests/test_daily_price_service.py, trading/tests and stores/tests/test_boundaries.py gave 183 passed and 1 failed. The failure is `price_feed/tests/test_dhan_daily_store.py::test_cache_past_t_is_still_checked`, which also fails on base 1665a1c.
+- 11: the instrument master half passes (tests). The holiday half is still not met and waits on T-20261017-1200 (F4 above).
+- 8: no LLM run. I made no Dhan, NSE or LLM calls, read no credentials, and wrote nothing to production or ~/NSE_BSE_Data.
+- 4: the full suite with --continue-on-collection-errors gives head 95 failed / 1684 passed / 8 errors and base 95 failed / 1656 passed / 8 errors. `comm -23 new base` is empty, and so is `comm -13`. Boundary test passes. These import: intake.runner, stance.runner, e2e.run, workflow.cli, execution.runner, raw.master_pipeline, backtest.replay, api.app_factory (with the env vars), rebuild_price_refs, price_chart_service, daily_price_service, lib.asof, trading.harness.
+- Found: the suite leaves an untracked `backend/data/dashboard/chart_profiles.duckdb` in the worktree it runs in. Main's checkout has the same file. It is outside this task.

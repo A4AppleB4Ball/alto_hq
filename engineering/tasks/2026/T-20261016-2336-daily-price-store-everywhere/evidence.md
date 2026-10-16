@@ -1,10 +1,10 @@
 ---
 schema: evidence/v1
 task: T-20261016-2336-daily-price-store-everywhere
-round: 2
+round: 3
 qa: pass
 qa_by: qa@alto_hq
-commits: 0d07e40..3becf29
+commits: 1665a1c..58e69ed
 acceptance_sha256: 38c4da22fb594140d8ec136e04062d6108e2f92ae84a03b32a27d964561046a5
 outputs_changed: unverified
 ---
@@ -108,3 +108,46 @@ The approval sha256 38c4da22... matches acceptance.md as it is now (amendments 1
 ### Check that would catch this class
 - A sandbox-hermeticity test that runs each sandbox factory return type with sockets disabled.
 - A seeding step (or check) that `new_sandbox_worktree` installs the stored instrument master and the holiday file.
+
+## Round 3 (rebase re-verification)
+
+The approval sha256 38c4da22... matches acceptance.md. QA ran in sandbox worktrees made with new_sandbox_worktree: `.claude/worktrees/T2336-r3` at 58e69ed and `T2336-r3base` at 1665a1c, each with mode sandbox and its own `alto_sandboxes/` data root. HTTP(S)_PROXY pointed at 127.0.0.1:9. QA made no Dhan, NSE or LLM calls, read no credentials, placed no orders and wrote nothing to production. `~/NSE_BSE_Data/dhan_cache` had the same name+size+mtime hash before and after the run (`7319d32b...a5b`, 5694 daily files). Logs are in `news_server/verify_data/reports/T-20261016-2336-daily-price-store-everywhere/` (`r3_suite_r3.log`, `r3_suite_r3base.log`, `r3.r3`, `r3.r3base`).
+
+### Acceptance checks
+1. PASS. `price_chart_service.py:117` and `rebuild_price_refs.py:63` build their stores through `create_daily_price_store`. `harness._resolve_price` raises when it gets no store (harness.py:230-236).
+2'. PASS. `grep -rln "DhanPriceStore(" backend | grep -v /tests/ | grep -v broker_factory | grep -v price_feed` returns exactly the 7 named files. The AST guard test passes.
+3, 5, 6, 7, 9, 10, 12. PASS. The round-2 repros (`test_qa_r2.py`), broker_factory/tests, price_feed/tests, lib/tests/test_asof_prices.py, api/services/tests/test_daily_price_service.py, trading/tests and test_boundaries ran on the rebased tree: 189 passed, 1 failed. The one failure is `price_feed/tests/test_dhan_daily_store.py::test_cache_past_t_is_still_checked`, which also fails on base 1665a1c, so it is not new.
+4. PASS.
+   - Full suite: head has 98 failed / 1681 passed / 8 errors; base has 98 failed / 1653 passed / 8 errors. `comm -23 head base` is empty (107 lines on each side).
+   - The boundary test passes.
+   - These import: main_cockpit, local, app_factory, e2e.lanes, harness, rebuild_price_refs, price_chart_service, daily_price_service.
+8. N/A. No LLM run.
+11. Instrument master half: PASS (round-2 repro `test_F3_stored_master`). Holiday half: **PENDING on T-20261017-1200**, as the owner decided.
+
+### Conflict resolution review
+- The branch range does not touch `backend/config/paths.py`.
+- `DHAN_CACHE_DIR` appears nowhere in backend at 58e69ed.
+- The branch reads only `paths.DHAN_CACHE_DAILY_DIR`, which is main's name.
+- No commit carries an attribution line.
+
+### Coexistence with main's 354cbda
+- No changed call site reaches `DhanDailyStore` in a sandbox: `daily_series.py:14-25` and `prices.py:19-20` divert to `CachedDailySeries` / `CachedDailyPrices`. So no single read takes both paths.
+- In a live checkout, `fetching_allowed()` is True, so main's cache-only branch is not taken there either.
+
+### Findings (confirmed by the verifier)
+- **A4 ALERT, backend/price_feed/cached_daily_series.py:37 vs backend/price_feed/dhan_daily_store.py:132-145.** A sandbox now has two cache-only daily read paths that use different rules and raise different errors:
+  - `require_current` is holiday-aware and raises `CachedPriceMissing(LookupError)`.
+  - Main's `_read_cache_only` compares calendar dates and raises `PriceCacheMissError(RuntimeError)`. It raises even when `end` falls on a weekend or holiday and the cache is current.
+  - Path (b) is still reached in a sandbox through `prefetch_daily_prices.py:45` and `DhanDailyPriceStore` (`dhan_daily_store.py:175`, used by `backtest/cli.py:174,315`).
+  - Nothing outside tests catches either class by name. `dhan_daily_store.py:211-214`, which is main's code and outside this range, swallows index-store errors with `except Exception`.
+  - These do not contradict each other on any call this task changed. The risk is that one condition has two error types and two rules. A follow-up should merge them into one cache reader.
+- A1-A3 from round 2 still apply. The code did not change.
+
+### Dev claims not confirmed
+- Dev's suite counts (95 failed / 1684 passed head, 95 / 1656 base) differ from QA's (98 / 1681, 98 / 1653). The new-failure diff is empty either way.
+- QA confirmed every other round-3 claim.
+
+### Check that would catch this class
+- A test that asserts every sandbox daily price read raises one exception type under one currency rule. Today that would fail, with `DhanDailyStore` in sandbox vs `CachedDailySeries`.
+
+Verdict: **PASS**. Every runnable check passed, and the holiday half of 11 is pending by owner decision.
