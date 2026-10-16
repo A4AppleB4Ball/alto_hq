@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261015-1058-dagster-spike
 title: "Spike: Dagster over the existing CLIs, with a completeness check that blocks ARSSBL's stance"
-status: in_progress
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 created: 2026-10-15T10:58+05:30
 created_by: owner
 kind: internal
