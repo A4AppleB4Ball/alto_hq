@@ -2,8 +2,10 @@
 schema: task/v1
 id: T-20261016-1928-scenario-selection
 title: "Per-class stored-state queries that propose the release-set companies, recorded as a cohort"
-status: in_progress
-claimed_by: dev-scenario-selection-1
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
+claimed_by:
+friction: "acceptance 6 find -newer on the whole data root catches live API/scraper writes; needed a quiet window"
 lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30
 created_by: owner
