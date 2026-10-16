@@ -1,0 +1,6899 @@
+{
+  "meetings": [
+    {
+      "exchange": "BSE",
+      "code": "500002",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500008",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500027",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500031",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500034",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500040",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500042",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500052",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500067",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500086",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500087",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500092",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500093",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500096",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500103",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500104",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500109",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500110",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500116",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500123",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500124",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500126",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500133",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500150",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500165",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500171",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500180",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500182",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500183",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500184",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500188",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500207",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500209",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500213",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500228",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500247",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500250",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500251",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500252",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500259",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500264",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500266",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500271",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500307",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500314",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500327",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500331",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500339",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500355",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500365",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500378",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500387",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500400",
+      "meeting_date": "2026-11-11",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500405",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500407",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500408",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500410",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500411",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500414",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500420",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500425",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500440",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500459",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500460",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500469",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500480",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500483",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500490",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500495",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500510",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500520",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500530",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500547",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500660",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500670",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500672",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500690",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500696",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500730",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500790",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500820",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500830",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500850",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500870",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "500878",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "501110",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "501144",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "501150",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "501295",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "501370",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "502015",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "502180",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "502420",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "502450",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "502958",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "503101",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "503806",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "503960",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504067",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504112",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504176",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504258",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504370",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504614",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504882",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "504973",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505036",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505192",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505355",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505412",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505533",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505650",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505688",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505700",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505800",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "505854",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506261",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506285",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506401",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506480",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506532",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506597",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "506767",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "507488",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "507685",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "507779",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "507815",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "507948",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "507960",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "508869",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "508906",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "508969",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509038",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509073",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509367",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509423",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509438",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509480",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509760",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509762",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "509820",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511196",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511243",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511473",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511549",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511601",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511726",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "511766",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512179",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512297",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512307",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512361",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512393",
+      "meeting_date": "2026-10-20",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512527",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512531",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "512599",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "513119",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "513262",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "513303",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "513309",
+      "meeting_date": "2026-10-07",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "513422",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "513519",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514010",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514030",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514060",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514236",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514354",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514360",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514440",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514460",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "514470",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "515018",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "515043",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "515055",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "516030",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "516092",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "516108",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517041",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517174",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517206",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517230",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517344",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517354",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517421",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517431",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517447",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517506",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517522",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517536",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517546",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "517569",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "519097",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "519287",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "519439",
+      "meeting_date": "2026-10-20",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "519552",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "519600",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "520057",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "521070",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "521176",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "521226",
+      "meeting_date": "2026-11-11",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "522034",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "522113",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "522134",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "522267",
+      "meeting_date": "2026-11-10",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "522275",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "522285",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523113",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523232",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523319",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523323",
+      "meeting_date": "2026-11-11",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523387",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523395",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523398",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523405",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523411",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523445",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523465",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523467",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523475",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523586",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523638",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523648",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523704",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523708",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523754",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523862",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "523862",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524000",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524109",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524129",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524174",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524204",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524218",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524440",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524516",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524542",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524590",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524598",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524624",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "524715",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526027",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526299",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526335",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526445",
+      "meeting_date": "2026-10-07",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526492",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526574",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526616",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526703",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526755",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526797",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526849",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526859",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526901",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "526953",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530005",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530125",
+      "meeting_date": "2026-11-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530249",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530253",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530263",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530393",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530429",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530445",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530475",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530555",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530557",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530585",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530609",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530701",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "530965",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531003",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531039",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531155",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531171",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531173",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531173",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531212",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531235",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531279",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531306",
+      "meeting_date": "2026-11-10",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531324",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531335",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531397",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531411",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531503",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531530",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531531",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531595",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531597",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531642",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531644",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531672",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531695",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531841",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531859",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "531968",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532019",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532024",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532100",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532143",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532155",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532156",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532163",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532173",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532174",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532175",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532180",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532181",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532187",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532209",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532210",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532215",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532218",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532259",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532268",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532281",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532286",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532305",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532307",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532313",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532331",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532348",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532349",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532366",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532371",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532374",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532375",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532376",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532378",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532402",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532406",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532410",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532419",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532424",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532432",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532460",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532461",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532466",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532470",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532477",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532478",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532483",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532497",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532500",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532503",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532504",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532505",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532508",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532509",
+      "meeting_date": "2026-11-07",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532515",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532522",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532524",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532529",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532538",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532540",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532541",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532548",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532612",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532627",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532628",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532636",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532638",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532640",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532644",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532648",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532661",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532668",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532670",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532687",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532720",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532726",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532742",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532749",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532755",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532756",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532784",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532796",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532809",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532814",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532835",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532845",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532848",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532851",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532864",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532868",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532885",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532900",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532902",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532921",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532926",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532928",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532929",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532944",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532953",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532974",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532977",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532978",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "532993",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533029",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533033",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533088",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533096",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533104",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533107",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533137",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533146",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533150",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533151",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533162",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533179",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533200",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533229",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533257",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533273",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533295",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533301",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533344",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533470",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533519",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533540",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "533676",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534091",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534618",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534733",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534741",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534804",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534809",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "534816",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535204",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535431",
+      "meeting_date": "2026-11-11",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535621",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535648",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535730",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535754",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "535917",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "536264",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "537292",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "537820",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538268",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538319",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538422",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538733",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538838",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538897",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "538935",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539012",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539016",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539149",
+      "meeting_date": "2026-11-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539199",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539221",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539254",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539268",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539277",
+      "meeting_date": "2026-10-07",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539289",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539314",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539332",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539336",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539436",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539437",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539449",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539450",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539515",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539524",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539542",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539560",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539574",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539658",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539662",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539773",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539787",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539819",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539837",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539864",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539872",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "539876",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540005",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540065",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540108",
+      "meeting_date": "2026-10-07",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540115",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540124",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540133",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540153",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540222",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540360",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540360",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540376",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540386",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540544",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540595",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540602",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540611",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540691",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540716",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540719",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540728",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540738",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540767",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540768",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540776",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540777",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540789",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540879",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540900",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540901",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "540914",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541153",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541301",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541450",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541540",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541556",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541729",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541770",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541799",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "541988",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542066",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542117",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542146",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542146",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542233",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542651",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542652",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542725",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542727",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542727",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542760",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542772",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542867",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542904",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "542920",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543213",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543232",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543235",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543238",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543243",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543252",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543257",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543264",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543271",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543276",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543279",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543300",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543306",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543320",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543321",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543334",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543335",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543374",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543396",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543398",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543410",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543412",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543415",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543426",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543427",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543458",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543498",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543526",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543533",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543579",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543596",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543625",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543644",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543663",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543669",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543720",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543748",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543831",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543831",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543904",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543933",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543934",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543940",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543959",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "543980",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544026",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544027",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544028",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544118",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544120",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544139",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544172",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544191",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544192",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544203",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544210",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544252",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544253",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544262",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544273",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544282",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544285",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544306",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544307",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544310",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544311",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544334",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544344",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544408",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544421",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544429",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544447",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544450",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544457",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544467",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544469",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544484",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544515",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544530",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544545",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544569",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544570",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544574",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544580",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544583",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544597",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544603",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544608",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544632",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544647",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544658",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544664",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544668",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544699",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544700",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544716",
+      "meeting_date": "2026-10-20",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544735",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544757",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544764",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544783",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544801",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544802",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544839",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544907",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544934",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544936",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544937",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-08T02:47:00+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544938",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544942",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544945",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544949",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544950",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544951",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "544952",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "590025",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "BSE",
+      "code": "590066",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "360ONE",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T22:04:10+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "3IINFOLTD",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "3MINDIA",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "3PLAND",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "5PAISA",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AARTIPHARM",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AAVAS",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ABB",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ABCAPITAL",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ABDL",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ABREL",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ABSLAMC",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ACC",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ACCELYA",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ACCENTMIC",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADANIENSOL",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADANIENT",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADANIGREEN",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-10T13:20:38+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADANIPORTS",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADANIPOWER",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADOR",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ADROITIND",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AGRITECH",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AILIMITED",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AJANTPHARM",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AKSHARCHEM",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ALKALI",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ALKYLAMINE",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ALLCARGO",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ALOKINDS",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AMBANIORGO",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AMBUJACEM",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ANANDRATHI",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ANANTRAJ",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ANGELONE",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AONESTEELS",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "APARINDS",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "APOLLO",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "APOLLOHOSP",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "APTUS",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ARCIL",
+      "meeting_date": "2026-10-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ARE&M",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ARMEE",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ARSSBL",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ARVEE",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T22:04:10+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ASIANPAINT",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ATGL",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ATUL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AUBANK",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AURIONPRO",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AURUM",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AVANTEL",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AWL",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AXISBANK",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "AYE",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJ-AUTO",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJCON",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:28:48+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJELEC",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJFINSV",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJHCARE",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJHFL",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJAJHLDNG",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BAJFINANCE",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BALMLAWRIE",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BANARBEADS",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BANDHANBNK",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BASF",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BBL",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BEPL",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BERGEPAINT",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BETA",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BHARATGEAR",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BHEL",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BIRLAMONEY",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BLUESTARCO",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BLUESTONE",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BOSCH-HCIL",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BOSCHLTD",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BPCL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BRIGADE",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BRIGHOTEL",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BSE",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BSHSL",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-11T12:15:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "BUTTERFLY",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CAMS",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CANBK",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CANFINHOME",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CANHLIFE",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CAPITALSFB",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CARERATING",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CASTROLIND",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-07T22:04:10+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CCCL",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CCL",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CDSL",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CEATLTD",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CENTRALBK",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CENTRUM",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CENTURYPLY",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CGCL",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CGPOWER",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CHEMBONDCH",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CHENNPETRO",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CHOLAFIN",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-08T22:19:23+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CHOLAHLDNG",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CIEINDIA",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CIPLA",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CMRSL",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "COFFEEDAY",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "COFORGE",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "COLPAL",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CORDELIA",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CRAFTSMAN",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CRAMC",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CREDITACC",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CRISIL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CROMPTON",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CSBBANK",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CUB",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CUBEXTUB",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CUMMINSIND",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CYBERMEDIA",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CYBERTECH",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CYIENT",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "CYIENTDLM",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DABUR",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DBCORP",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DBSTOCKBRO",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DEEPAKNTR",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DELTACORP",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DEN",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DHANBANK",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DIL",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DLF",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-11T12:15:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DLINKINDIA",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DMART",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DNAMEDIA",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DODLA",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DPSCLTD",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "DRREDDY",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "E2E",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EIMCOELECO",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ELECON",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ELEVATE",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ELLEN",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EMCURE",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EMMVEE",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T22:04:10+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EMUDHRA",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ENDURANCE",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EQUITASBNK",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ESABINDIA",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ESCONET",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ESCORTS",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ESFL",
+      "meeting_date": "2026-10-20",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ETERNAL",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EVERESTIND",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "EXIDEIND",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FAIRCHEMOR",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FEDERALBNK",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FEDFINA",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FIVESTAR",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FOSECOIND",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FRACTAL",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "FSL",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GAIL",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GALLANTT",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GANGOTRI",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GHCL",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GILLETTE",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GINNIFILA",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GLASSWALL",
+      "meeting_date": "2026-10-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GLAXO",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GLOBUSSPR",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GMBREW",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GMDCLTD",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GNA",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GNFC",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GOCLCORP",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GODREJCP",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GODREJPROP",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GRADIENTE",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GRADIENTE",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GREENPLY",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GROWW",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:28:48+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GSFC",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GSFC",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GSPLTRANS",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GTPL",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GUJENERGY",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "GVT&D",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HATHWAY",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T22:04:10+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HATSUN",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HAVELLS",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HCG",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HCLTECH",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HDBFS",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HDFCAMC",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HDFCBANK",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HDFCLIFE",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HERITGFOOD",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HEROMOTOCO",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HEROMOTORS",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HFCL",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HINDALCO",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HINDPETRO",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HINDUNILVR",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HINDZINC",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HONAUT",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HSCL",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "HUHTAMAKI",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ICICIAMC",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ICICIBANK",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ICICIGI",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ICICIPRULI",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ICRA",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IDBI",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IDFCFIRSTB",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IGIL",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IIFL",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T22:04:10+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IITL",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDBANK",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDGN",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDHOTEL",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDIACEM",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDIANB",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDOCO",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDORAMA",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDOTHAI",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDSWFTLAB",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDUSINDBK",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INDUSTOWER",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INFOBEAN",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INFOLLION",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-11T12:15:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INFY",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "INSECTICID",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IOC",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IREDA",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IRFC",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IRISDOREME",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ISGEC",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "IXIGO",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "J&KBANK",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JAYNECOIND",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JINDALSAW",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JINDALSTEL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JIOFIN",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JKCEMENT",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JLHL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JMFINANCIL",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JPPOWER",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JSFB",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JSL",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JSWSTEEL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JTEKTINDIA",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JUBLINGREA",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JUSTDIAL",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "JYOTHYLAB",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KABRAEXTRU",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KANOHAR",
+      "meeting_date": "2026-10-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KANPRPLA",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KANSAINER",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KAPSTON",
+      "meeting_date": "2026-10-20",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KARAMTARA",
+      "meeting_date": "2026-10-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KARNIKA",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KARURVYSYA",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KCP",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KEI",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KFINTECH",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KOTAKBANK",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KPITTECH",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KROSS",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KSHINTL",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "KSOLVES",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LAGNAM",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LALPATHLAB",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LATENTVIEW",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LAURUSLABS",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LCCPROJECT",
+      "meeting_date": "2026-10-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LCL",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LGBBROSLTD",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LICI",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LMW",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LOTUSDEV",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LT",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LTF",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LTM",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LTTS",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LUMAXIND",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LUMAXTECH",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LUXIND",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "LYKALABS",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "M&M",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "M&MFIN",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MAHEPC",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MAHLIFE",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MAHLOG",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MAHSCOOTER",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MANBA",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MANKIND",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MARATHON",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MARICO",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MARUTI",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MASTEK",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MEDPLUS",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MEESHO",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MELSTAR",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "METROBRAND",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MFSL",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MGEL",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MHRIL",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MINDTECK",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MODISONLTD",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T18:45:38+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MONOLITH",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MPHASIS",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MPIMANIPAL",
+      "meeting_date": "2026-10-01",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MRPL",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MSUMI",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MUKANDLTD",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MUTHOOTCAP",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "MWL",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-11T12:15:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NAM-INDIA",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NAVINFLUOR",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NAVKARCORP",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NDTV",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NELCAST",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NELCO",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NEPHROPLUS",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NESCO",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NESTLEIND",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NEWGEN",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NIKITA",
+      "meeting_date": "2026-11-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NOCIL",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NURECA",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NUVOCO",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "NXST",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "OBEROIRLTY",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "OFSS",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ONMOBILE",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ONWARDTEC",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ORIENTCEM",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ORIENTELEC",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ORIENTHOT",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ORIENTPPR",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PAISALO",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PAKKA",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PARACABLES",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PARIN",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PAUSHAKLTD",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PAYTM",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PCJEWELLER",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PERSISTENT",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T23:50:21+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PETRONET",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PFS",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PGHH",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PGHL",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PHANTOMFX",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PIDILITIND",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PILITA",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PIRAMALFIN",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PITTIENG",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PLASTIBLEN",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PNB",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PNBGILTS",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "POLYCAB",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PONNIERODE",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "POONAWALLA",
+      "meeting_date": "2026-10-09",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PRANAV",
+      "meeting_date": "2026-10-01",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PRAXIS",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PREMIERPOL",
+      "meeting_date": "2026-10-10",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PSB",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PSPPROJECT",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "PTC",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RADICO",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RAIN",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RAJRATAN",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RALLIS",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RANEHOLDIN",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RBLBANK",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "REGENCERAM",
+      "meeting_date": "2026-11-12",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RENTOMOJO",
+      "meeting_date": "2026-10-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RENUKA",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "REPRO",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RIIL",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RITES",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RML",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ROSSARI",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RPEL",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RSSOFTWARE",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RUSHIL",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-10T13:20:38+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "RUSTOMJEE",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SAGILITY",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SAILIFE",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SAPPHIRE",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SARDAEN",
+      "meeting_date": "2026-10-31",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SAREGAMA",
+      "meeting_date": "2026-11-04",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SBC",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SBFC",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SBILIFE",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SECURCRED",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-11T12:15:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SEJALLTD",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SERVOTECH",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SESHAPAPER",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-09T15:26:01+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SGFIN",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHAIVAL",
+      "meeting_date": "2026-10-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHANTIGEAR",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHEKHAWATI",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHK",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHOPERSTOP",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHREDIGCEM",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHREECEM",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SHRIPISTON",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SKMEGGPROD",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SMARTLINK",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SMARTWORKS",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SMLMAH",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SOBHA",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SOLARA",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SONA",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-09T18:21:19+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SONACOMS",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SONAMLTD",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SOUTHBANK",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SPCL",
+      "meeting_date": "2026-10-24",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SPLPETRO",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SPORTKING",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SRF",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SRTL",
+      "meeting_date": "2026-10-20",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SSRETAIL",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SSWL",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "STARHEALTH",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "STCINDIA",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "STEAMHOUSE",
+      "meeting_date": "2026-10-05",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "STLTECH",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUBEXLTD",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUKHJITS",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUMICHEM",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUNPHARMA",
+      "meeting_date": "2026-10-30",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUNTECK",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUPRAJIT",
+      "meeting_date": "2026-11-07",
+      "captured_at": "2026-10-09T12:23:16+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SUPREMEPWR",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SURYODAY",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SWANDEF",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SWARAJENG",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SWASTIKAIN",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SWIGGY",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SWSOLAR",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "SYNGENE",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TALWALKARS",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TARIL",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TATACAP",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TATACOMM",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TATAELXSI",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TATAPOWER",
+      "meeting_date": "2026-11-11",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TATATECH",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TATVA",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TCI",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TCS",
+      "meeting_date": "2026-10-08",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TEAMLEASE",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TECHM",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TEJASNET",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TGBHOTELS",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "THELEELA",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-08T20:42:39+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "THERMAX",
+      "meeting_date": "2026-11-05",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TIGERLOGS",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TIMKEN",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TINNARUBR",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TIPSMUSIC",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-09T12:23:16+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TMB",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-09T11:51:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TMCV",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TORNTPHARM",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TREEHOUSE",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TREJHARA",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TRENT",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TRF",
+      "meeting_date": "2026-10-13",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TRUALT",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TTKPRESTIG",
+      "meeting_date": "2026-11-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TTML",
+      "meeting_date": "2026-10-22",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "TVTODAY",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UBL",
+      "meeting_date": "2026-10-27",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UCOBANK",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UJJIVANSFB",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-07T18:50:57+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ULTRACEMCO",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UMIYA-MRO",
+      "meeting_date": "2026-10-12",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UNIONBANK",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UNITDSPR",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "URBANCO",
+      "meeting_date": "2026-10-16",
+      "captured_at": "2026-10-10T11:16:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UTIAMC",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "UTKAL",
+      "meeting_date": "2026-10-07",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VAIBHAVGBL",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VARMORA",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VEEGALAND",
+      "meeting_date": "2026-10-06",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VENUSREM",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VGUARD",
+      "meeting_date": "2026-10-29",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VIJIFIN",
+      "meeting_date": "2026-10-14",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VINYLINDIA",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VIPULLTD",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-12T20:03:15+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "VMM",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WAAREEINDO",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WAAREERTL",
+      "meeting_date": "2026-10-19",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WENDT",
+      "meeting_date": "2026-10-21",
+      "captured_at": "2026-10-15T00:43:55+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WESTLIFE",
+      "meeting_date": "2026-10-23",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WEWORK",
+      "meeting_date": "2026-10-26",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WIPRO",
+      "meeting_date": "2026-10-15",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "WONDERLA",
+      "meeting_date": "2026-11-02",
+      "captured_at": "2026-10-14T04:22:43+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "YESBANK",
+      "meeting_date": "2026-10-17",
+      "captured_at": "2026-10-07T16:01:24+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ZENSARTECH",
+      "meeting_date": "2026-10-28",
+      "captured_at": "2026-10-07T16:28:48+05:30"
+    },
+    {
+      "exchange": "NSE",
+      "code": "ZYDUSWELL",
+      "meeting_date": "2026-11-03",
+      "captured_at": "2026-10-16T03:42:59+05:30"
+    }
+  ],
+  "last_captured_at": "2026-10-16T03:42:59+05:30"
+}

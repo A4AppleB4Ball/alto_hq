@@ -38,31 +38,69 @@ meetings on record (10-15, 10-23): the store is add-only, so a moved or second m
 the old date in place and "which is the next result" is ambiguous. 6 of 93 BSE meetings dated
 10-01..10-14 have no result filing (postponed or not a results meeting) and stay on record.
 
-## 2. Date accuracy: criterion not met on stance companies
+## 2. Date accuracy, market-wide (owner decision D-20261016-2030)
 
-Target was at least 50 companies for the last ended quarter. It cannot be met from stored
-data, and I did not loosen it:
-- Stance companies with Q2FY27 documents in the index: 1 (ARSSBL: meeting 10-13, ppt
-  publish_date 10-13 `exact_pdf`, transcript 10-15 `first_observed`). The index holds only
-  concall ppt/transcript/annual types; results filings are not in it.
-- Q1FY27 (the last quarter with documents) has no meetings on record: capture began 10-07 and
-  reads NSE only from the day after quarter end.
+Stored meeting date vs the date the results were filed, Q2FY27, meetings dated 2026-10-01..15
+(filings are on disk through 10-15). Rerun offline, no network, from the task folder:
+`python -I date_accuracy/measure.py date_accuracy/inputs` (output saved in
+`date_accuracy/measure_output.txt`). `date_accuracy/extract_inputs.py` is what copied the raw
+inputs from the product data (read-only): the results-calendar store, the company mapping, the
+stance keys, every BSE `Result` row and every NSE `Outcome of Board Meeting` row of the stored
+daily announcement files 10-01..15 (BSE 119, NSE 303 rows, unmodified). No fetch was needed.
 
-What I measured instead, market-wide, with the result filing as the "actual publish date"
-(BSE daily announcements, category Result / Financial Results, 2026-10-01..15, 116 scrips,
-95 have a meeting on record): filing date minus meeting date (nearest meeting on or before
-the first filing):
+Actual date: BSE = the Result / Financial Results filing (`NEWS_DT`); NSE = the Outcome of Board
+Meeting filing (`sort_date`). Sample: every stored meeting in the window, not a subsample.
 
-| gap days | 0 | 1 |
+| exchange | meeting codes | paired (rule A) | BSE-only / NSE-only / both / unmapped | stance subset |
+|---|---|---|---|---|
+| BSE | 140 | 95 | 11 / - / 56 / 28 | 4 |
+| NSE | 112 | 107 | - / 6 / 80 / 21 | 7 |
+
+Gap = filing date minus meeting date, days (rule A, headline):
+
+| exchange | gap 0 | gap 1 | gap 5 |
+|---|---|---|---|
+| BSE (95) | 94 (98.9%) | 1 | 0 |
+| NSE (107) | 105 (98.1%) | 1 | 1 |
+
+By listing: BSE-only 11 of 11 at gap 0; NSE-only 5 of 6 at gap 0 (the other gap 5, BSHSL meeting
+10-10, outcome 10-15); companies on both exchanges 56/56 (BSE) and 80/80 (NSE). Stance subset:
+4 BSE and 7 NSE, all gap 0. "unmapped" = code absent from the company mapping CSV (28 BSE, 21 NSE
+codes), so its listing class is not known; they are in the totals.
+
+**Pairing rules and their effect on gap 0** (per exchange and code):
+- A forward (headline): a meeting pairs with the first filing on or after it and before the
+  code's next meeting. Gap is never negative by construction; a meeting with no such filing is
+  "unfiled" (BSE 47 meetings, NSE 6: no filing on disk by 10-15, so postponed, not a results
+  meeting or filed late; not diagnosed here).
+- B backward (the round-1 rule): a filing pairs with the latest meeting on or before it.
+- C nearest on either side: can show a filing before the stored date.
+
+| rule | BSE paired / gap 0 | NSE paired / gap 0 |
 |---|---|---|
-| scrips | 94 | 1 |
+| A | 95 / 94 (98.9%) | 107 / 105 (98.1%) |
+| B | 95 / 94 (98.9%) | 110 / 105 (95.5%) |
+| C | 97 / 94 (96.9%) | 116 / 105 (90.5%) |
 
-Stance subset: 4 BSE scrips, all gap 0. NSE "Outcome of Board Meeting" text for 7 stance
-symbols (ALOKINDS, ARSSBL, CYIENTDLM, EMMVEE, KABRAEXTRU, PREMIERPOL, SBC): all gap 0.
-Caveat: the pairing picks the nearest earlier meeting, so a gap of 0 is partly built in.
-It shows the date is the result day, not that a postponement is caught. Concall documents
-trail the result (ARSSBL: 0 and 2 days; typically days to weeks), so the calendar date is the
-result date, not the concall date. Needs a re-run once Q2 documents exist (see follow-up 1).
+Reading: gap 0 is robust on BSE (94 under every rule); the rule moves only the denominator.
+Rules A and B cannot produce a negative gap, so they hide a filing earlier than the stored date.
+Rule C shows them: BSE 530253 (stored 10-14, filed 10-01, -13), 543579 (stored 10-14, filed
+10-09, -5); BSE 532378 stored 10-12, filed 10-13 (+1). On NSE the extra B/C pairs are mostly
+other Outcome of Board Meeting filings by the same company (e.g. TCS 10-01 and 10-08), which
+are not results outcomes: NSE's desc does not say whether an outcome is a results outcome, so
+the NSE pairing needs the stored results meeting to select the right filing (rule A does this)
+and any gap above 0 on NSE (BSHSL +5, UTKAL +1) is a candidate, not proven postponement. I did
+not read filing text to decide (no keyword rule).
+
+What this does not show: it measures only meetings the store holds, so a results meeting the
+store missed (47 NSE-only and 78 dual-listed NSE outcome filers have no stored meeting in the
+window; many are non-results outcomes, and SME generic purposes are a known gap) is not in the
+gap table. Gap distribution is the date accuracy of what is stored: the stored date is the
+filing day in about 98% of cases on both exchanges. The BSE-only meeting gap before 10-07 is in
+the unfiled count, not the gap table. Concall documents trail the result (ARSSBL: 0 and 2
+days), so the calendar date is the result date, not the concall date. Stance companies
+(~484) re-measure against index documents after about 2026-11-15 (follow-up 1, decision's
+condition).
 
 ## 3. The two known gaps, counted
 
@@ -119,6 +157,6 @@ rebuilds and backtests honest.
    with `last_captured_at` older than 20 hours raises.
 
 ## Not done
-- Date accuracy at 50 stance companies (data does not exist yet, see 2).
+- Date accuracy on 50 stance companies (data does not exist yet; owner decision moved it to follow-up 1).
 - Exact SME-gap count (needs a network read).
 - No LLM run; no product code changed; no data written.

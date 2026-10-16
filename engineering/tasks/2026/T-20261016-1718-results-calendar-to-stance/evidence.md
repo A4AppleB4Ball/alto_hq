@@ -1,8 +1,8 @@
 ---
 schema: evidence/v1
 task: T-20261016-1718-results-calendar-to-stance
-round: 1
-qa: fail
+round: 2
+qa: pass
 outputs_changed: no
 ---
 
@@ -31,3 +31,23 @@ mtimes of alto_data/stances and alto_data/system (515 entries) before and after:
 
 ## Suggested catch
 Spike acceptance items should state the data-availability precondition, so a sample-size target is not approved against a population that cannot exist yet.
+
+## Round 2
+
+Step 0: task.md approvals hold acceptance.md sha256 5da36768...897bf905; recomputed sha256 matches (owner change per D-20261016-2030). No code diff. plan.md and handoff.md not read before the verdict.
+
+Item 2 (market-wide): PASS.
+- Rerun `python -I date_accuracy/measure.py date_accuracy/inputs` (offline): output identical to measure_output.txt (diff empty).
+- Own script (/tmp/qa_m.py, forward pairing, window 10-01..10-15): BSE 95 paired, gap 0 = 94, gap 1 = 1, 47 unfiled; NSE 107 paired, gap 0 = 105, gap 1 = 1, gap 5 = 1, 6 unfiled. Matches measure_output and findings.
+- Inputs are a read-only copy: results_calendar.json is byte-identical to the product file (cmp); BSE Result rows 119 and NSE Outcome of Board Meeting rows 303 recounted from the product daily_announcements equal the saved files; extract_inputs.py only reads product paths and writes to the given output dir. Selection is by exchange-stated fields (CATEGORYNAME, desc), no keyword rule.
+- Sample size: 95 BSE and 107 NSE paired companies-meetings, with BSE-only 11 and NSE-only 6 (plus 56/80 dual-listed, 28/21 unmapped). Both exceed 50 and include single-exchange names.
+- Pairing rule stated (A forward, B backward, C nearest) and its effect on gap 0 measured: BSE 94 under all rules; NSE 105 paired 107/110/116 (98.1/95.5/90.5%). Stance subset reported (4 BSE, 7 NSE, all gap 0).
+Items 1, 3, 4, 5: findings.md sections still present and unchanged in substance from round 1 (diff shows only item 2 added); round 1 results stand.
+
+Data safety: alto_data/stances mtime 1792040171 and alto_data/system 1792102379 under news_server/data; system was unchanged by me (no write, no network; only reads). I did not capture a before value for stances in this round beyond these readings; nothing I ran writes there.
+
+Confirmed findings (ALERT, disclosed by the author, not defects):
+- Rules A/B cannot show a filing earlier than the stored date; only rule C does (BSE -13, -5). Headline gap 0 is therefore an upper-leaning figure.
+- Sample is meetings the store holds in 10-01..10-15; unfiled 47 BSE, 6 NSE are undiagnosed. 28 BSE and 21 NSE codes are unmapped, so the single-exchange counts are small (11, 6).
+No BLOCK. Suite: n/a (no code).
+Dev claims not confirmed: none checked after verdict beyond the above.
