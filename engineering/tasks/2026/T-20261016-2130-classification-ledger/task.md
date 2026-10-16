@@ -16,6 +16,10 @@ approvals:
     sha256: 022fb193eb0b36782c7a1618c58e224fa80096e580202419ee4cbfcc8912b986
     by: owner
     at: 2026-10-16T23:40+05:30
+  - file: evidence.md
+    sha256: 3086f3316a6de7e9df1223c720a52b0feeee23a707c5ea6468aed7296ec0e2b6
+    by: owner
+    at: 2026-10-17T00:10+05:30
 claimed_by: claude-main-20261016-1900
 lease_until: 2026-10-17T21:20+05:30
 waiting_on: "review evidence.md and approve the merge"
