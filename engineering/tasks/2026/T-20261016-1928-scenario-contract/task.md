@@ -2,12 +2,16 @@
 schema: task/v1
 id: T-20261016-1928-scenario-contract
 title: "Scenario contract (scenario/v1, edits, timeline, expected verdicts) and catalog validator"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T19:28+05:30
 created_by: owner
 kind: internal
 related: [E-20261015-1140-validation, T-20261016-1928-case-freezer]
-waiting_on: "Approve acceptance.md"
+approvals:
+  - file: acceptance.md
+    sha256: 689d3cff8618237d8d576a0d8fd9eae8681cbedc668d40272aeccfe1b3dfb9d5
+    by: owner
+    at: 2026-10-16T19:40+05:30
 branch: eng/T-20261016-1928-scenario-contract
 ---
 

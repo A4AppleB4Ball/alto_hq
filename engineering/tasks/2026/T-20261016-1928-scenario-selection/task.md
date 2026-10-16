@@ -2,12 +2,16 @@
 schema: task/v1
 id: T-20261016-1928-scenario-selection
 title: "Per-class stored-state queries that propose the release-set companies, recorded as a cohort"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T19:28+05:30
 created_by: owner
 kind: internal
 related: [E-20261015-1140-validation, T-20261016-1718-completeness-check]
-waiting_on: "Approve acceptance.md; owner picks the final 3-5 companies from the candidates"
+approvals:
+  - file: acceptance.md
+    sha256: ff3137bec0a1baefe2973b78cc6f15958d74a32d66260660dd6c0799067615ed
+    by: owner
+    at: 2026-10-16T19:40+05:30
 branch: eng/T-20261016-1928-scenario-selection
 ---
 

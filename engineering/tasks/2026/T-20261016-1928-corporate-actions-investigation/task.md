@@ -2,12 +2,16 @@
 schema: task/v1
 id: T-20261016-1928-corporate-actions-investigation
 title: "Investigate how splits and bonuses flow through prices, stance and positions today (FC12)"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T19:28+05:30
 created_by: owner
 kind: internal
 related: [E-20261015-1140-validation]
-waiting_on: "Approve acceptance.md"
+approvals:
+  - file: acceptance.md
+    sha256: a7fec9d0d198dc0a71fffca3d3c176ad88e10c52bfcfe1211286f38c289eb6a8
+    by: owner
+    at: 2026-10-16T19:40+05:30
 ---
 
 ## Goal
