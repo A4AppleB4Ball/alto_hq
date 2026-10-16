@@ -222,3 +222,4 @@ __marimo__/
 # Editor swap files
 *.swp
 .swp
+.claude/worktrees/
