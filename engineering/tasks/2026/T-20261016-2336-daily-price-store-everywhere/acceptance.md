@@ -15,3 +15,10 @@
 6. **Sandbox price reads.** In a sandbox checkout, every daily price read used by the stance run (the AsOfLedger price path, `backend/lib/asof.py`) and by `create_daily_price_store` for non-paper users reads the shared Dhan price cache (`~/NSE_BSE_Data/dhan_cache`, resolved through `backend.config.paths`) read-only: no Dhan client is built, no credentials are read, nothing is written to the cache. A missing price raises naming the symbol and date (no fetch). Live checkouts are unchanged (pinned by test).
 7. **No look-ahead.** A sandbox price read for an as-of date never returns a price after that date (test).
 8. **No Kimi:** any LLM run uses DeepSeek on Foundry or the local model.
+
+## Amendment 3 (owner 2026-10-17, after QA round 1)
+
+9. **Every sandbox price read checks the cache is current** (both the AsOfLedger path and `create_daily_price_store`) and raises naming the symbol and date; no stale close is returned.
+10. `rebuild_price_refs` raises a clear error for any user in a sandbox (not only paper).
+11. In a sandbox, the Dhan instrument master and the NSE holiday calendar are read from stored copies (resolved through `backend.config.paths`), read-only; a sandbox makes no network call; a missing copy or a year it does not cover raises naming what is missing.
+12. `backend/api/services/daily_price_service.py` gets its daily series through the checkout-gated factory; live arguments unchanged (test).

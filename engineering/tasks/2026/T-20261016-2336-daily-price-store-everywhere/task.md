@@ -11,9 +11,9 @@ kind: internal
 related: [T-20261016-2146-paper-broker]
 approvals:
   - file: acceptance.md
-    sha256: b99f29aafe882f6ac4f333048f2b550df6668075e4f6fbc6a19dde11e5d19101
+    sha256: 38c4da22fb594140d8ec136e04062d6108e2f92ae84a03b32a27d964561046a5
     by: owner
-    at: 2026-10-17T01:43+05:30
+    at: 2026-10-17T02:05+05:30
 ---
 
 ## Goal
