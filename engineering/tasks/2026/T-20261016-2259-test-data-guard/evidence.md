@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2259-test-data-guard
-round: 2
+round: 3
 qa: fail
 qa_by: qa@claude
-commits: 1665a1c..e7bfc9d
-acceptance_sha256: 548696372fb90bf55e97871abdd206456477c4c24552181f3d64a957c06735db
+commits: 1665a1c..802a45b
+acceptance_sha256: be3cff5b1589b1c43f5d23ecf3a88da3b62edecf917bbf1c43c2dd63434ed6e7
 outputs_changed: unverified
 ---
 
@@ -75,3 +75,31 @@ Not confirmed: "ACME writer not found" (consistent with mine, not independently 
 
 ### Check that would catch the class
 The session-end live-root assertion now in place catches any test write outside the book and scheduler exclusions at the end of a hand-run suite. For the ACME class specifically: run the cooldown test file once from the main checkout (live) with the marker after merge, as part of ship's full-suite diff.
+
+## Round 3 (delta e7bfc9d..802a45b; acceptance as re-approved 2026-10-17 03:00, sha be3cff5b)
+
+Worktrees: tdg-qa (head, `mode: test`), tdg-qa3 (head, sandbox declaration), tdg-base (1665a1c, sandbox). Logs/sets: news_server/verify_data/reports/T-20261016-2259-test-data-guard/r3_{base,head_t,head_s}.{log,set}.
+
+### Delta review
+- Server path byte-identical: `git diff 1665a1c HEAD -- chart_profile_storage.py` only adds `SERVER_DB_PATH = Path("data/dashboard/chart_profiles.duckdb")` (same relative path as main's default string) and `default_db_path()`. Run outside test mode (sandbox declaration) in a temp cwd: db_path = `data/dashboard/chart_profiles.duckdb`, file created under the temp cwd only. The chart-profile migration ALERT from round 2 is gone (path unchanged).
+- Callers: only `backend/api/routes/price_chart.py:27` (module-level `ChartProfileStorage()`, runs at import, now resolves via default_db_path so test mode goes to the temp root) and a type-only use in `ai_levels/service.py:17,47`. No scripts use it. Head worktrees stayed clean after suites (no backend/data/dashboard; base worktree does create it, as expected).
+- Smell judgement: acceptable but mildly smelly. One 3-line function, one branch, contained; but production code now knows about test mode (imports TEST_MODE and CHECKOUT). It is the only place a path is cwd-relative, so the branch exists to paper over that. Cleaner: give the path a home in backend.config.paths and keep the server on it (owner's call; not a defect). Callers reading `CHECKOUT.mode` at call time is fine.
+
+### Acceptance
+1. Mode: PASS (config tests, 57+ passed in the suites below).
+2. Guard: PASS (`test_store_write_under_live_root_raises_naming_the_path`).
+3. (a) PASS: `pytest backend/api/services/tests/test_rebalance_price_action_cooldown.py -q` with marker /tmp/tdg_m5, in both `mode: test` and sandbox: 2 passed each; `find news_server/data -newer marker -type f` excluding workspace/*/book/* and scheduler/* empty.
+   (b) FAIL (not covered by a committed test). Store write under live root: covered (test_test_mode.py:30, LiveRootAccessError naming the path). Direct file write failing the session through the session-end assertion: NOT covered. `backend/config/tests/test_live_root_watch.py` unit-tests snapshot/assert_unchanged on tmp_path only; nothing runs the conftest `pytest_sessionfinish` (backend/conftest.py:26-27) in a temp copy and sees the session fail. I demonstrated the mechanism myself in round 2 (script, exit code 1) and the sandbox run below shows the real hook raising LiveRootChangedError, but that is not a committed test as written. Finding for dev: add the test (temp copy of the repo with a test that writes a file under the live root, run pytest on it in a subprocess, expect nonzero exit and the path in the output). I wrote no product tests.
+4. Full suite: PASS on the comm check. Base 95 failed, 8 errors, 1656 passed. Head `mode: test`: 95 failed, 8 errors, 1666 passed. `comm -23 head base` empty (all three trees, 103 identical failure lines). Marker find after the head runs: empty in `mode: test`. See finding 1 for the sandbox run.
+5. Repo checks: PASS (test_boundaries in the suite; entry points as in round 2).
+
+### Findings
+1. ALERT (false positive, watcher exclusions): the sandbox-declaration head run ended with `LiveRootChangedError ... modified=['alto_data/workspace/backtest/system/dhan_instruments.json']`. The tests wrote to the sandbox root; the writer was the live uvicorn (cwd main alto, pid 72592) refreshing `workspace/<user>/system/dhan_instruments.json` (backtest at 03:25:10, scienceamit1 at 03:24:23, while my run was going). The exclusions (workspace/*/book/*, scheduler/*) do not cover this live-server write, so a hand-run suite fails at the end whenever the server refreshes instruments (same class as round 2's note). Fix choices belong to dev/owner (exclude that daily refresh path, or compare only paths a test could reach). Confirmed by mtime vs run window and server cwd; not run past the verifier.
+2. ALERT: check 3(b) has no committed test for the direct-write session failure (above).
+No BLOCK found in the delta itself.
+
+### Verdict
+`fail`: check 3(b) as now written has no test to run (the direct-write half), plus the suite-end false positive. Everything in the delta (path revert, default_db_path) is correct and the suite has no new failures. Check 3 base half no longer applies.
+
+### Dev claims
+Not read yet before verdict beyond the coordinator brief; nothing to compare.
