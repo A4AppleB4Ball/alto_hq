@@ -72,3 +72,75 @@ def test_file_beside_an_item_is_not_an_item(tmp_path):
     shape = pattern_to_regex("org/epics/<year>/E-….md")
     assert shape.fullmatch("org/epics/2026/E-20261015-1140-data-storage.md")
     assert not shape.fullmatch("org/epics/2026/E-20261015-1140-data-storage.inventory.md")
+
+
+EPIC = """schema: epic/v1
+extends: item/v1
+file: org/epics/<year>/E-….md
+sidecar: org/epics/<year>/E-….<topic>.md
+required:
+  status: {type: enum, values: [open, done]}
+"""
+
+VERSION = """schema: version/v1
+extends: item/v1
+file: product/versions/v<n>/version.md
+required:
+  status: {type: enum, values: [staging, awaiting_owner, promoted]}
+"""
+
+
+def write_item(path: Path, schema: str, item_id: str, extra: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(f"---\nschema: {schema}\nid: {item_id}\ntitle: t {item_id}\n{extra}---\n")
+
+
+def test_task_folder_with_bad_id_fails(tmp_path):
+    root = make_repo(tmp_path, {"T-20261016-2300-Bad_Slug": "status: needs_owner\nwaiting_on: x\n"})
+    with pytest.raises(ItemError, match="T-20261016-2300-Bad_Slug: not a valid task/v1 item folder"):
+        build(root)
+
+
+def test_task_folder_without_task_md_fails(tmp_path):
+    root = make_repo(tmp_path, {})
+    (root / "engineering" / "tasks" / "2026" / "T-20261016-2300-empty").mkdir(parents=True)
+    with pytest.raises(ItemError, match="T-20261016-2300-empty: item folder has no task.md"):
+        build(root)
+
+
+def epic_repo(tmp_path: Path) -> Path:
+    root = make_repo(tmp_path, {})
+    (root / "org" / "schemas" / "epic.v1.yaml").write_text(EPIC)
+    write_item(root / "org/epics/2026/E-20261015-1140-data.md", "epic/v1", "E-20261015-1140-data", "status: open\n")
+    return root
+
+
+def test_epic_sidecar_is_recognised(tmp_path):
+    root = epic_repo(tmp_path)
+    (root / "org/epics/2026/E-20261015-1140-data.inventory.md").write_text("# notes\n")
+    build(root)
+    by_status = (root / BY_STATUS).read_text()
+    assert "## open (1)" in by_status and "inventory" not in by_status
+
+
+@pytest.mark.parametrize("name", [
+    "E-20261015-1140-Other_X.md",           # bad id
+    "E-20261015-1140-other.inventory.md",   # sidecar of no epic
+    "E-20261015-1140-data.In_Ventory.md",   # sidecar topic not kebab-case
+])
+def test_stray_file_under_epics_fails(tmp_path, name):
+    root = epic_repo(tmp_path)
+    (root / "org/epics/2026" / name).write_text("# stray\n")
+    with pytest.raises(ItemError, match=f"{name}: not a valid epic/v1 item file"):
+        build(root)
+
+
+def test_version_in_both_views(tmp_path):
+    root = make_repo(tmp_path, {})
+    (root / "org" / "schemas" / "version.v1.yaml").write_text(VERSION)
+    write_item(root / "product/versions/v3/version.md", "version/v1", "v3",
+               "status: awaiting_owner\nwaiting_on: promote v3\n")
+    build(root)
+    assert "## awaiting_owner (1)" in (root / BY_STATUS).read_text()
+    approvals = (root / APPROVALS).read_text()
+    assert "[v3](../../product/versions/v3/version.md)" in approvals and "promote v3" in approvals

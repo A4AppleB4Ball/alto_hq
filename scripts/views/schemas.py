@@ -17,6 +17,7 @@ class ItemSchema:
     name: str
     file_pattern: str
     statuses: tuple[str, ...]
+    sidecar_pattern: str | None
 
 
 def load_item_schemas(root: Path) -> list[ItemSchema]:
@@ -31,34 +32,39 @@ def load_item_schemas(root: Path) -> list[ItemSchema]:
         status = data.get("required", {}).get("status")
         if not isinstance(status, dict) or "values" not in status:
             raise ValueError(f"{path}: item schema has no status values")
-        schemas.append(ItemSchema(data["schema"], data["file"], tuple(status["values"])))
+        schemas.append(ItemSchema(
+            data["schema"], data["file"], tuple(status["values"]), data.get("sidecar"),
+        ))
     if not schemas:
         raise ValueError(f"{root}: no item schemas found under org/schemas")
     return schemas
 
 
+# A '<name>' placeholder in a pattern segment ('<year>', 'v<n>', '<topic>').
+PLACEHOLDER = re.compile(r"<[a-z-]+>")
+# What a '<topic>' or other placeholder may be inside an id-bearing segment: kebab-case, no dots.
+PLACEHOLDER_IN_ID = r"[a-z0-9][a-z0-9-]*"
+
+
 def pattern_to_glob(pattern: str) -> str:
     """'engineering/tasks/<year>/T-…/task.md' -> 'engineering/tasks/*/T-*/task.md'."""
-    parts = []
-    for segment in pattern.split("/"):
-        if segment.startswith("<") and segment.endswith(">"):
-            parts.append("*")
-        else:
-            parts.append(segment.replace("…", "*"))
-    return "/".join(parts)
+    return PLACEHOLDER.sub("*", pattern).replace("…", "*")
+
+
+def segment_to_regex(segment: str) -> str:
+    """One pattern segment as a regex. 'X-…' is an item id with prefix X
+    (README rule 1); a placeholder beside an id is kebab-case; a placeholder
+    elsewhere is any one path segment."""
+    if "…" in segment:
+        head, tail = segment.split("…")
+        tail_parts = PLACEHOLDER.split(tail)
+        tail_regex = PLACEHOLDER_IN_ID.join(re.escape(part) for part in tail_parts)
+        return re.escape(head) + ID_TAIL + tail_regex
+    parts = PLACEHOLDER.split(segment)
+    return r"[^/]+".join(re.escape(part) for part in parts)
 
 
 def pattern_to_regex(pattern: str) -> re.Pattern:
-    """The exact path shape of an item file: '<…>' is one path segment and
-    'X-…' is an item id with prefix X (README rule 1). Files beside an item
-    that only share its id as a prefix (e.g. 'E-….inventory.md') do not match."""
-    parts = []
-    for segment in pattern.split("/"):
-        if segment.startswith("<") and segment.endswith(">"):
-            parts.append(r"[^/]+")
-        elif "…" in segment:
-            head, tail = segment.split("…")
-            parts.append(re.escape(head) + ID_TAIL + re.escape(tail))
-        else:
-            parts.append(re.escape(segment))
-    return re.compile("/".join(parts))
+    """The exact path shape of an item file. Files beside an item that only
+    share its id as a prefix (e.g. 'E-….inventory.md') do not match."""
+    return re.compile("/".join(segment_to_regex(s) for s in pattern.split("/")))
