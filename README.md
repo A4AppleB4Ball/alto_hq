@@ -103,8 +103,7 @@ alto_hq/
 │       └── evals/                     # cases a new version must pass before use
 │
 ├── management/
-│   ├── briefs/<year>/<month>/<date>.md    # the daily brief
-│   └── _generated/approvals.md            # every item with status awaiting_owner
+│   └── briefs/<year>/<month>/<date>.md    # the daily brief
 │
 ├── operations/
 │   ├── incidents/<year>/I-…/
@@ -121,7 +120,8 @@ alto_hq/
 │   │   ├── attempts/<n>/diagnosis.md  # written when an attempt stops; at most 2
 │   │   ├── handoff.md                 # dev: commits, acceptance check outputs, what was not done
 │   │   └── evidence.md                # QA result, golden replay, merge commit
-│   └── releases/<YYYY-MM-DD>.md       # what landed, linking its tasks (v<n>.md once versions exist)
+│   ├── releases/<YYYY-MM-DD>.md       # what landed, linking its tasks (v<n>.md once versions exist)
+│   └── _generated/approvals.md        # every item with status awaiting_owner or needs_owner
 │
 ├── research/
 │   ├── protocol/protocol-v<n>.md      # evaluation rules: costs, slippage, liquidity, holdout
