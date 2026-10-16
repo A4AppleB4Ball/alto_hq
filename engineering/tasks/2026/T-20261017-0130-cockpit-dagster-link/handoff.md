@@ -19,3 +19,17 @@ Commits: (1) chain-state endpoint + backend tests, (2) docs for launching UI, (3
 ## Not done / found
 - No Playwright/browser check of the live pages (no data to serve in sandbox).
 - Found: frontend/src/features/alto-cockpit/pages/pipeline/components/PipelineCard.tsx:22 fails eslint react-refresh rule (pre-existing). Untracked backend/data/dashboard/ appears in main and worktree (pre-existing).
+
+# Round 2 (attempt 2)
+Main had not moved (base still 9a97ee1), so no rebase was needed. Commits:
+4cec56d Cockpit: the Dagster button reads its own endpoint and the card shows unavailable records
+416d066 Cockpit: chain state reads the last run of the chain job only, reports unreadable records, serves the Dagster link on its own endpoint
+2abb419 Cockpit: Dagster button on the Queue and Pipeline pages and a Pipeline card with the last chain run's state
+d3f55d9 Orchestration: document launching the Dagster UI and the cockpit's chain-state link
+3264215 Cockpit: chain-state endpoint reads the last Dagster chain run from its stored records without importing Dagster
+
+- F1 fixed: last_run filters on pipeline_name = names.CHAIN_JOB ("__ASSET_JOB", the implicit asset job every chain run uses; pinned to the definitions by dagster_tests::test_the_chain_job_name_is_the_implicit_asset_job). No chain run -> status no_run, no fallback to the newest run. Unit test: heartbeat row after chain run; only-heartbeat home -> no_run. Real Dagster test: real chain run, then a real heartbeat_job run (dagster_env/definitions.py) in the same home; the endpoint still returns the chain run, 1/1/0. query.py had the same flaw (newest run of any job); fixed the same way (RunsFilter job_name).
+- F2 fixed: sqlite3.OperationalError on opening -> status "unavailable" with reason (card shows it); unexpected shapes and a missing run event log still raise. The Dagster button now has its own endpoint GET /api/cockpit/dagster-link (setting only); dagster_url removed from chain-state. Frontend tests: Queue and Pipeline buttons render when chain-state returns 500; Pipeline shows the chain-state error. Proven: the missing-sidecar WAL case (unit test makes WAL dbs with no sidecars). NOT proven: reads while Dagster actively writes (QA could not either); only finished runs were read.
+- F3: followed the convention. git log shows frontend/dist is committed only in bulk "frontend build" commits (ba6b71a, b9811ef); of the last six commits touching frontend/src only one touched dist, so feature commits do not rebuild it. I did not commit dist. Build verified to a temp dir (vite build --outDir /tmp/cdl/dist ok, tracked dist untouched). The owner must rebuild dist before the server shows the button.
+- F4: the dagster_tests run under the production Python with PYTHONPATH=<venv>/lib/python3.10/site-packages (as the chain docs say): 6 passed.
+- Checks: chain_state tests 14 pass; vitest 11 pass; tsc -b clean; full backend suite in separate sandbox roots: base 95 failed/1735 passed/8 errors, head 95 failed/1749 passed/8 errors, comm -23 empty.
