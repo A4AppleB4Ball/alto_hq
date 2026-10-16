@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-2252-stance-cold-start-window
 title: "Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01"
-status: ready
+status: in_progress
+claimed_by: dev-run-20261016-2300
+lease_until: 2026-10-17T23:00+05:30
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: decision

@@ -2,12 +2,17 @@
 schema: task/v1
 id: T-20261016-2259-test-data-guard
 title: "Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard"
-status: draft
+status: ready
 created: 2026-10-16T22:59+05:30
 created_by: claude-main
 kind: internal
 related: [T-20261015-0321-checkout-data-root]
 depends_on: [T-20261015-0321-checkout-data-root]
+approvals:
+  - file: acceptance.md
+    sha256: 548696372fb90bf55e97871abdd206456477c4c24552181f3d64a957c06735db
+    by: owner
+    at: 2026-10-16T23:05+05:30
 ---
 
 ## Goal
