@@ -30,3 +30,7 @@ Curated: keep what keeps finding bugs, drop what never does.
 ## Added 2026-10-16 (T-20261016-2146 paper broker)
 - Bug class: an e2e test patches the real helpers a new broker hits (adv.previous_close builds DhanPriceStore, which raises for non-dhan; execution/market_analysis/adv.py:48). Run the real helper once for the new broker type.
 - Bug class: a JSON store that saves on read paths, with no lock (executor/paper/broker.py _settled), loses updates across two processes.
+
+## Added 2026-10-16 (T-20261016-2147 stance_chain)
+- Bug class: a check that reuses a shared rule but adds its own extra rule beside it (validation/stance_chain/check.py:47-49, first link not cold start = gap) diverges from the reconciler. Slice the input mid-chain to expose it.
+- Scenario that paid off: read the frozen case's raw window fields. ARSSBL's cold-start link has covers_from > covers_to and every check accepts it.
