@@ -26,11 +26,17 @@ the problem:
 In a worktree made by the new command:
 
 - every path in the dump from check 1 resolves under the sandbox root;
-- `python -m backend.e2e.run --companies <one golden company> --dry-run`
-  resolves only sandbox paths;
-- after a run of one real, non-LLM step (e.g. `documents`) in the sandbox,
-  the live data root has no file modified since the run started (compare
-  mtimes of the live root before and after).
+- `python -m backend.e2e.run --symbols <one golden company> --steps documents`
+  (the real flags; it has no `--companies` or `--dry-run`) run in the sandbox
+  reads only sandbox paths. The sandbox is seeded for this check with a copy of
+  that company's index file from the live root (the new command or a test
+  fixture does the copy; the live root is only read);
+- one real write through a store the pipeline uses (an appended stance record
+  for that company via `CompanyStore`, in the sandbox) lands under the sandbox
+  root, and afterwards the live data root has no file modified by it (compare
+  mtimes of the live root before and after, ignoring files the running API and
+  scrapers write: list them and show none is under a company path of the
+  golden company).
 
 ## 4. Non-production LLM config is refused on live
 

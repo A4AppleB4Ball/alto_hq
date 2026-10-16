@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261015-0321-checkout-data-root
 title: Every checkout names its own data root; a sandbox can never resolve to production
-status: ready
+status: in_progress
 created: 2026-10-15T03:21+05:30
 created_by: owner
 kind: internal
@@ -11,8 +11,11 @@ approvals:
     sha256: 704f994a7a59944b5480b0bbe8d19a07fb74c7403e020a4b7b59e3befdd72f63
     by: owner
     at: 2026-10-16T19:40+05:30
-claimed_by: claude-main-20261016-1900
-lease_until: 2026-10-17T19:00+05:30
+  - file: acceptance.md
+    sha256: 0d5e9c9923dfbb324bdcd5428c1b9b9724493636b1386191fea565feecaa6a95
+    by: owner
+    at: 2026-10-17T00:40+05:30
+claimed_by:
 branch: eng/T-20261015-0321-checkout-data-root
 friction: "No role exists for an owner-led design session, so created_by is owner."
 ---
