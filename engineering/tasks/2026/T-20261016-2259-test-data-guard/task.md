@@ -2,8 +2,8 @@
 schema: task/v1
 id: T-20261016-2259-test-data-guard
 title: "Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard"
-status: ready
-waiting_on: "dev: add session-failure test for a direct live-root write (check 3b); fix watcher false positive on workspace/*/system/dhan_instruments.json"
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 created: 2026-10-16T22:59+05:30
 created_by: claude-main
 kind: internal

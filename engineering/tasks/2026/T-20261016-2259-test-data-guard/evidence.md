@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2259-test-data-guard
-round: 3
-qa: fail
+round: 4
+qa: pass
 qa_by: qa@claude
-commits: 1665a1c..802a45b
-acceptance_sha256: be3cff5b1589b1c43f5d23ecf3a88da3b62edecf917bbf1c43c2dd63434ed6e7
+commits: 8cf276e..a121ff3
+acceptance_sha256: f761861f811fffc90af7ac7e437365e95aa19e90560b9a7578b8f95c8e65beca
 outputs_changed: unverified
 ---
 
@@ -103,3 +103,59 @@ No BLOCK found in the delta itself.
 
 ### Dev claims
 Not read yet before verdict beyond the coordinator brief; nothing to compare.
+
+
+## Round 4 (8cf276e..a121ff3; acceptance re-approved, sha f761861f)
+
+Base for the suite diff is 8cf276e (not main 9a97ee1). Worktrees tdg4-s (sandbox declaration, root /tmp/qa4r/s), tdg4-t (`mode: test`), tdg4-base (8cf276e, sandbox, root /tmp/qa4r/b); removed after. The live root was never written: all probing used a temp copy of the layout (/tmp/qa4: fake main `alto` with mode live, fake `news_server`, worktree with the head backend). Logs: news_server/verify_data/reports/T-20261016-2259-test-data-guard/r4b_{s,t,base}.{log,set}. No verifier sub-agent was used; every finding below was reproduced by a script I ran.
+
+### Part A: why the dev's store write reached the live root (cause established)
+
+The guard is not a property of the checkout; it is installed only when `backend.config.paths` is first imported while `checkout._test_root` is set, and `_test_root` is set only by `activate_test_mode`, called only from `backend/conftest.py` (or by inheriting ALTO_TEST_ROOT). I reproduced the debris in the temp layout: a probe test calling `CompanyStore(<live>/stances).append_stance("ZZNOSUCH", ...)` and `open(<live>/x.txt,"w")`:
+- `pytest backend/qa_probe` (conftest loaded): both refused, LiveRootAccessError, nothing written.
+- the same file under a directory outside `backend/` (no conftest.py applies): 3 passed, wrote `stances/ZZNOSUCH/{latest.json,log.jsonl,log.jsonl.lock}` and x.txt into the fake live root. Identical with `--noconftest`.
+- a plain script (no pytest): `import backend.config.paths` reports CHECKOUT.mode sandbox, no guard.
+
+So the non-raise happens whenever the process is not a test session of backend/conftest.py: pytest invoked on a file outside backend/, `--noconftest`, `-c`/`--confcutdir`/`--rootdir` settings that skip it, `python -c`/script runs, or a subprocess without ALTO_TEST_ROOT. The debris file set (latest.json, log.jsonl, log.jsonl.lock) is exactly what my unguarded run produced. I cannot know which invocation the dev used; the dev's note "same test raised in other runs" fits (conftest loaded in some, not in others). Treat the cause as: guard absent in that process, not a hole in the hook.
+
+Answers:
+1. Under a plain sandbox declaration running pytest on a file under backend/: the guard IS active, because conftest activates test mode unconditionally (not only for `mode: test`). Printed in-run: `MODE test`, CHECKOUT.live_root = main checkout's declared data_root, STANCES_DIR = <tmp>/alto_test_root_*/data/alto_data/stances, guard `_live_root` = the live root. An explicit path under the live root is refused (both probe tests). Under the same declaration without conftest: CHECKOUT.mode is sandbox, STANCES_DIR is the sandbox root, and an explicit live path is writable (above).
+3. Install order: safe for tests that run under conftest. conftest imports only `backend.config.checkout`, then `activate_test_mode` (mkdir of the temp root happens before the hook exists, harmless); the hook goes in at the first `import backend.config.paths` (load_checkout), which happens at collection of the first test/conftest that imports it, before any test body runs. No conftest or plugin above backend/ imports paths first (no repo-root conftest.py). Weak point: install is lazy, not in conftest itself, so a process that opens files before paths is imported is unguarded for those (none found). Nested pytest or a shell with ALTO_TEST_ROOT leaked fails loudly: "test mode is already active" in conftest (reproduced), no silent mode.
+4. Live root declared differently or missing: the live root is whatever `main_checkout_root(worktree)`'s `.alto_checkout.yaml` says. Missing file: CheckoutDeclarationError at import (loud). Main file not mode live (sandbox or test): CheckoutDeclarationError (loud). Main file declares another root (I set it to /tmp/qa4/other): guard protects only that root; the real production root was writable (ALLOWED). Also nothing in test mode checks the live layout (`_require_live_layout` runs only outside test mode), so a worktree whose gitdir points at a clone or copy with its own mode live file guards that file's root, not production. ALERT: acceptable because the declaration is the owner's source of truth, but it means the guard is only as good as the main checkout file; a test asserting live root == `<workspace>/news_server` in the real main would close it.
+
+### Part B: audit-hook gaps (temp layout, run in a test-mode child, script /tmp/qa4/gaps.py)
+
+| operation | result | rating, reachable from repo |
+|---|---|---|
+| dir_fd open/mkdir/unlink/rename (relative name + dir_fd, resolved against cwd) | ALLOWED | ALERT; `dir_fd` appears nowhere in backend/ |
+| os.chmod, os.utime | ALLOWED | ALERT; not used outside tests (grep) |
+| mkfifo | ALLOWED | ALERT; unused |
+| sqlite3.connect (create table) | ALLOWED | ALERT; only prune_runs.py:39 shells out to `sqlite3` on the dagster home, never a live-root path from a test |
+| duckdb ATTACH / COPY TO / duckdb.sql on the default connection | ALLOWED | ALERT; no such SQL in backend/ (grep); path must be a literal live path |
+| pyarrow/parquet C++ write | ALLOWED | ALERT; dhan_price_store.py:369,410, dhan_daily_store.py etc. write parquet, but under DHAN_CACHE_ROOT = ~/NSE_BSE_Data/dhan_cache (paths.py:230), outside the live root, so not in scope |
+| subprocess `touch`, os.system, python child without importing backend.config.paths, child with env={} | ALLOWED | ALERT; the repo's children (e2e/run.py:209, pipeline_executor.py:50, test_*) pass `{**os.environ}`; a cleared-env child falls to the checkout declaration (sandbox) not live |
+| pandas.to_csv, pathlib.touch, r+, O_RDONLY|O_CREAT, truncate, link, symlink, copyfile/copy2/copytree, rename/replace, mkdir, duckdb.connect (positional, kw, Path) | REFUSED | BLOCK class covered |
+| cwd-relative write after chdir into live | REFUSED (resolved against cwd) | covered |
+
+None of the ALLOWED rows is reachable by a repo test, because in test mode every path in backend.config.paths resolves into the temp root; they need a literal live path. Residual non-test risk: any process outside a conftest session is unguarded (Part A), which is outside acceptance 2 ("in test mode").
+
+### Acceptance (as written, sha f761861f)
+1. Mode: PASS. `mode: test` declared; `STANCES_DIR` under the temp root (test_roots_are_under_the_temp_root passes; also printed above); temp root removed at session end (conftest sessionfinish, rmtree with ignore_errors=False).
+2. One guard: PASS. `pytest backend/stores/tests/test_boundaries.py backend/config/tests/test_live_root_guard.py backend/config/tests/test_test_mode.py` 20 passed. The guard tests cover direct write, append, mkdir, rename, remove, shutil copy, duckdb connect, child process, store write, temp-root write allowed, live read allowed, symlink under temp pointing into live refused. Failing before: copying test_live_root_guard.py into the 8cf276e tree gives 12 errors (no live_root_guard module / no LiveRootAccessError).
+3. (a) PASS: marker /tmp/tdg_m9 on news_server/data; `pytest backend/api/services/tests/test_rebalance_price_action_cooldown.py backend/config/tests -q` in both declarations: 65 passed each. `find news_server/data -newer marker -type f` with the stated exclusions (workspace/*/book/*, scheduler/*): empty. (b) PASS: the guard tests run in a temp copy (layout fixture), real live root untouched. (c) PASS: `live_root_watch.py` and LiveRootChangedError no longer exist (grep empty); conftest.py only creates and removes the temp root.
+4. Full suite: PASS. Command from the dev skill (run from backend/, PYTHONPATH=.., SESSION_SECRET etc., `pytest -q -p no:cacheprovider --rootdir=. .`), marker /tmp/tdg_m8. Base (8cf276e): 95 failed, 8 errors, 1715 passed. Head sandbox: 95 failed, 8 errors, 1733 passed. Head `mode: test`: same. `comm -23 head base` empty for both (103 identical lines), `comm -13` empty. No LiveRootAccessError in any log, no watcher error. The run is no longer exposed to live-server writes: the guard checks only this process's own calls. Marker find on the live root (excluding workspace/*/book/*, scheduler/*): empty. Without exclusions it listed workspace/scienceamit1/book/default/snapshots.jsonl (live server); after check 3a, scheduler/state.json, history, logs. So the guard needs no exclusion, but the acceptance-3a `find` still does, because the live server writes there during any run (the exclusions are about the find, not the suite).
+   Base sandbox received test debris (chat duckdb, u_test, backtest/system, screener raw_reports); head sandbox root received none.
+5. Repo checks: PASS. test_boundaries in the suite; imports of backend.config.paths, backend.e2e.run, backend.workflow.cli, backend.api.local ok (with the env vars of the dev skill).
+
+### Findings
+1. ALERT (cause of the live-root debris, Part A): the guard exists only inside a pytest session that loads backend/conftest.py. A `pytest` run on a file outside backend/, with `--noconftest`, or a script, writes the live root unguarded when run from a worktree whose gitdir resolves to the live main. Suggested hardening for the owner or dev (not required by acceptance): refuse by default for any process of a non-live checkout, i.e. install the guard in `load_checkout` for sandbox and test modes, not only test mode; this also makes the dev's earlier mistake impossible. Reproduced in /tmp/qa4 as above.
+2. ALERT: guard's live root = whatever the main checkout file says; no layout check in test mode (Part A, Q4).
+3. ALERT: hook gaps in Part B; none reachable from the repo.
+4. ALERT (minor): lazy install point. `activate_test_mode` does not install the guard; `load_checkout` does. If a future conftest/plugin writes files before importing paths it is unguarded.
+No BLOCK. The owner can decide whether finding 1's hardening is wanted before merge.
+
+### Dev claims
+Confirmed: incident described (debris set matches my unguarded reproduction), dir_fd/chmod/utime gaps (also open-gaps listed above), suite counts (95 failed, 8 errors at base and head; my passed counts 1715/1733). Not confirmed: "cause unproven" is now explained by Part A (guard absent in that process), though which invocation the dev used cannot be recovered.
+
+### Check that would catch the class
+A test asserting that `backend.config.paths` import in a sandbox-mode process (no ALTO_TEST_ROOT) cannot write the live root, i.e. guard installed for sandbox as well; or ship's full-suite diff from the main checkout with the marker.
