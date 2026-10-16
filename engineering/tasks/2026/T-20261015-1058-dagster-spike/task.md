@@ -9,9 +9,12 @@ kind: internal
 spawned_from: I-20261015-1058-stances-without-quarterly-analysis
 related: [D-20261015-1058-dagster-for-compute-chain]
 approvals:
-  acceptance.md: 07865e13d719339bc3912d9393a536b47c3fc59dce2715a0a93085afb3ae4576
+  - file: acceptance.md
+    sha256: 07865e13d719339bc3912d9393a536b47c3fc59dce2715a0a93085afb3ae4576
+    by: owner
+    at: 2026-10-15T16:51+05:30
+closed: 2026-10-16T17:18+05:30
 branch: eng/T-20261015-1058-dagster-spike
-friction: "Approvals field format is not defined in task.v1.yaml; used a mapping of file to sha256."
 ---
 
 ## Goal
