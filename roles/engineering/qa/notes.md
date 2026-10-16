@@ -34,3 +34,6 @@ Curated: keep what keeps finding bugs, drop what never does.
 ## Added 2026-10-16 (T-20261016-2147 stance_chain)
 - Bug class: a check that reuses a shared rule but adds its own extra rule beside it (validation/stance_chain/check.py:47-49, first link not cold start = gap) diverges from the reconciler. Slice the input mid-chain to expose it.
 - Scenario that paid off: read the frozen case's raw window fields. ARSSBL's cold-start link has covers_from > covers_to and every check accepts it.
+
+## Added 2026-10-17 (T-20261016-2336 daily price store)
+- Bug class: a guard (cache-currency check) is added to one of two sibling read paths only (CachedDailySeries checks, broker_factory/prices.py:35 DailyPriceWindow does not): stale price returned green. Test every factory return type with a cache that ends before `end`.
