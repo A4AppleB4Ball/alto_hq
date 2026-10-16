@@ -3,6 +3,7 @@ schema: evidence/v1
 task: T-20261016-1718-dagster-environment
 round: 1
 qa: pass
+merge_commit: 79e66a7
 outputs_changed: unverified
 range: a5b5606..063b6af
 ---
