@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2259-test-data-guard
-round: 4
+round: 5
 qa: pass
 qa_by: qa@claude
-commits: 8cf276e..a121ff3
-acceptance_sha256: f761861f811fffc90af7ac7e437365e95aa19e90560b9a7578b8f95c8e65beca
+commits: 9a97ee1..319e42c
+acceptance_sha256: d68cdb12f37721583bd1f5ba6fef6fe92906e8ceb346a9c0adaec997f4c964a8
 outputs_changed: unverified
 ---
 
@@ -159,3 +159,42 @@ Confirmed: incident described (debris set matches my unguarded reproduction), di
 
 ### Check that would catch the class
 A test asserting that `backend.config.paths` import in a sandbox-mode process (no ALTO_TEST_ROOT) cannot write the live root, i.e. guard installed for sandbox as well; or ship's full-suite diff from the main checkout with the marker.
+
+
+## Round 5 (a121ff3..319e42c; suite base main 9a97ee1; acceptance sha d68cdb12)
+
+a121ff3 is no longer an ancestor of 319e42c (rebased on 9a97ee1); the suite diff uses main 9a97ee1, diff stat of 9a97ee1..319e42c is config/guard/tests/conftest/chart_profile/gate only. Live root never written: probes ran in a temp layout (/tmp/qa5/L: live main with head config, fake news_server, worktree made by new_sandbox_worktree) or in worktrees with their own roots (/tmp/qa5/broot, the dev's sandbox root). No verifier sub-agent; each finding was reproduced by a script I ran.
+
+### Acceptance (as written)
+1. Mode: PASS (config tests in the 288-test subset; full suite below).
+2. Guard install point: PASS. backend/config/tests/test_live_root_guard_outside_pytest.py: 5 passed at head. With `live_root_guard.install(...)` replaced by `pass` in checkout.py (own worktree at 319e42c): 2 failed (script outside backend/ under a sandbox declaration; pytest --noconftest), 3 passed (live mode, own-root write, live read: these cannot fail without the install by design). The brief said six tests; the file has five (the earlier test_live_root_guard.py has the others, unchanged).
+   Idempotence: install() twice for two roots, then twice again: set holds both, both refused, duckdb refused, `:memory:` fine; hook added once (`_hooked`). Live mode in a temp main with head config: `_live_roots` empty, `_hooked` False, duckdb.connect unwrapped, write to the live root succeeds.
+3. (a) PASS: `pytest backend/api/services/tests/test_rebalance_price_action_cooldown.py -q` (sandbox declaration, marker /tmp/qa5/m3): 2 passed; find on the real live root with the stated exclusions empty. (b) PASS (temp-copy tests). (c) PASS (no watcher).
+4. Full suite from backend/ (dev-skill command), base 9a97ee1 (own sandbox root) vs head sandbox declaration vs head `mode: test` (own worktree, separate roots, run sequentially/never on one root): base 95 failed 8 errors 1735 passed; head sandbox 95/8/1758; head test 95/8/1758. `comm -23 head base` empty both ways (and `comm -13` empty). No LiveRootAccessError in any log. Marker find on the real live root after each run (excluding workspace/*/book/*, scheduler/*): empty.
+5. Boundary test is in the suite; imports of backend.config.paths, backend.e2e.run, backend.workflow.cli, backend.api.local ok (api needs ALLOWED_EMAILS, GOOGLE_* env). Subset backend/validation + backend/orchestration + backend/config (includes case_root, dagster chain tests, freeze/install): head and base fail the identical 34 failed + 5 errors (environment, pre-existing); no LiveRootAccessError.
+
+### Focus items
+(1) Legitimate sandbox tooling, none refused:
+- new_sandbox_worktree --seed-index ZZ run from a live temp main: worktree + sandbox root created, index copied, nothing written to the temp live root. load_checkout(worktree) inside the live process installs the guard there after the worktree exists; harmless (nothing later writes live).
+- validation.cases freeze/install, chain.case_root, verdicts: docs give out dirs outside news_server (../alto_testcases/cases, $DAGSTER_HOME); live is only read (copyfile source, read_only duckdb is not refused by the wrapper). Their tests pass.
+- cockpit API in the real sandbox worktree: TestClient lifespan (scheduler/trading/price loops started and stopped), /api/health 401, zero LiveRootAccessError/Traceback. e2e CLI and stance runner import and --help fine in the sandbox (their no-network dry-run for a real symbol not run: no safe symbol).
+- ~/NSE_BSE_Data writes (price cache, nse_holidays) from a sandbox process with HOME in a temp dir: write allowed; it is outside the live root so the guard never sees it (the T-20261017-0010 price-read gate is separate).
+- Refused by design: any python write under news_server outside the sandbox, e.g. news_server/verify_data/reports/<task>/ from a sandbox script (LiveRootAccessError, reproduced). The qa skill sends raw logs there; shell redirection is unaffected, but a python tool run from a sandbox with --out under verify_data would now fail loudly. ALERT (low): document that --out must be outside the live root.
+(2) Live installs nothing: PASS (above). The real main checkout is at 9a97ee1 (no guard code), so a real-main import is not informative; head's code reading the real main declaration works (import of backend.config.paths in the dev worktree prints mode sandbox, live root /Users/kmrh581/personal/projects/workspace/news_server, no writes).
+(3) ZZNOSUCH modes: reproduced by the committed tests (script from outside backend/, pytest --noconftest now refuse; fail without the install).
+(6) Observable behaviour: subprocess `touch` into the live root is allowed (known gap). multiprocessing fork and spawn children and os.fork children inherit the guard and refuse; no hang or misbehaviour with audit hooks. Cost: 30000 open+replace pairs 16.65 s without the hook, 26.2 s with it (+0.16 ms per write op, Path.resolve per event); real runs (full suite 98-121 s vs 108 s base) show no noticeable slowdown. ALERT (minor).
+
+### Findings (no BLOCK)
+1. ALERT: case-insensitive filesystem bypass. On macOS APFS, `open("<live>/NEWS/...", "w")` where the live dir is `News` wrote the file (resolve() does not normalise case). Only reachable by a path spelled with different case; repo paths come from the declaration. live_root_guard.py `_refuse_if_live`.
+2. ALERT: python writes under news_server outside the sandbox now refused (verify_data), see above; message is clear.
+3. ALERT: hook gaps (dir_fd, chmod/utime, ATTACH, sqlite, subprocess children that do not import paths) unchanged and documented in the module docstring.
+4. ALERT (minor): live roots accumulate in a process (checkout tests add temp "live" dirs that stay guarded); the suite is unaffected (0 errors) but a later write to such a temp dir in the same process would be refused.
+
+### Verdict
+Every acceptance check ran and passed; no BLOCK; no new failures vs base.
+
+### Dev claims
+Confirmed: counts 95/8, comm empty, tests fail without the install, live mode installs nothing, tooling only reads live. Not confirmed: "six tests" (five in the new file). ZZNOSUCH debris remains in the live root for the owner to remove.
+
+### Check that would catch the class
+A test that writes via a path whose case differs from the declared live root (finding 1); ship's full-suite diff with the marker.
