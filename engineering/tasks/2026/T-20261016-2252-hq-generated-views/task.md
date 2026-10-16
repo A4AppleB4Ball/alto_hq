@@ -2,11 +2,12 @@
 schema: task/v1
 id: T-20261016-2252-hq-generated-views
 title: "alto_hq generated views: tasks by status and the owner's approval queue"
-status: ready
+status: in_progress
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: internal
 related: []
+friction: "the amendment changes org/schemas, which README routes through P- items; the task gave no P- path"
 branch: eng/T-20261016-2252-hq-generated-views
 approvals:
   - file: acceptance.md
