@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2130-classification-ledger
-round: 1
-qa: fail
+round: 2
+qa: pass
 qa_by: qa@claude-sonnet-5.5
-commits: 79e66a7..02564f9
-acceptance_sha256: 5e36723fc4d56bb48cb59842ee920577296cca97cb593309ef595d19d7370238
+commits: b893361..47a3a00
+acceptance_sha256: 022fb193eb0b36782c7a1618c58e224fa80096e580202419ee4cbfcc8912b986
 outputs_changed: unverified
 ---
 
@@ -46,3 +46,19 @@ Sequential, committed trees, dev-skill command from `backend/`: head 66 failed 1
 ### Risks and a check that would catch this class
 - Stray generated files in commits: a boundary or pre-commit check that fails on new binaries under `backend/data/`.
 - Per-symbol corrupt ledger blocks that symbol's checkpoint (intended); consider an alert path when the follow-up completeness check lands.
+
+
+## Round 2
+
+PASS. Worktrees /Users/kmrh581/personal/projects/workspace/alto/.claude/worktrees/cl-qa2 (head 47a3a00) and cl-base2 (b893361). Scratch in /tmp/clqa2.
+
+- Approval: `shasum -a 256 acceptance.md` = 022fb193...986, matches the second approval in task.md (owner 2026-10-16T23:40).
+- Duckdb: `git log b893361..47a3a00 -- '*.duckdb'` empty; `git diff --stat b893361 47a3a00` has no duckdb or binary. Gone from every commit in range.
+- Race fix (/Users/kmrh581/personal/projects/workspace/alto/backend/stance/classification_cache.py): my own test /tmp/clqa2/race.py, 8 threads behind a barrier, each classify returns a distinct signal, same identity. Head: 1 ledger entry, all 8 returned signals equal it (True). Round-1 code (02564f9 file swapped in): 1 entry, 8 different returned signals, mismatch (False). Dev's test test_concurrent_verdict_stored_during_classify_wins also FAILS against the round-1 file (1 failed, 11 passed) and passes at head, so it does test the fix. Worktree restored clean.
+- Checks 1-6: `pytest backend/stance backend/stores/stance backend/stores/tests/test_boundaries.py` at head: 147 passed. Unchanged since round 1 apart from the cache fix (round-1 comparisons to base record, concurrent writers, 5b hold; diff of repository.py re-read: append under exclusive_lock, corrupt lines raise).
+- Check 7 (amended): diff b893361..47a3a00 of the three existing stance test files shows only `company_store=MagicMock()` -> `MagicMock(classification_lookup=MagicMock(return_value=None))` (4 sites), no assertion touched. Suite below. Entry points (worker, runner, poller, classification_cache, repository) import.
+- Suite, sequential from backend/ per dev skill: head 66 failed 1540 passed 16 skipped; base 66 failed 1519 passed; `comm -23 new base` empty.
+
+Findings: none. No BLOCK, no ALERT.
+Dev claims: all confirmed (the pre-fix-fail was stated as not done; I did it).
+Residual known: cache key excludes prompt text (approved); a torn ledger line raises for that symbol until repaired.
