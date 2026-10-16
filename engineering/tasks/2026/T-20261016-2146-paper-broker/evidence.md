@@ -1,10 +1,10 @@
 ---
 schema: evidence/v1
 task: T-20261016-2146-paper-broker
-round: 1
+round: 2
 qa: fail
 qa_by: qa@engineering
-commits: 9950df7..f706d57 (checks 4-6 on a merge with 20e6afe, tree 032c7b08, identical to dev's check-4 tree)
+commits: 9950df7..70c1c1c (checks 4-6 on a merge with 20e6afe, my tree .claude/worktrees/T-20261016-2146-qa2, mode sandbox over an empty temp root)
 acceptance_sha256: 3b391c3c9004c78c0de337009837d167bd4dcc348042619406e48baec59650ef
 outputs_changed: unverified
 ---
@@ -44,3 +44,38 @@ Full suite from backend/ on qa-merge vs qa-mbase (both against the temp sandbox 
 
 ### Risks / automatic check
 An invariant test that runs the e2e with only the clock patched (real adv, lot lookup and factory over a seeded sandbox) would catch B1. A concurrency test on PaperAccountStore would catch A2.
+
+## Round 2
+
+The approval sha256 still matches acceptance.md (3b391c3c...). My tree: `.claude/worktrees/T-20261016-2146-qa2`, which is 70c1c1c merged with 20e6afe. Its `.alto_checkout.yaml` is mode sandbox over an empty temp root. The baseline tree is `-qa-mbase` (20e6afe). Logs are in `news_server/verify_data/reports/T-20261016-2146-paper-broker/r2_*.log` and my scratch tests are in `/tmp/qa2_r2/`. I placed or cancelled no orders, read no credentials and wrote no production data.
+
+### Acceptance checks
+Command (qa2): `python -m pytest -q -p no:cacheprovider backend/executor/paper backend/executor/broker_factory backend/executor/tests/test_credentials.py backend/api/routes/tests/test_broker_switch.py backend/config/tests` gave `73 passed` (r2_accept.log).
+1. Interface: PASS (test unchanged).
+2. Fill model: PASS. The owner accepted the fill decisions, so they are not failures.
+3. Book: PASS.
+4. Live refusal: PASS on the merge.
+5. End to end: **FAIL.** The test passes, and the round-1 mocks are gone. It now runs the real factory and gate, real previous_close/ADV over the stored prices, and the real lot lookup from a seeded instrument-master cache. It passes only because `test_end_to_end.py:126` replaces `RebalanceService._build_planner_inputs`, which `submit_decision` calls on every approval. Check 5 says the proposal goes "through `RebalanceService.submit_decision`". The real one fails for a paper user (B2). The rule I applied is the same as for B1: the test passes only with a mock over a path a real paper user hits. Replacing `plan_orders` alone, which is a pure function of its inputs, would have been acceptable as "the proposal is given".
+6. Suite: PASS (see Suite below).
+
+### B1 and A2, re-verified
+- **B1 is fixed.** `adv.py:48,81` now go through `broker_factory/prices.py:create_daily_price_store`. I tested the live path in `/tmp/qa2_r2/test_live.py`: with mode live and a dhan user, DhanPriceStore is called with exactly `("u", ["X"], [], "2024-01-01", today)`, the same call as at base. A paper user in live mode raises. The e2e test builds the broker with the real `create_broker_client`.
+- **A2 is fixed.** I wrote my own cross-process test, `/tmp/qa2_r2/test_mp_race.py`: 3 forked processes place 90 orders and read holdings and funds while they do. All 90 ids are unique and stored, and `orders_issued` is 90. After that, holdings, funds, positions and order_status leave account.json byte-identical. The lock is a real flock (`stores/locking.py:22`) and the write is atomic.
+
+### Findings (the verifier confirmed this one)
+- **BLOCK B2: a paper user who holds anything cannot approve a proposal, and probably cannot build one.** Path: `backend/api/services/rebalance_service.py:937` (submit_decision calls `_build_planner_inputs` on every approval), then `:255` (`_trading_calendar(holdings)`), then `:431` (`DhanPriceStore(...)`), then `price_feed/dhan_price_store.py:~50`, which raises `RuntimeError: DhanPriceStore requires BROKER=dhan. Current: paper`. After the first paper fill, holdings are non-empty, so every later approval raises. Repro: with the e2e `_seed_sandbox`, `RebalanceService(USER)._trading_calendar({"ACME": None})` raises, and `({})` returns []. The verifier reproduced this independently. The e2e test hides it: its patched inputs have empty holdings and an empty `trading_calendar`. Dropping only that patch also fails, earlier, on `KeyError: 'stance'` from the seeded desired.json. So the real approval path for a paper user is untested beyond that point. This is the same class as B1, in RebalanceService instead of the EMS.
+- **ALERT A1 (merge order)** still stands for ship. The daily price store now also imports the gate, so main alone would fail every broker build and every previous_close/ADV call.
+- **ALERT:** account.json now requires `orders_issued` with no default. Round-1 sandbox accounts must be reopened. This fails closed, so it is acceptable.
+
+### Suite
+I ran the dev-skill command (PYTHONPATH=.., dummy env, from backend/) on qa2 and on qa-mbase:
+- head: 83 failed, 1551 passed, 8 errors
+- base: 83 failed, 1531 passed, 8 errors
+- `comm -23` is empty, so there are no new failures.
+- `stores/tests/test_boundaries.py`: 2 passed.
+
+### Dev claims compared after the verdict
+Dev's handoff itself says the planner mock remains and that the task is "not done" if QA reads check 5 strictly. I confirm that. Dev frames the mock as "planning is the release runner's job". But the method the test replaces is also the approval path inside submit_decision, and it raises for any paper user who holds a position. I did not re-run the entry-point imports; I relied on dev's list. The rest matches what I found.
+
+### Automatic check that would catch this class
+A test that a paper user's `RebalanceService._build_planner_inputs` runs over a seeded sandbox that holds one name. More generally: grep for `DhanPriceStore(` outside `broker_factory/` in code reachable from rebalance_service and the EMS. trading_loop_service.py:147, strategy_service.py:362 and price_chart_service.py:117 are other places a paper user would hit; I did not run them.

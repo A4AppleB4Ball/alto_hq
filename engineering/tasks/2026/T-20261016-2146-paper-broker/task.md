@@ -2,9 +2,10 @@
 schema: task/v1
 id: T-20261016-2146-paper-broker
 title: "PaperBroker: a local broker for sandboxes, refused in the live checkout"
-status: ready
+status: needs_owner
+waiting_on: "QA round 2 FAIL (B2): the paper approval path raises in RebalanceService._trading_calendar via DhanPriceStore; decide whether to widen scope to the planner inputs or accept check 5 with the planner mocked"
 claimed_by:
-lease_until: 2026-10-17T22:00+05:30
+lease_until: 2026-10-17T23:59+05:30
 created: 2026-10-16T21:46+05:30
 created_by: owner
 kind: internal
