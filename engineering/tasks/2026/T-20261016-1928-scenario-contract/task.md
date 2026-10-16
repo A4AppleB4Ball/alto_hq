@@ -1,0 +1,24 @@
+---
+schema: task/v1
+id: T-20261016-1928-scenario-contract
+title: "Scenario contract (scenario/v1, edits, timeline, expected verdicts) and catalog validator"
+status: awaiting_owner
+created: 2026-10-16T19:28+05:30
+created_by: owner
+kind: internal
+related: [E-20261015-1140-validation, T-20261016-1928-case-freezer]
+waiting_on: "Approve acceptance.md"
+branch: eng/T-20261016-1928-scenario-contract
+---
+
+## Goal
+
+`backend/validation/scenarios/contract.py` defines scenario/v1, the closed edit vocabulary, timeline checkpoints and expected-verdict files (pydantic). `python -m backend.validation.scenarios.catalog --root ../alto_testcases` validates every scenario and the release set's class coverage. Design: `org/epics/2026/E-20261015-1140-validation.scenario-catalog.md` (story 11).
+
+## Why
+
+Scenarios are data written by many agents; the contract is what stops them drifting from the cases and the checks.
+
+## Out of scope
+
+Applying edits (needs the sandbox from T-20261015-0321-checkout-data-root), writing scenarios, the check catalogue (story 5).
