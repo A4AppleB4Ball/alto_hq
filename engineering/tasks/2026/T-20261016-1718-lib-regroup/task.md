@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-1718-lib-regroup
 title: "Regroup backend/lib into quarters/, filings/, prices/, resolvers/"
-status: ready
+status: needs_owner
+waiting_on: "Deferred by owner 2026-10-16: rearrangement only. Do not pick up until the owner sets status back to ready."
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
