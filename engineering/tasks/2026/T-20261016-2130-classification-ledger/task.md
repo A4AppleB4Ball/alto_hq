@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261016-2130-classification-ledger
 title: "Log every materiality classification, immaterial ones included, in the stance store"
-status: ready
+status: in_progress
 created: 2026-10-16T21:30+05:30
 created_by: owner
 kind: internal

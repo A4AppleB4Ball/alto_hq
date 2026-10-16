@@ -3,6 +3,7 @@ schema: evidence/v1
 task: T-20261016-2200-completeness-awaiting-state
 round: 1
 qa: pass
+merge_commit: 66871a6
 qa_by: qa@claude
 commits: 79e66a7..4544f94
 acceptance_sha256: 891784628abcc1d4c874db17848220c890d1d56fb386b4808066075ca74e7e88
