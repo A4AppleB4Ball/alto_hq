@@ -1,0 +1,6 @@
+symbol,exchange,case,classes,picked_because
+ARSSBL,NSE,ARSSBL@2026-10-15,FC02a;FC08;FC09,incident I-20261015-1058: Q1/Q2 FY27 missing; 9 stance links without quarterly analysis
+CHANDAN,NSE,CHANDAN@2026-10-15,FC03;FC05,failed intake: reporting period not determined; corrupt-file edit on another document
+511144,BSE,511144@2026-10-15,FC01;FC04;FC06;FC11,BSE-only complete company in the 2026-10-15 proposals
+ORIANA,NSE,ORIANA@2026-10-15,FC12,real 1:5 split record date 2026-09-18 (FC12 parked)
+3IINFOLTD,NSE,3IINFOLTD@2026-10-15,FC10,first not_initiated candidate; NSE-listed
