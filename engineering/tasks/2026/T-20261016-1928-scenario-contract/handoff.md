@@ -54,3 +54,17 @@
 
 - No FC12 edit op (design: after investigation).
 - plan.md was written alongside the code, not before it.
+
+## QA round 1 alerts (evidence.md)
+
+Fixed in commit `9f274dd`, one test each in `scenarios/tests/test_catalog.py`:
+- Alert 1: `delay_arrival.arrival` outside the window now raises CatalogError
+  (`test_delay_arrival_outside_window`).
+- Alert 3: malformed YAML now raises CatalogError naming the file
+  (`test_malformed_yaml_names_file`).
+- Alert 4: duplicate scenario ids now raise CatalogError naming both folders
+  (`test_duplicate_scenario_id`).
+- Alert 2 (expected `verdict` is free text): left as is, per the coordinator.
+  It waits on the verdict contract defining its set of states.
+
+`pytest backend/validation`: 46 passed.

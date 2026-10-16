@@ -1,9 +1,9 @@
 ---
 schema: evidence/v1
 task: T-20261016-1928-scenario-contract
-round: 1
+round: 2
 qa: pass
-range: 79e66a7..efe5533
+range: 79e66a7..9f274dd
 outputs_changed: unverified
 ---
 
@@ -38,3 +38,20 @@ None. The CLI run, the test counts and the boundary test all reproduced. The par
 
 ### What would catch this class automatically
 The four gaps above would be caught by one property test per date-bearing edit field (every date field lies in the window) and a uniqueness rule on scenario ids.
+
+## Round 2
+
+Range 79e66a7..9f274dd (new commit 9f274dd). The acceptance.md sha256 still matches. The QA worktree was moved to 9f274dd.
+
+### Fixes, checked with /tmp/qa_probe.py
+- Alert 1 fixed. `delay_arrival` 2030-01-01 now raises `CatalogError: S-A: edit delay_arrival arrival 2030-01-01 is outside the window` (catalog.py:75-76).
+- Alert 3 fixed. Malformed timeline.yaml now raises a `CatalogError` that names the path and says "malformed YAML" (catalog.py:39-42).
+- Alert 4 fixed. A duplicate id raises `CatalogError: duplicate scenario id S-A in <folder> and <folder>` (catalog.py:135-139).
+- Alert 2 is still open and deferred by dev (an expected verdict accepts any string). It stays an ALERT.
+- Side effect: two random-live entries that share an id are now rejected by the duplicate-id rule before the count rule. The set is still rejected, so this is not a regression.
+
+### Acceptance
+- Checks 1-4 still pass. `pytest backend/validation`: 46 passed (43 plus 3 new tests).
+- Check 5: one serial head full suite at 9f274dd gave 66 failed, 1466 passed, 16 skipped. The base is from round 1 (79e66a7: 66 failed, 1448 passed). `comm -23 head base` is empty. Log: `suite_qa_r2.log`.
+
+There are no new findings and no BLOCK. Verdict: **PASS**.
