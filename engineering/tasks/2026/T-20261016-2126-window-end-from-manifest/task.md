@@ -13,6 +13,10 @@ approvals:
     sha256: b79dc63f54c78cb3beee40105f5b7d6362eb134a173c520b6ad8249bbcc847ec
     by: owner
     at: 2026-10-16T21:30+05:30
+  - file: evidence.md
+    sha256: 15ff012ce98dae2452117e61cf5526d0572098e17a8cc01c3d4a566c8d5b3533
+    by: owner
+    at: 2026-10-16T21:40+05:30
 branch: eng/T-20261016-2126-window-end-from-manifest
 ---
 
