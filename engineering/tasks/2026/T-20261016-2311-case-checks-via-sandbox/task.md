@@ -2,8 +2,9 @@
 schema: task/v1
 id: T-20261016-2311-case-checks-via-sandbox
 title: "Stage checks on frozen cases read through DataAccess in a sandbox checkout; remove validation/cases/access.py path building"
-status: awaiting_owner
-waiting_on: "ship: owner approved the merge 2026-10-17"
+status: done
+closed: 2026-10-17
+merge_commit: 1665a1c
 claimed_by:
 lease_until: 2026-10-17T23:59+05:30
 friction: worktrees are sandbox-only since 35e1342, so the dev skill's 'compare against the live run' and the freezer both need a live-read path (added --live); the skill's suite baseline also needs a sandbox file in the base worktree.
