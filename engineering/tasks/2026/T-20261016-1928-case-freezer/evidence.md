@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-1928-case-freezer
-round: 2
-qa: fail
+round: 3
+qa: pass
 qa_by: qa@alto_hq/roles/engineering/qa
 commits: 79e66a7..65bc595
-acceptance_sha256: cacd9db1248f72af4cfde032f4e132e49977b56f228cead4a1ca6a283e88741d
+acceptance_sha256: 91b9f0009c780efcdaed2739091ee21f36acfaf55a145680a9071eea65fd90f4
 outputs_changed: unverified
 ---
 
@@ -61,3 +61,17 @@ Range 905ef7e..65bc595 (one commit). Cases are at alto_testcases 557b0b0. The ap
 
 ### Verdict
 FAIL on round 2, solely because acceptance 2 as written names `publish_date`. The code is otherwise clean. Status is `needs_owner`. The owner's decision: amend acceptance 2 to `filed_at` and re-approve it. A re-judgement then needs no dev work.
+
+## Round 3 (re-judgement against acceptance v2)
+
+Acceptance v2 (alto_hq 0ff6fcd) has sha256 91b9f000…90f4, which matches the approval in task.md. The code is unchanged (head 65bc595) and the cases are unchanged (alto_testcases 557b0b0). As the coordinator asked, checks 1, 3, 5 and 6 reuse round 2: all PASS. The script is `/tmp/qa_cf_scripts/r3.py`; its log is `r3.log`.
+
+2. **Window start (filed_at): PASS.** I recomputed min(2026-07-01, FY26 annual `filed_at`) from each case's own index:
+   - ARSSBL: start 2026-06-06, as expected, from `screener_arssbl_annual_report_financialyear2026frombse` (FY26).
+   - 511144: start 2026-07-01, as expected, from `screener_511144_annual_report_financialyear2026frombse` (FY26, filed_at 2026-08-27).
+
+   Both manifests name the document. The negative path held in round 2: no annual raised `NoAnnualPublishDate`, which keys on `filed_at`, and `--not-initiated` gave start 2026-07-01. The fixture tests for this pass (4 of 4 selected).
+4. **Read-only, scoped: PASS.** I touched the marker, then froze both companies to /tmp. The output matches 557b0b0 by sha256 (0 lines differ). Over every source file the store specs select (669 files, which back the manifest's store paths) and their 24 parent store directories, 0 files and 0 directories have an mtime newer than the marker. The round 2 audit-hook trace (0 writes outside `--out`) still applies. The tmp-fixture test `test_freeze_holds_every_store_and_leaves_source_untouched` passes.
+
+### Verdict
+**PASS.** Every v2 acceptance check has been run and has passed. There is no BLOCK; F1 and F2 were resolved in round 2. Status is set to awaiting_owner.
