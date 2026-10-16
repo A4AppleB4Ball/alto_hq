@@ -23,3 +23,11 @@ reported if it fails.
 
 **Checks:** 1 grep of the three files; 2 `pytest backend/executor/broker_factory/tests/test_no_direct_dhan_price_store.py`;
 3 `pytest backend/executor/broker_factory/tests/test_price_store_sites.py`; 4 full suite vs base, boundary test, entry-point imports.
+
+## Round continuation (amendments 2', 5, 6, 7)
+- Rebased onto local main 0d07e40 (`rebase --onto main 9801fba`).
+- 2': guard test gets an exact-file allowlist (7 named files).
+- 5: rebuild_price_refs raises `PaperPriceRefsUnavailable` before building any store when the user's broker is paper.
+- 6/7: `paths.DHAN_CACHE_DIR` / `DHAN_CACHE_DAILY_DIR` (same value as the old CACHE_ROOT; dhan_price_store imports it). New read-only `backend/price_feed/cached_daily_series.py` (clamps <= end, raises naming symbol+date when the cache lacks a regular trading day up to end, never writes, no client). New `broker_factory/daily_series.create_symbol_daily_series`: live -> DhanDailyStore (unchanged args), sandbox -> cached series. AsOfLedger._store uses it. `create_daily_price_store`: sandbox + non-paper user -> DailyPriceWindow over the shared cache.
+- Not money path beyond price reads; live arguments pinned by tests.
+- Checks: pytest on broker_factory/tests, lib/tests asof, price_feed/tests; suite base vs new.
