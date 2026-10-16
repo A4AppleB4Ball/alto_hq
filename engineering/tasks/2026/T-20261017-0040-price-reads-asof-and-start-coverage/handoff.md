@@ -1,8 +1,16 @@
-# Handoff
-Branch eng/T-20261017-0040-price-reads-asof-and-start-coverage, base 354cbda, commit b8d3840. Worktree: alto/.claude/worktrees/<task>.
-1. Non-trading end: tests test_saturday_end..., test_end_after_a_trading_day..., test_holiday_end... pass (price_feed/tests/test_daily_store_without_credentials.py). Uses backend.lib.market_calendar (regular_trading_days + nse_trading_holidays); backend/lib/prices does not exist and market_day.py is announcement-file based, so market_calendar was used.
-2. Start coverage: test_cache_starting_after_start_raises_naming_first_day; listing exemption via CompanyRegistry (backend/raw/utils/company_registry.py, NSE-only companies only; other symbols have no listing date recorded, so they raise).
-3. Existing tests unedited; test_cache_past_t_is_still_checked fails on base too.
-4. Pilot 20MICRONS (real cache read-only, cache ends Tue 2026-10-13): end 2026-10-17 (Sat) raises PriceCacheMissError "cache ends 2026-10-13", correct since Wed-Fri 14-16 are trading days. No Saturday after 10-13 can clamp until the cache is refreshed; clamp shown by tests only.
-5. Suite: 95 failed/8 errors both; comm -23 empty (/tmp lists). Boundary test 2 passed; entry points import.
-Notes: function-level imports of market_calendar in _read_cache_only to avoid cycle (backend.lib __init__ -> asof -> store). nse_trading_holidays is a network call to NSE and lists the current year only; reads whose end is beyond the cache by a year boundary raise ValueError. Called only when cache ends before end.
+# Handoff (round 2)
+Branch eng/T-20261017-0040-price-reads-asof-and-start-coverage, base a6d2315 (current local main), commits 25ae2de (clamp + start coverage), 38337b9 (stored holiday list), b008fde (price feed uses it). Worktree: alto/.claude/worktrees/T-20261017-0040-price-reads-asof-and-start-coverage (clean; only pre-existing untracked backend/data/dashboard).
+
+## QA findings
+1. BLOCK network call: fixed (b008fde, 38337b9). NSE_HOLIDAYS_FILE = ~/NSE_BSE_Data/nse_holidays.json in backend/config/paths.py; backend/lib/market_calendar/stored_holidays.py reads it (HolidayListMissingError if absent); write command `python -m backend.lib.market_calendar.write_holidays [--path F]` merges NSE's listing into the stored years (NSE lists the current year only, so run it each year). trading_days.HolidayYearMissingError (ValueError) names the missing year(s). dhan_daily_store._read_cache_only no longer touches the network; the list is only read when the cache does not already cover start..end.
+2. ALERT start on weekend/holiday: fixed; start raises only if a regular trading day lies in [start, first cached day).
+3. ALERT listing message: fixed; the error says no listing date is recorded for the symbol (only NSE-only companies have one).
+4. Tests: offline/year-boundary tests with a socket guard (Dec cache end -> Jan end works with a covering list; names missing year otherwise; missing file raises), weekend-start, start-before-missing-trading-day, write command tests (price_feed/tests/test_daily_store_without_credentials.py, lib/market_calendar/tests/test_stored_holidays.py).
+
+## Acceptance (acceptance.md sha c788...2814, unchanged)
+1,2,3,5: targeted run price_feed/tests + market_calendar + test_boundaries: 46 pass, 1 fail (test_cache_past_t_is_still_checked, fails on base too).
+4. Pilot 20MICRONS, real cache read-only, temp holiday list in /tmp (the real file is not written; it does not exist yet): end 2026-10-13 ok; 10-14 and Sat 10-17 raise PriceCacheMissError "cache ends 2026-10-13". Clamp on real data still not exercisable until the cache is refreshed.
+6. Full suite (sandbox roots) base a6d2315 103 fail/err, new 103; comm -23 empty. Boundary test passes. Entry points import (api.main etc. imported by suite).
+
+## Owner action
+Populate the real file: `python -m backend.lib.market_calendar.write_holidays` from a machine with network (writes ~/NSE_BSE_Data/nse_holidays.json), and add past years. Until then non-live reads that need the list raise HolidayListMissingError. Not done: no history of past-year holidays exists to backfill (NSE lists only the current year).
