@@ -2,12 +2,18 @@
 schema: task/v1
 id: T-20261016-2130-classification-ledger
 title: "Log every materiality classification, immaterial ones included, in the stance store"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T21:30+05:30
 created_by: owner
 kind: internal
 related: [E-20261016-1756-stance-inputs, E-20261015-1140-validation, T-20261016-1718-completeness-check]
-waiting_on: "Read and approve acceptance.md and the ledger location (sidecar in the stance store)"
+approvals:
+  - file: acceptance.md
+    sha256: 5e36723fc4d56bb48cb59842ee920577296cca97cb593309ef595d19d7370238
+    by: owner
+    at: 2026-10-16T23:00+05:30
+claimed_by: claude-main-20261016-1900
+lease_until: 2026-10-17T22:00+05:30
 branch: eng/T-20261016-2130-classification-ledger
 ---
 
@@ -18,6 +24,8 @@ When the stance worker's classifier rules an announcement or macro event immater
 ## Why
 
 Today an immaterial filing returns None from the checkpoint (`backend/stance/worker.py:365` and :288) and leaves nothing durable. A completeness check that asks whether every document was consumed would flag every immaterial document as missing. The invariant is: each document is CONSUMED or CLASSIFIED (`backend/docs/25_future_ideas.md`).
+
+The ledger is also the classifier's cache: a stored verdict for the same item, as_of, classifier config and input fingerprint is reused and the LLM call is skipped.
 
 ## Out of scope
 
