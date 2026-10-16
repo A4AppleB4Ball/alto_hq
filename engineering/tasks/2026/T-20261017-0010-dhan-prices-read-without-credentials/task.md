@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261017-0010-dhan-prices-read-without-credentials
 title: "Stance price reads use the cached daily prices with no Dhan credentials, and raise a named error on a miss"
-status: ready
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 created: 2026-10-17T00:10+05:30
 created_by: claude-main
 kind: internal
