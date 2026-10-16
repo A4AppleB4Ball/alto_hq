@@ -16,6 +16,10 @@ approvals:
     sha256: 002c1a097865fc39ffffea8b0526084094ee6953d26919b0040bc55a29ac46d7
     by: owner
     at: 2026-10-16T21:10+05:30
+  - file: evidence.md
+    sha256: beed0dc25394dc6ad29a31bff253cb39e8955bce3453c27ac159fff6c611f8d2
+    by: owner
+    at: 2026-10-16T22:30+05:30
 branch: eng/T-20261016-1718-proposal-gate
 friction: acceptance 2 assumes only ARSSBL and CHANDAN differ; cash-limited buys and held incomplete names also move
 ---
