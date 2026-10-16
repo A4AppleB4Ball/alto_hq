@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-2147-checks-index-quarterly
 title: "Stage checks: index entries carry their dates and period; quarterly versions are valid; intake failures are reported"
-status: ready
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
+lease_until: 2026-10-17T22:00+05:30
 created: 2026-10-16T21:47+05:30
 created_by: owner
 kind: internal
@@ -13,6 +15,7 @@ approvals:
     by: owner
     at: 2026-10-16T21:51+05:30
 branch: eng/T-20261016-2147-checks-index-quarterly
+friction: "frozen cases copy files not folders, so an empty failed/ is absent in a case; handled in validation/cases/access.py via the manifest store status"
 ---
 
 ## Goal
