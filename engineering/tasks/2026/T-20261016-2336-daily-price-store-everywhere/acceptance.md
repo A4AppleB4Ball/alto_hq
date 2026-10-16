@@ -9,3 +9,9 @@
 
 2'. Replaces 2. The test allows, by exact file name only, the research and cache scripts `backend/backtest/sweep.py`, `backend/backtest/scripts/{ab_discount_sign,compare_macro_ablation,compare_macro_signal_backtest,compare_tiebreak_modes,compare_trade_book}.py` and `backend/scripts/refresh_price_cache.py`; any other direct `DhanPriceStore(` outside `broker_factory`/`price_feed` fails.
 5. `rebuild_price_refs` for a paper user raises a clear error that 15-minute price refs are not available for paper (no AttributeError, no rebuild from daily bars).
+
+## Amendment 2 (owner 2026-10-17)
+
+6. **Sandbox price reads.** In a sandbox checkout, every daily price read used by the stance run (the AsOfLedger price path, `backend/lib/asof.py`) and by `create_daily_price_store` for non-paper users reads the shared Dhan price cache (`~/NSE_BSE_Data/dhan_cache`, resolved through `backend.config.paths`) read-only: no Dhan client is built, no credentials are read, nothing is written to the cache. A missing price raises naming the symbol and date (no fetch). Live checkouts are unchanged (pinned by test).
+7. **No look-ahead.** A sandbox price read for an as-of date never returns a price after that date (test).
+8. **No Kimi:** any LLM run uses DeepSeek on Foundry or the local model.

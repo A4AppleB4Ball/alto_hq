@@ -2,10 +2,10 @@
 schema: task/v1
 id: T-20261016-2252-stance-cold-start-window
 title: "Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01"
-status: in_progress
+status: ready
 claimed_by:
 lease_until: 2026-10-17T23:59+05:30
-waiting_on: owner - Bedrock token for the local proxy is expired (ExpiredTokenException); refresh it so the SHILPAMED sandbox pilot (check 10) can run
+waiting_on: owner - the SHILPAMED sandbox pilot needs prices; AsOfLedger always builds a live Dhan client from scienceamit1's credentials (backend/lib/asof.py:61). Decide how a sandbox gets prices. Also confirm check 11's walk-start change (cold walk begins before the first quarter version)
 friction: main's .alto_checkout.yaml landed mid-task, so an existing worktree needed a hand-written sandbox declaration and a hand-copied input set (no seed command beyond the index)
 created: 2026-10-16T22:52+05:30
 created_by: owner
@@ -14,9 +14,9 @@ related: [E-20261015-1140-validation, T-20261016-2147-checks-stance-chain]
 evidence_route: "owner 2026-10-16: shadow is parked; this fix restores the owner's stated chain-start rule, so a before/after sandbox comparison (ARSSBL, one legacy, one 2026-07-01 company) replaces research+shadow"
 approvals:
   - file: acceptance.md
-    sha256: a8d0bf6cc096578f6c6a16acdf2f9044a3166c285675ea956f16bab3d9f34367
+    sha256: c426d632267169f8af51e08c48b6289f93bed8694328742cabe72b1fe1ce0faf
     by: owner
-    at: 2026-10-16T23:50+05:30
+    at: 2026-10-17T01:43+05:30
 ---
 
 ## Goal
