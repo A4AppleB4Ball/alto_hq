@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-2130-classification-ledger
 title: "Log every materiality classification, immaterial ones included, in the stance store"
-status: awaiting_owner
+status: done
+closed: 2026-10-17
+merge_commit: eb1eee96a89c430938e0d4452c059c287ff976d4
 created: 2026-10-16T21:30+05:30
 created_by: owner
 kind: internal
