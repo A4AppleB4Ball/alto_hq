@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2235-checks-stance-inputs-asof
-round: 1
-qa: fail
+round: 2
+qa: pass
 qa_by: qa@v1
-commits: 9013baa..f653467
-acceptance_sha256: ed0e83361368a9ca7287e9fbdd46e147c218f486bd152324f0deac794dc600f9
+commits: 1665a1c..25a9b8d
+acceptance_sha256: 7f537bc157acc293cfe5937fc7006fc5085e82b2f7302cf9f9d3961c42ba7e73
 outputs_changed: unverified
 ---
 
@@ -35,3 +35,28 @@ Setup: sandbox checkout `python -m backend.config.new_sandbox_worktree t2235-qa 
 
 ### Check that would catch this class
 A sandbox-readiness preflight: the acceptance runner lists the production-only state files the suite needs, and a case freezes them.
+
+
+## Round 2
+
+The approval sha256 7f537bc1... matches acceptance.md as it is now. Range 1665a1c..25a9b8d.
+
+Setup: fresh sandboxes `python -m backend.config.new_sandbox_worktree t2235-qa2 --base 25a9b8d` and `t2235-qa2-base --base 1665a1c`. Into each I ran `python -m backend.validation.cases.install ../alto_testcases/cases/<c>@2026-10-15 --store <s>` for c in 511144, ARSSBL, CHANDAN and s in index, workflow_cache, quarter_versions, stances, bse_day_files, nse_day_files, exchange_attachment_hashes, legacy_chain_starts. Nothing was copied from live. Logs: news_server/verify_data/reports/T-20261016-2235-checks-stance-inputs-asof/r2_*.log.
+
+1. Frozen cases: PASS. `python -m backend.validation.stance_inputs_asof.cli 511144 ARSSBL CHANDAN --through 2026-10-15` gives 511144 as_of_clean (35 inputs over 14 links), ARSSBL as_of_clean (13 over 12) and CHANDAN as_of_clean (11 over 6), exit 0. By-hand check of 511144 link 2026-10-06: its trigger bse_511144_b2357e73... is in BSE day file announcements_2026-10-06.json, and its quarterly Q1_FY27/2026-08-05 has version_date 2026-08-05 (workflow_outputs/cache/quarterly_update/511144/Q1_FY27/2026-08-05.json). Both dates are on or before 2026-10-06.
+2. Planted defect: PASS. I edited the sandbox log only (backed up first; after restore, cmp identical). Adding trigger 4ed443ba... (filed 2026-10-07) to link 2026-10-06 gives `leaked (link 2026-10-06: trigger_docids bse_511144_4ed443ba-... input_after_as_of (input dated 2026-10-07, link as_of 2026-10-06); ...)` with exit 1.
+3. One resolution path, both exchanges: PASS. test_package_reads_no_file_itself passes. All three cases, including ARSSBL on NSE, return verdicts without raising. filings_between is a superset view on the same scan_announcements reader.
+4. Unresolvable input: PASS. In the same plant, `bse_511144_doesnotexist` gives `input_not_in_index`, exit 1. test_unresolvable_input_fails_as_not_in_index also passes.
+5. Verdict contract: PASS. Verdict(CHECK_ID, CHECK_VERSION, state, reason, fingerprint) is unchanged from round 1. test_verdict_carries_id_version_and_fingerprint passes.
+6. Suite: PASS. `pytest -q backend/validation backend/stance` in the fresh head sandbox gives 322 passed, 0 failed. Full suite with `pytest -q backend --continue-on-collection-errors`: head has 61 failed, 1705 passed and 3 errors; base (cases installed the same way) has 61 failed, 1688 passed and 3 errors. `comm -23 head base` is empty, so there is no new failure. test_boundaries gives 2 passed. Entry imports (validation cli, lib.asof) work. `backend.api.main_cockpit` needs SESSION_SECRET in the environment; that is environment setup, not this change.
+7. Fingerprint independent of --through: PASS. test_fingerprint_independent_of_through passes. Live check: 511144 at --through 2026-10-15 and at 2026-10-14 both give fp d781266f...
+8. PASS. T-2311 has landed (1665a1c is in base), and check 6 above ran in a fresh sandbox holding only what cases.install placed.
+
+### Findings
+None at BLOCK or ALERT. Note: a trigger filed after `--through` resolves to None and is reported as input_not_in_index rather than input_after_as_of. It still fails, never passes. Because there were no findings, I did not run a verifier.
+
+### Dev claims not confirmed
+None. Dev's 61-failed-both-sides claim matches my run. The round 1 handoff mentions copying the live legacy_chain_starts.json; round 2 needs no copy, because the case installs it.
+
+### Check that would catch this class
+A sandbox-readiness preflight in the acceptance runner. It now exists in effect: cases.install --store legacy_chain_starts.
