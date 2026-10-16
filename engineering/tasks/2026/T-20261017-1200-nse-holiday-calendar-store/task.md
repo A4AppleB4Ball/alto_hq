@@ -2,14 +2,17 @@
 schema: task/v1
 id: T-20261017-1200-nse-holiday-calendar-store
 title: "Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list"
-status: awaiting_owner
-waiting_on: "owner: approve revised acceptance.md"
+status: ready
 created: 2026-10-17T12:00+05:30
 created_by: claude-main
 kind: internal
 spawned_from: T-20261016-2336-daily-price-store-everywhere
 related: [T-20261016-2336-daily-price-store-everywhere, T-20261017-0040-price-reads-asof-and-start-coverage]
-approvals: []
+approvals:
+  - file: acceptance.md
+    sha256: dc1036de7905826fd82b6c4bb392d8a811864e00230d5d9c7f1d2c9d1a51f451
+    by: owner
+    at: 2026-10-17T15:30+05:30
 ---
 
 ## Goal

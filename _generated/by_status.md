@@ -16,12 +16,11 @@ when this view and an item disagree, the item wins.
 | [P-20261015-1140-epic-type](../org/changes/2026/P-20261015-1140-epic-type.md) | change/v1 | Add the epic item type (E) for high-level plans |
 | [P-20261016-2252-version-item-epic-sidecars](../org/changes/2026/P-20261016-2252-version-item-epic-sidecars.md) | change/v1 | version/v1 extends item/v1; epic/v1 declares its sidecar files |
 
-## awaiting_owner (2)
+## awaiting_owner (1)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261016-2336-daily-price-store-everywhere](../engineering/tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | task/v1 | Every daily price read goes through the checkout-gated price store |
-| [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list |
 
 ## done (21)
 
@@ -109,9 +108,10 @@ when this view and an item disagree, the item wins.
 | [E-20261016-2147-shadow-lane](../org/epics/2026/E-20261016-2147-shadow-lane.md) | epic/v1 | Many shadow lanes run beside live, each a full product definition, compared over time on one dashboard |
 | [I-20261015-1058-stances-without-quarterly-analysis](../operations/incidents/2026/I-20261015-1058-stances-without-quarterly-analysis/incident.md) | incident/v1 | Ten companies hold stances with no quarterly analysis; the proposal buys one of them |
 
-## ready (2)
+## ready (3)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261017-0130-cockpit-dagster-link](../engineering/tasks/2026/T-20261017-0130-cockpit-dagster-link/task.md) | task/v1 | Cockpit: a button to Dagster's UI on the Queue and Pipeline pages, and a Pipeline card with the last chain run's per-company state |
+| [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list |
 | [T-20261017-1300-sandbox-dhan-instrument-master](../engineering/tasks/2026/T-20261017-1300-sandbox-dhan-instrument-master/task.md) | task/v1 | A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date |
