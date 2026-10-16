@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261015-0321-checkout-data-root
 title: Every checkout names its own data root; a sandbox can never resolve to production
-status: in_progress
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 created: 2026-10-15T03:21+05:30
 created_by: owner
 kind: internal

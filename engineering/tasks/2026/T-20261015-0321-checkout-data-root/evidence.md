@@ -1,12 +1,12 @@
 ---
 schema: evidence/v1
 task: T-20261015-0321-checkout-data-root
-round: 1
-qa: fail
+round: 2
+qa: pass
 qa_by: qa@claude
-commits: 9950df7..20e6afe
-acceptance_sha256: 0d5e9c9923dfbb324bdcd5428c1b9b9724493636b1386191fea565feecaa6a95
-outputs_changed: unverified
+commits: 9950df7..dce991f
+acceptance_sha256: a8ad8dd82d7f8e48ee50bb48f9faa45fde490e35d9b00193a179abf4264dff9a
+outputs_changed: no
 ---
 
 ## Round 1
@@ -39,3 +39,29 @@ Verifier step: findings 1-3 were reproduced by me directly (commands above) rath
 
 ### Check that would catch this class
 An invariant test that scans backend/ and scripts/ for `Path.home()`, `/Users/`, `"../` and cwd-relative `data/` outside backend/config/paths.py, plus making the NSE_BSE_Data and dhan_cache roots a declared field (or derived from data_root) in `.alto_checkout.yaml`.
+
+
+## Round 2
+
+Method: throwaway clones in /tmp/qa2 (head at /tmp/qa2/head, live file naming /Users/kmrh581/personal/projects/workspace/news_server; base 9950df7 at /tmp/qa2b/base). acceptance.md sha256 a8ad8dd8... matches the third approval. Production only read.
+
+1. PASS. 69-line dumps. Base clone with a news_server symlink, normalising only the clone prefix and that symlink (ALTO_ROOT and ALTO_WORKSPACE_REPO_ROOT derive from checkout location): identical. Stronger: the unmodified main checkout (HEAD 9950df7, no normalisation, no symlink) vs head: the only differing line is ALTO_WORKSPACE_REPO_ROOT, which is the checkout prefix. The normalisation is a legitimate equivalence.
+2. PASS. No file, missing field, unknown field, unknown mode, sandbox == live, sandbox inside live, live in worktree: each raises CheckoutDeclarationError naming the file. backend/config/tests: 40 passed.
+3. PASS. Worktree via new_sandbox_worktree w1 --seed-index 544332: 56 of 69 lines under the sandbox root; the 13 others are ALTO_ROOT-derived (10) and nse_data_root/nse_eq_dir/nse_index_dir (3); known_user_ids() is []. `python -m backend.e2e.run --symbols 544332 --steps documents --end 2026-10-16` passed; an open() audit hook inside child processes saw one open under any news_server/NSE/sandbox path: the sandbox screener_announcements index. CompanyStore().append_stance landed under the sandbox stances/544332. Full live mtime walk before/after (456665 entries): zero modified or new under any path, only the news_server/.git directory entry (not data, not 544332); nothing removed.
+4. PASS. Live: --llm-config benchmark raises NonProductionLLMConfigOnLiveError for e2e.run and stance.runner; LLM_CONFIG_PATH=benchmark raises for e2e.run, workflow.cli, stance.runner. Sandbox: same flag on e2e.run completes; env var builds LLMSettings.
+5. PASS. Sequential full suite (dev-skill command, committed trees, empty data roots to avoid production writes): base 83 failed/1519 passed/8 errors; head 83 failed/1532 passed/8 errors; comm -23 head base empty (91 entries each), so no failure needed rerunning. Entry-point imports (every non-test __main__ module under backend/): 3 failures at both base and head, none new.
+Ruling items: PASS. Symlink directly into live, nested, a chain, a link to the live root, and a ../ link are refused. grep for rename_gujgasltd over the head tree (all file types, .sh and docs included): no references; only alto_hq task docs name it.
+
+### Mishap check
+A find over the live root for files newer than 21:25 today: nothing under any 544332 path. Changed files are other writers: data/screener_data/raw_reports/stocks (scraper, 29), data/alto_data/scheduler/logs, workspace/scienceamit1 (API), data/dashboard/chat/partition_index.duckdb, stances/ACME/decisions.jsonl (22:17, not golden), verify_data reports of other tasks. Side effect in the diff: commit 8152dde carries a progress.jsonl line from the mishap run (logs/e2e/progress.jsonl, run 20261016_213331, symbol 544332): production log noise, not data.
+
+### Findings (reproduced by me; no separate verifier sub-agent)
+1. ALERT: symlink guard gaps, backend/config/checkout.py:_refuse_symlinks_into (about lines 83-92). It resolves only each link's own target and does not descend links. (a) sandbox/data -> /tmp/el2, and /tmp/el2/alto_data -> live alto_data: accepted, and paths.DATA_ROOT realpath is the live alto_data. (b) a link to a parent of the live root (sandbox/data -> .../workspace) is accepted (the target is not inside live), and SHARED_DATA_ROOT then resolves into workspace/, so DATA_ROOT becomes workspace/alto_data. Direct, nested and chain cases are refused. The guard also runs only at import, and walks the whole sandbox root on every import (a seeded full root of about 450k files took about 30 s to walk).
+2. ALERT: mode live is accepted in any clone with a .git directory, not only the main checkout on this machine (checkout.py is_main_checkout). My /tmp/qa2/head clone with a live file pointing at production was accepted. Needs a human-written file, so low likelihood.
+3. ALERT: commit 8152dde includes an unrelated logs/e2e/progress.jsonl line from the mishap; drop it before merge.
+
+### Dev claims not confirmed
+- Dev's suite run on the live root (66 failures): not reproduced; mine used empty roots (83 identical on both sides). Dev's find-based no-change claim is confirmed independently.
+
+### Check that would catch this class
+A test that builds a two-hop link and a link to a parent of the live root in a temp dir; make the guard compare realpath of each data_root child, or check realpath(path under data_root) for every PATH constant in paths.py against the live root.
