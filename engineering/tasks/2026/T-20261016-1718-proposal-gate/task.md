@@ -16,6 +16,7 @@ approvals:
 claimed_by: claude-main-20261016-1900
 lease_until: 2026-10-17T19:00+05:30
 branch: eng/T-20261016-1718-proposal-gate
+friction: acceptance 2 assumes only ARSSBL and CHANDAN differ; cash-limited buys and held incomplete names also move
 ---
 
 ## Goal
