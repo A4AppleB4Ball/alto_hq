@@ -3,7 +3,6 @@ schema: task/v1
 id: T-20261016-2146-paper-broker
 title: "PaperBroker: a local broker for sandboxes, refused in the live checkout"
 status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
 claimed_by:
 lease_until: 2026-10-17T23:59+05:30
 created: 2026-10-16T21:46+05:30
@@ -15,6 +14,10 @@ approvals:
     sha256: f9882844a8ee21b95588a0e3ff035e36c9744d8fd3c1b80d43f23e1ae73d0138
     by: owner
     at: 2026-10-16T23:11+05:30
+  - file: evidence.md
+    sha256: 4dbb8caacbbdd0d0a4146b9faa2d473a9392512d61ebca85676e75758dc3c0c6
+    by: owner
+    at: 2026-10-16T23:36+05:30
 branch: eng/T-20261016-2146-paper-broker
 friction: acceptance 4 depends on an unmerged branch; its gate test cannot import on main, so the suite needed --continue-on-collection-errors and a second, merged-tree comparison
 ---
