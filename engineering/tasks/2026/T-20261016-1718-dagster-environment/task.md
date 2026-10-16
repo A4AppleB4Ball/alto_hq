@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261016-1718-dagster-environment
 title: "Dagster in its own environment with launchd daemon and webserver"
-status: needs_owner
+status: ready
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
@@ -10,12 +10,11 @@ spawned_from: T-20261015-1058-dagster-spike
 related: [T-20261015-1058-dagster-spike, E-20261015-1140-orchestration-and-ops]
 approvals:
   - file: acceptance.md
-    sha256: 3936b74360cb01eb8387c220641d972b84f014199d5c5a0e5b2284a74bd5bac9
+    sha256: e8af784eca56852c6210d297c8341f07cac3c7c646c2269be1d8479e3a96adc6
     by: owner
-    at: 2026-10-16T18:55+05:30
+    at: 2026-10-16T20:00+05:30
 claimed_by: claude-main-20261016-1900
 lease_until: 2026-10-17T19:00+05:30
-waiting_on: "owner steps in handoff.md: install.sh, kill -9 check, sleep check, reboot check, live data-mtime check"
 branch: eng/T-20261016-1718-dagster-environment
 ---
 
