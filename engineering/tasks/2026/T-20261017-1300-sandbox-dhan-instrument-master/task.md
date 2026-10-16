@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261017-1300-sandbox-dhan-instrument-master
 title: "A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date"
-status: in_progress
+status: needs_owner
+waiting_on: "check 7 cannot run as written before merge; amend it or accept QA create() run plus a post-merge CLI run (see evidence.md)"
 claimed_by:
 lease_until:
 friction: check 7's CLI form cannot run before merge (the CLI requires the live main checkout, which has the old code); ran create() from the branch against main instead.
