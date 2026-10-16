@@ -5,7 +5,7 @@ title: "Stance cold-start window starts at the company's chain start (lib/chain_
 status: in_progress
 claimed_by:
 lease_until: 2026-10-18T23:59+05:30
-waiting_on: T-20261016-2336 (sandbox prices) for check 10 pilot; QA on v4 range 0d07e40..103170e
+waiting_on: "T-20261016-2336 for checks 5 and 10; QA round 1 PASS on all other checks (evidence.md)"
 friction: main's .alto_checkout.yaml landed mid-task, so an existing worktree needed a hand-written sandbox declaration and a hand-copied input set (no seed command beyond the index)
 created: 2026-10-16T22:52+05:30
 created_by: owner
