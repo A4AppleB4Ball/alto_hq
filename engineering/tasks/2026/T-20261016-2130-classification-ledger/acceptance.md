@@ -30,5 +30,5 @@ checks (a stub classifier returns fixed signals).
    miss.
 6. **Readable.** A reader method in the store returns the entries of a symbol;
    a corrupt line raises, never skipped.
-7. **Nothing else changed.** The existing stance tests pass unchanged; suite
+7. **Nothing else changed.** The existing stance tests pass, with at most the `company_store` mock argument changed (owner ruling 2026-10-16: no assertion edited); suite
    vs base shows no new failure; entry points import.
