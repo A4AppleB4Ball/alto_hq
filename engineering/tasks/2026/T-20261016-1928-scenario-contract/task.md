@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261016-1928-scenario-contract
 title: "Scenario contract (scenario/v1, edits, timeline, expected verdicts) and catalog validator"
-status: ready
+status: in_progress
 created: 2026-10-16T19:28+05:30
 created_by: owner
 kind: internal

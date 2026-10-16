@@ -58,8 +58,8 @@ verified a7fec9d0…eb6a8.
   link saw post-split levels: a price-level leak, not news (public 2026-07-13).
   What a live 2026-09-14 run saw is not checkable from stored state.
 - Positions did not cross the date: first fill BUY 375 @ 297.4 on 2026-10-08
-  (`book/default/fills.jsonl`); `snapshots.jsonl` starts 2026-09-24 empty;
-  `rebalance/current.json` 375 @ 297.4, price 268.05.
+  (`alto_data/workspace/scienceamit1/book/default/fills.jsonl`); `workspace/scienceamit1/…/snapshots.jsonl` starts 2026-09-24 empty;
+  `workspace/scienceamit1/…/rebalance/current.json` 375 @ 297.4, price 268.05.
 
 ## 4. Positions and target quantities across a split
 
@@ -68,7 +68,7 @@ verified a7fec9d0…eb6a8.
   deliberately absent"); `position_views.py:84-90` raises with no lot. Trading
   stops loudly rather than mis-sizing.
 - Targets: notional / live raw price, rounded to lot (`backend/trading/planner.py:266`, `:353`): new basis automatically.
-- Price refs: `price_refs.py:101-127` updates peak/trough from raw ticks. For
+- Price refs: `backend/stores/book/price_refs.py:101-127` (`observe`) updates peak/trough from raw ticks. For
   an ACCUMULATE holding a pre-split `peak_since_last_buy` reads ≈−80%
   drawdown (`backend/trading/core.py:326-334`) → maximum dip-buy weight, if
   the reconcile did not raise first. Jump-trim vs trough (`:337-339`) is not

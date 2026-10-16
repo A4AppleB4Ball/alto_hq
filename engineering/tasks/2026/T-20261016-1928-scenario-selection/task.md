@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-1928-scenario-selection
 title: "Per-class stored-state queries that propose the release-set companies, recorded as a cohort"
-status: ready
+status: in_progress
+claimed_by: dev-scenario-selection-1
+lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30
 created_by: owner
 kind: internal

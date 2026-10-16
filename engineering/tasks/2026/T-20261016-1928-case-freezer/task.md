@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-1928-case-freezer
 title: "Freeze one company's sources and stores into alto_testcases as a hash-verified case"
-status: ready
+status: in_progress
+claimed_by: dev-case-freezer-20261016
+lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30
 created_by: owner
 kind: internal
