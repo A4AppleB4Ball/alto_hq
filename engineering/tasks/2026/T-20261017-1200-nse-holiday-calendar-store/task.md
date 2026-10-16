@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261017-1200-nse-holiday-calendar-store
 title: "Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list"
-status: ready
+status: awaiting_owner
+waiting_on: "owner approval of revised acceptance.md (checks 11-13, check 4 rename, rebase onto 4fefe71)"
 claimed_by:
 lease_until:
 friction: "check 4 greps a private name (_read_cache_only) for the merged reader; naming a public function to match would be odd"
