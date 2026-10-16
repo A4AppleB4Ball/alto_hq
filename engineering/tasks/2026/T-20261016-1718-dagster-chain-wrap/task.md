@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-1718-dagster-chain-wrap
 title: "Producers, intake, quarterly and stance as company-partitioned Dagster assets"
-status: ready
+status: in_progress
+claimed_by: claude-main-20261016-1900
+lease_until: 2026-10-17T19:00+05:30
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal

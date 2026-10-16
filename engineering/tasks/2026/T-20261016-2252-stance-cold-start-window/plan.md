@@ -1,0 +1,9 @@
+# Plan: T-20261016-2252-stance-cold-start-window
+
+**Touches.** `backend/lib/chain_start/policy.py` (new `stance_scan_start`), `backend/lib/asof.py` (`AsOfLedger.chain_start`; `announcements_between` stops clamping to FEED_START_DATE), `backend/stance/worker.py` (cold-start `since_date`), `backend/stance/chain/continuity.py` (`inverted_window`), `backend/stance/reconcile.py` (state `inverted_window`), `backend/stance/ready.py` (a rewind state), `backend/validation/stance_chain/{check,policy,cli}.py` (rule, v2, `--fleet`). Callers of `announcements_between`: worker.py:341/447 and `AsOfLedger.view` (no production caller). Entry points: stance.runner, stance.reconcile, stance.ready, e2e (through ready/reconcile).
+
+**Money path?** Indirect only (stance inputs). No weights/orders code touched.
+
+**Change.** Cold-start covers_from = `stance_scan_start(chain_start)` = min(chain start, FEED_START_DATE), the owner rule "min(2026-07-01, FY26 annual publish date)", with legacy companies keeping their recorded 2026-01-01. Pre-feed windows are read from day files; a missing day file or body raises naming it. An inverted window raises in the ledger and fails stance_chain and the reconciler. Stays the same: windows of companies whose chain starts on/after 2026-07-01 (they still open at 2026-07-01), non-cold windows, the chain-start rule itself.
+
+**Checks.** 1: AST test `stance/tests/test_cold_start_window_rule.py`. 2/3/6: sandbox runner (`--output-dir <tmp>`, LLM `_send` patched to raise, ledger windows logged) on base and branch for ARSSBL, RAJRATAN (legacy), DBOL (chain start 2026-07-01), 3BBLACKBIO (start after feed). 4: `stance_chain.cli --fleet` and `stance.reconcile --companies` on the live store (read-only). 5: needs an LLM rebuild: ask first. 7: pytest stance/validation/lib, full suite vs base 4c44dbf, boundary test.

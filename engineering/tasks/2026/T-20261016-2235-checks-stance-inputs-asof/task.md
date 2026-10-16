@@ -2,12 +2,16 @@
 schema: task/v1
 id: T-20261016-2235-checks-stance-inputs-asof
 title: "Stage check: no stance link used an input dated after its as-of"
-status: draft
-waiting_on: "T-20261015-0321-checkout-data-root merged (DataAccess has no case root until then)"
+status: ready
 created: 2026-10-16T22:35+05:30
 created_by: owner
 kind: internal
 related: [E-20261015-1140-validation, T-20261016-2147-checks-stance-chain, T-20261015-0321-checkout-data-root]
+approvals:
+  - file: acceptance.md
+    sha256: ed0e83361368a9ca7287e9fbdd46e147c218f486bd152324f0deac794dc600f9
+    by: owner
+    at: 2026-10-16T23:11+05:30
 ---
 
 ## Goal
