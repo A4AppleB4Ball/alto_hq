@@ -2,8 +2,7 @@
 schema: task/v1
 id: T-20261016-1718-completeness-check
 title: "Completeness check: backend/validation/verdicts and completeness, from the approved definition"
-status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+status: done
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
@@ -18,8 +17,7 @@ approvals:
     sha256: 36435bbd3108801abf480873b9c0351405f72a6edf4542bd0ab9ce177d601e3a
     by: owner
     at: 2026-10-16T18:40+05:30
-claimed_by: claude-main-20261016-1900
-lease_until: 2026-10-17T19:00+05:30
+closed: 2026-10-16T19:20+05:30
 branch: eng/T-20261016-1718-completeness-check
 friction: acceptance 7 as written (`python -I -c "import backend..."`) cannot run in any environment: -I drops cwd and PYTHONPATH and backend is not installed; ran with sys.path.insert under -I instead.
 ---

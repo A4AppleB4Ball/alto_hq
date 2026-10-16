@@ -4,6 +4,7 @@ task: T-20261016-1718-completeness-check
 round: 1
 qa: pass
 outputs_changed: unverified
+merge_commit: a5b5606
 ---
 
 # QA evidence, round 1 (ab8a959..3ad6d1c)
