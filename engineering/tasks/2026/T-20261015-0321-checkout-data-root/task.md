@@ -2,8 +2,7 @@
 schema: task/v1
 id: T-20261015-0321-checkout-data-root
 title: Every checkout names its own data root; a sandbox can never resolve to production
-status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+status: done
 created: 2026-10-15T03:21+05:30
 created_by: owner
 kind: internal
@@ -20,6 +19,12 @@ approvals:
     sha256: a8ad8dd82d7f8e48ee50bb48f9faa45fde490e35d9b00193a179abf4264dff9a
     by: owner
     at: 2026-10-17T02:10+05:30
+  - file: evidence.md
+    sha256: 8c8110b3ac16f2cd875f776dd83305ea3bc22129668d4e72c3120d50aa26a408
+    by: owner
+    at: 2026-10-17T02:30+05:30
+merge_commit: 9013baa
+closed: 2026-10-17
 claimed_by: claude-main-20261016-1900
 lease_until: 2026-10-17T23:00+05:30
 branch: eng/T-20261015-0321-checkout-data-root
