@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-2252-hq-generated-views
 title: "alto_hq generated views: tasks by status and the owner's approval queue"
-status: in_progress
+status: needs_owner
+waiting_on: "QA round 2 FAIL on check 6 (non-.md files and non-id names in item folders are skipped silently; version folders have no id check). Decide: tighten the code, or amend check 6 to allow them; and file or waive a P- item for the schema changes"
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: internal
