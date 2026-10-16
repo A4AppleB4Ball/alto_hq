@@ -26,3 +26,7 @@ Curated: keep what keeps finding bugs, drop what never does.
 - Bug class: a commit's own new test only checks mock.call_args (the last call) and fails.
 - Scenario that paid off: fake-broker TWAP with slices in placed/partial/filled/pending, then cancel, retry exhaustion, expiry, cutoff.
 - Verifier tip: brief verifiers to avoid the FAILED alert path (alerts.py urlopen); one verifier hung.
+
+## Added 2026-10-16 (T-20261016-2146 paper broker)
+- Bug class: an e2e test patches the real helpers a new broker hits (adv.previous_close builds DhanPriceStore, which raises for non-dhan; execution/market_analysis/adv.py:48). Run the real helper once for the new broker type.
+- Bug class: a JSON store that saves on read paths, with no lock (executor/paper/broker.py _settled), loses updates across two processes.
