@@ -2,8 +2,7 @@
 schema: task/v1
 id: T-20261016-1928-case-freezer
 title: "Freeze one company's sources and stores into alto_testcases as a hash-verified case"
-status: needs_owner
-waiting_on: "amend acceptance 2 to filed_at (index annuals carry no publish_date) and re-approve; then QA re-judges with no code change"
+status: ready
 claimed_by:
 lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30
@@ -12,9 +11,9 @@ kind: internal
 related: [E-20261015-1140-validation, T-20261016-1718-completeness-check]
 approvals:
   - file: acceptance.md
-    sha256: cacd9db1248f72af4cfde032f4e132e49977b56f228cead4a1ca6a283e88741d
+    sha256: 91b9f0009c780efcdaed2739091ee21f36acfaf55a145680a9071eea65fd90f4
     by: owner
-    at: 2026-10-16T19:40+05:30
+    at: 2026-10-16T23:40+05:30
 branch: eng/T-20261016-1928-case-freezer
 friction: acceptance 4's literal `find -newer` cannot be empty on a live data root (the API process writes book snapshots and dashboard chat continuously); a check scoped to the freeze's read set, or a quiet window, is needed.
 ---
