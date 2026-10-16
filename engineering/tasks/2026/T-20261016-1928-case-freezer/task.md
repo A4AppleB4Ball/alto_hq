@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-1928-case-freezer
 title: "Freeze one company's sources and stores into alto_testcases as a hash-verified case"
-status: ready
+status: needs_owner
+waiting_on: "amend acceptance 2 to filed_at (index annuals carry no publish_date) and re-approve; then QA re-judges with no code change"
 claimed_by:
 lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30

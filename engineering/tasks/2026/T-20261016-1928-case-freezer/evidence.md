@@ -1,10 +1,10 @@
 ---
 schema: evidence/v1
 task: T-20261016-1928-case-freezer
-round: 1
+round: 2
 qa: fail
 qa_by: qa@alto_hq/roles/engineering/qa
-commits: 79e66a7..905ef7e
+commits: 79e66a7..65bc595
 acceptance_sha256: cacd9db1248f72af4cfde032f4e132e49977b56f228cead4a1ca6a283e88741d
 outputs_changed: unverified
 ---
@@ -41,3 +41,23 @@ Base 79e66a7: 67 failed. Head solo: 67 failed, same set (`comm -23` empty).
 
 ### Verdict
 FAIL, on acceptance 2 as written only. Recommended: the owner amends acceptance 2 to `filed_at`; then the round-2 rerun is a re-judgement, with no code change needed. F1 and F2 are ALERTs.
+
+## Round 2
+
+Range 905ef7e..65bc595 (one commit). Cases are at alto_testcases 557b0b0. The approval hash still matches, and `acceptance.md` is **unamended**: it still says `publish_date`. QA worktree is `.claude/worktrees/case-freezer-qa2`. Logs are under `r2_*` in the reports folder.
+
+### Acceptance check results
+1. **Frozen: PASS.** I re-froze both companies into /tmp. They match 557b0b0 by sha256 (0 lines differ).
+2. **Window start: still FAIL as written. Owner amendment pending; this is not a code defect.** The facts are unchanged from round 1: the index has `publish_date: null` for both annuals, and the code uses `filed_at`. QA cannot pass a check that only passes with a different field. If the owner amends acceptance 2 to `filed_at` and re-approves it, the existing behaviour passes it, and that needs only a re-judgement.
+3. **Hashes: PASS.** `python -m backend.validation.cases.load` prints `ARSSBL@2026-10-15: 520 files verified` and `511144@2026-10-15: 385 files verified`. Each line also prints the stores past as-of, `{'prices_dhan_15min': '2026-10-16'}`, for both companies.
+4. **Read-only: PASS.** `find news_server/data -newer marker_r2` after both freezes is empty. The audit-hook trace records 0 writes outside `--out`; the first run's hits were only `.pyc` compiles in the fresh worktree. **F1 is fixed.** `cache_root()` (step_cache.py:32) returns `CACHE_DIR` and creates nothing. Its only caller is roots.py:54, and no other code changed outside validation/cases. I judge the store edit fine: it is a read-only accessor with no behaviour change for `StepCache`.
+5. **No fallbacks: PASS.** Unchanged from round 1.
+6. **Suite: PASS.** `pytest validation stores/tests/test_boundaries.py` gives 50 passed. The serial head full suite gives 66 failed / 1468 passed. `comm -23` against the base failure set is empty, so there are 0 new failures.
+
+### Findings
+- **F1:** fixed (above).
+- **F2:** addressed. Each frozen store now records `max_date` and `past_as_of` (dates.py, freeze.py:107-111), and `load` exposes them. The 15-minute price bars after as-of are flagged in both manifests. Stores without a reader are recorded `not_dated` explicitly rather than guessed. Trimming at as-of is still the replay's job; that is the stated design.
+- No new findings.
+
+### Verdict
+FAIL on round 2, solely because acceptance 2 as written names `publish_date`. The code is otherwise clean. Status is `needs_owner`. The owner's decision: amend acceptance 2 to `filed_at` and re-approve it. A re-judgement then needs no dev work.
