@@ -37,3 +37,8 @@ Curated: keep what keeps finding bugs, drop what never does.
 
 ## Added 2026-10-17 (T-20261016-2336 daily price store)
 - Bug class: a guard (cache-currency check) is added to one of two sibling read paths only (CachedDailySeries checks, broker_factory/prices.py:35 DailyPriceWindow does not): stale price returned green. Test every factory return type with a cache that ends before `end`.
+
+## Added 2026-10-17 (T-20261017-1200 holiday store)
+- Bug class: a server code path switched to a local-only file with no delivery path (trading_loop_service.py:309 reads ~/NSE_BSE_Data/nse_holidays.json, untracked in git, writer local-only). Ask "how does this file reach the server?"
+- Scenario that paid off: run sandbox price reads for the frozen validation cases (ARSSBL, 511144, CHANDAN) at the stance PRICE_START and HISTORY_START, head vs base.
+- Tip: never run head and base suites concurrently; concurrency tests collide. Re-run the diff files sequentially.

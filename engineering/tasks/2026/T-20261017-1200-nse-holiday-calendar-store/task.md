@@ -3,6 +3,9 @@ schema: task/v1
 id: T-20261017-1200-nse-holiday-calendar-store
 title: "Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list"
 status: ready
+claimed_by:
+lease_until:
+friction: "check 4 greps a private name (_read_cache_only) for the merged reader; naming a public function to match would be odd"
 created: 2026-10-17T12:00+05:30
 created_by: claude-main
 kind: internal
