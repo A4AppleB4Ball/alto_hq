@@ -7,6 +7,6 @@ when this view and an item disagree, the item wins.
 
 | Item | Status | Title | Waiting on |
 |---|---|---|---|
-| [T-20261016-2235-checks-stance-inputs-asof](../tasks/2026/T-20261016-2235-checks-stance-inputs-asof/task.md) | awaiting_owner | Stage check: no stance link used an input dated after its as-of | ship: owner approved the merge 2026-10-17 |
-| [T-20261016-2336-daily-price-store-everywhere](../tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | awaiting_owner | Every daily price read goes through the checkout-gated price store | ship: owner approved the merge 2026-10-17 (check 11 holiday half pending on T-20261017-1200) |
+| [T-20261016-2336-daily-price-store-everywhere](../tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | awaiting_owner | Every daily price read goes through the checkout-gated price store | ship: owner approved the merge 2026-10-17 (round 3) |
 | [T-20261016-1718-lib-regroup](../tasks/2026/T-20261016-1718-lib-regroup/task.md) | needs_owner | Regroup backend/lib into quarters/, filings/, prices/, resolvers/ | Deferred by owner 2026-10-16: rearrangement only. Do not pick up until the owner sets status back to ready. |
+| [T-20261016-2259-test-data-guard](../tasks/2026/T-20261016-2259-test-data-guard/task.md) | needs_owner | Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard | waive check 3 base half (cannot run in a worktree), decide chart_profiles.duckdb migration, then approve merge |

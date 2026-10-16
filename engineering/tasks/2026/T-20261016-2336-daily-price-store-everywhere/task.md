@@ -3,7 +3,7 @@ schema: task/v1
 id: T-20261016-2336-daily-price-store-everywhere
 title: "Every daily price read goes through the checkout-gated price store"
 status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+waiting_on: "ship: owner approved the merge 2026-10-17 (round 3)"
 lease_until: 2026-10-18T12:00+05:30
 friction: the full-suite baseline must be a sandbox worktree when the head is one (a production-root base differs by ~40 data-root failures); acceptance 2's scope (all of backend) is wider than the Goal's three sites; the mismatch was visible only after a grep
 created: 2026-10-16T23:36+05:30
@@ -16,9 +16,9 @@ approvals:
     by: owner
     at: 2026-10-17T02:05+05:30
   - file: evidence.md
-    sha256: 76d1d4d3b2410327eef9c8bebc8ee7ac4a6c6e86402a795afe6c44837b11663d
+    sha256: 2ac6e8c6970525496d88083bb61610e4dbe8174e920deda4288054677a6c690e
     by: owner
-    at: 2026-10-17T13:00+05:30
+    at: 2026-10-17T15:00+05:30
 ---
 
 ## Goal

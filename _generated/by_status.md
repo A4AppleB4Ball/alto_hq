@@ -16,14 +16,13 @@ when this view and an item disagree, the item wins.
 | [P-20261015-1140-epic-type](../org/changes/2026/P-20261015-1140-epic-type.md) | change/v1 | Add the epic item type (E) for high-level plans |
 | [P-20261016-2252-version-item-epic-sidecars](../org/changes/2026/P-20261016-2252-version-item-epic-sidecars.md) | change/v1 | version/v1 extends item/v1; epic/v1 declares its sidecar files |
 
-## awaiting_owner (2)
+## awaiting_owner (1)
 
 | Item | Schema | Title |
 |---|---|---|
-| [T-20261016-2235-checks-stance-inputs-asof](../engineering/tasks/2026/T-20261016-2235-checks-stance-inputs-asof/task.md) | task/v1 | Stage check: no stance link used an input dated after its as-of |
 | [T-20261016-2336-daily-price-store-everywhere](../engineering/tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | task/v1 | Every daily price read goes through the checkout-gated price store |
 
-## done (20)
+## done (21)
 
 | Item | Schema | Title |
 |---|---|---|
@@ -43,6 +42,7 @@ when this view and an item disagree, the item wins.
 | [T-20261016-2147-checks-index-quarterly](../engineering/tasks/2026/T-20261016-2147-checks-index-quarterly/task.md) | task/v1 | Stage checks: index entries carry their dates and period; quarterly versions are valid; intake failures are reported |
 | [T-20261016-2147-checks-stance-chain](../engineering/tasks/2026/T-20261016-2147-checks-stance-chain/task.md) | task/v1 | Stage check: stance chain is continuous |
 | [T-20261016-2200-completeness-awaiting-state](../engineering/tasks/2026/T-20261016-2200-completeness-awaiting-state/task.md) | task/v1 | Completeness: a due quarter with no documents is Awaiting and does not block |
+| [T-20261016-2235-checks-stance-inputs-asof](../engineering/tasks/2026/T-20261016-2235-checks-stance-inputs-asof/task.md) | task/v1 | Stage check: no stance link used an input dated after its as-of |
 | [T-20261016-2252-hq-generated-views](../engineering/tasks/2026/T-20261016-2252-hq-generated-views/task.md) | task/v1 | alto_hq generated views: tasks by status and the owner's approval queue |
 | [T-20261016-2311-case-checks-via-sandbox](../engineering/tasks/2026/T-20261016-2311-case-checks-via-sandbox/task.md) | task/v1 | Stage checks on frozen cases read through DataAccess in a sandbox checkout; remove validation/cases/access.py path building |
 | [T-20261016-2315-checkout-guard-hardening](../engineering/tasks/2026/T-20261016-2315-checkout-guard-hardening/task.md) | task/v1 | The checkout guard resolves every data path, refuses links to the live root or its parents at any depth, and costs no import-time walk |
@@ -88,13 +88,14 @@ when this view and an item disagree, the item wins.
 |---|---|---|
 | [T-20261016-1718-dagster-chain-wrap](../engineering/tasks/2026/T-20261016-1718-dagster-chain-wrap/task.md) | task/v1 | Producers, intake, quarterly and stance as company-partitioned Dagster assets |
 | [T-20261016-2252-stance-cold-start-window](../engineering/tasks/2026/T-20261016-2252-stance-cold-start-window/task.md) | task/v1 | Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01 |
-| [T-20261016-2259-test-data-guard](../engineering/tasks/2026/T-20261016-2259-test-data-guard/task.md) | task/v1 | Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard |
+| [T-20261017-0040-price-reads-asof-and-start-coverage](../engineering/tasks/2026/T-20261017-0040-price-reads-asof-and-start-coverage/task.md) | task/v1 | Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start |
 
-## needs_owner (1)
+## needs_owner (2)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261016-1718-lib-regroup](../engineering/tasks/2026/T-20261016-1718-lib-regroup/task.md) | task/v1 | Regroup backend/lib into quarters/, filings/, prices/, resolvers/ |
+| [T-20261016-2259-test-data-guard](../engineering/tasks/2026/T-20261016-2259-test-data-guard/task.md) | task/v1 | Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard |
 
 ## open (6)
 
@@ -111,6 +112,6 @@ when this view and an item disagree, the item wins.
 
 | Item | Schema | Title |
 |---|---|---|
-| [T-20261017-0040-price-reads-asof-and-start-coverage](../engineering/tasks/2026/T-20261017-0040-price-reads-asof-and-start-coverage/task.md) | task/v1 | Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start |
+| [T-20261017-0130-cockpit-dagster-link](../engineering/tasks/2026/T-20261017-0130-cockpit-dagster-link/task.md) | task/v1 | Cockpit: a button to Dagster's UI on the Queue and Pipeline pages, and a Pipeline card with the last chain run's per-company state |
 | [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | A live job stores NSE's trading holidays per year; every reader reads the stored file and raises when a year is missing |
 | [T-20261017-1300-sandbox-dhan-instrument-master](../engineering/tasks/2026/T-20261017-1300-sandbox-dhan-instrument-master/task.md) | task/v1 | A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date |
