@@ -3,7 +3,7 @@ schema: task/v1
 id: T-20261017-1300-sandbox-dhan-instrument-master
 title: "A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date"
 status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+waiting_on: "ship: owner approved the merge 2026-10-17; A3 accepted as stricter behaviour"
 claimed_by:
 lease_until:
 friction: check 7's CLI form cannot run before merge (the CLI requires the live main checkout, which has the old code); ran create() from the branch against main instead.
@@ -17,6 +17,10 @@ approvals:
     sha256: a38f8586911b941e325cfcd6d50216773d3d1b478f657ca5b8d36592c186138f
     by: owner
     at: 2026-10-17T13:30+05:30
+  - file: evidence.md
+    sha256: ea3d8908afcc5b6fe7c520f22517a6c1f1e18f1ae029dd1d8c4af281179ac554
+    by: owner
+    at: 2026-10-17T18:00+05:30
 ---
 
 ## Goal

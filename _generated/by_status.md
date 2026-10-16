@@ -20,15 +20,16 @@ when this view and an item disagree, the item wins.
 
 | Item | Schema | Title |
 |---|---|---|
-| [T-20261016-2336-daily-price-store-everywhere](../engineering/tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | task/v1 | Every daily price read goes through the checkout-gated price store |
+| [T-20261017-1300-sandbox-dhan-instrument-master](../engineering/tasks/2026/T-20261017-1300-sandbox-dhan-instrument-master/task.md) | task/v1 | A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date |
 
-## done (21)
+## done (24)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261015-0321-checkout-data-root](../engineering/tasks/2026/T-20261015-0321-checkout-data-root/task.md) | task/v1 | Every checkout names its own data root; a sandbox can never resolve to production |
 | [T-20261015-1058-dagster-spike](../engineering/tasks/2026/T-20261015-1058-dagster-spike/task.md) | task/v1 | Spike: Dagster over the existing CLIs, with a completeness check that blocks ARSSBL's stance |
 | [T-20261016-1718-completeness-check](../engineering/tasks/2026/T-20261016-1718-completeness-check/task.md) | task/v1 | Completeness check: backend/validation/verdicts and completeness, from the approved definition |
+| [T-20261016-1718-dagster-chain-wrap](../engineering/tasks/2026/T-20261016-1718-dagster-chain-wrap/task.md) | task/v1 | Producers, intake, quarterly and stance as company-partitioned Dagster assets |
 | [T-20261016-1718-dagster-environment](../engineering/tasks/2026/T-20261016-1718-dagster-environment/task.md) | task/v1 | Dagster in its own environment with launchd daemon and webserver |
 | [T-20261016-1718-proposal-gate](../engineering/tasks/2026/T-20261016-1718-proposal-gate/task.md) | task/v1 | Rebalance proposal refuses a stance whose latest quarter has no valid analysis |
 | [T-20261016-1718-results-calendar-to-stance](../engineering/tasks/2026/T-20261016-1718-results-calendar-to-stance/task.md) | task/v1 | Results calendar tells stance agents A, B and D the next result date before it publishes |
@@ -46,7 +47,9 @@ when this view and an item disagree, the item wins.
 | [T-20261016-2252-hq-generated-views](../engineering/tasks/2026/T-20261016-2252-hq-generated-views/task.md) | task/v1 | alto_hq generated views: tasks by status and the owner's approval queue |
 | [T-20261016-2311-case-checks-via-sandbox](../engineering/tasks/2026/T-20261016-2311-case-checks-via-sandbox/task.md) | task/v1 | Stage checks on frozen cases read through DataAccess in a sandbox checkout; remove validation/cases/access.py path building |
 | [T-20261016-2315-checkout-guard-hardening](../engineering/tasks/2026/T-20261016-2315-checkout-guard-hardening/task.md) | task/v1 | The checkout guard resolves every data path, refuses links to the live root or its parents at any depth, and costs no import-time walk |
+| [T-20261016-2336-daily-price-store-everywhere](../engineering/tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | task/v1 | Every daily price read goes through the checkout-gated price store |
 | [T-20261017-0010-dhan-prices-read-without-credentials](../engineering/tasks/2026/T-20261017-0010-dhan-prices-read-without-credentials/task.md) | task/v1 | Stance price reads use the cached daily prices with no Dhan credentials, and raise a named error on a miss |
+| [T-20261017-0040-price-reads-asof-and-start-coverage](../engineering/tasks/2026/T-20261017-0040-price-reads-asof-and-start-coverage/task.md) | task/v1 | Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start |
 
 ## draft (12)
 
@@ -86,16 +89,15 @@ when this view and an item disagree, the item wins.
 
 | Item | Schema | Title |
 |---|---|---|
-| [T-20261016-1718-dagster-chain-wrap](../engineering/tasks/2026/T-20261016-1718-dagster-chain-wrap/task.md) | task/v1 | Producers, intake, quarterly and stance as company-partitioned Dagster assets |
 | [T-20261016-2252-stance-cold-start-window](../engineering/tasks/2026/T-20261016-2252-stance-cold-start-window/task.md) | task/v1 | Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01 |
-| [T-20261017-0040-price-reads-asof-and-start-coverage](../engineering/tasks/2026/T-20261017-0040-price-reads-asof-and-start-coverage/task.md) | task/v1 | Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start |
+| [T-20261017-0130-cockpit-dagster-link](../engineering/tasks/2026/T-20261017-0130-cockpit-dagster-link/task.md) | task/v1 | Cockpit: a button to Dagster's UI on the Queue and Pipeline pages, and a Pipeline card with the last chain run's per-company state |
+| [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list |
 
-## needs_owner (2)
+## needs_owner (1)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261016-1718-lib-regroup](../engineering/tasks/2026/T-20261016-1718-lib-regroup/task.md) | task/v1 | Regroup backend/lib into quarters/, filings/, prices/, resolvers/ |
-| [T-20261016-2259-test-data-guard](../engineering/tasks/2026/T-20261016-2259-test-data-guard/task.md) | task/v1 | Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard |
 
 ## open (6)
 
@@ -108,10 +110,8 @@ when this view and an item disagree, the item wins.
 | [E-20261016-2147-shadow-lane](../org/epics/2026/E-20261016-2147-shadow-lane.md) | epic/v1 | Many shadow lanes run beside live, each a full product definition, compared over time on one dashboard |
 | [I-20261015-1058-stances-without-quarterly-analysis](../operations/incidents/2026/I-20261015-1058-stances-without-quarterly-analysis/incident.md) | incident/v1 | Ten companies hold stances with no quarterly analysis; the proposal buys one of them |
 
-## ready (3)
+## ready (1)
 
 | Item | Schema | Title |
 |---|---|---|
-| [T-20261017-0130-cockpit-dagster-link](../engineering/tasks/2026/T-20261017-0130-cockpit-dagster-link/task.md) | task/v1 | Cockpit: a button to Dagster's UI on the Queue and Pipeline pages, and a Pipeline card with the last chain run's per-company state |
-| [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list |
-| [T-20261017-1300-sandbox-dhan-instrument-master](../engineering/tasks/2026/T-20261017-1300-sandbox-dhan-instrument-master/task.md) | task/v1 | A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date |
+| [T-20261016-2259-test-data-guard](../engineering/tasks/2026/T-20261016-2259-test-data-guard/task.md) | task/v1 | Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard |
