@@ -32,3 +32,14 @@ Four tests pass `company_store=MagicMock()`; a MagicMock lookup returns a truthy
 - No backfill, no completeness check use (out of scope).
 - 4 existing stance worker tests fail in the full-suite run on base too (shared llm config singleton polluted by an earlier test: "No LLM config for component"), they pass in isolation. Found: that pollution is also why my worker tests patch `get_llm_config`.
 - The write is not atomic with the stance record: a crash between classifier and append just means a re-call, not a wrong result.
+
+## Round 2 (fix round)
+
+Branch eng/T-20261016-2130-classification-ledger, base main b893361, commits f8e69d9, 4d30a00, 47a3a00 (head). Worktree /Users/kmrh581/personal/projects/workspace/alto/.claude/worktrees/classification-ledger.
+
+- QA ALERT duckdb: fixed. chart_profiles.duckdb removed from history (filter-branch, then rebased on main). `git diff --stat main...HEAD` lists 8 files, all stance/stores, no binary.
+- QA ALERT race: fixed in /Users/kmrh581/personal/projects/workspace/alto/backend/stance/classification_cache.py. After classify, `append_classification` returns False when a concurrent run stored the identity first; the stored entry's signal is then returned, so returned == stored. Test: test_concurrent_verdict_stored_during_classify_wins in backend/stance/tests/test_worker_classification_ledger.py. Not run against pre-fix code to see it fail (stated honestly). Also dropped the inaccurate docstring claim about prices.
+- Check 7 amended text: four mock-argument edits only, no assertion edited (owner ruling).
+- Acceptance checks rerun at head: pytest backend/stance backend/stores = 244 passed; test_boundaries 2 passed; entry points import.
+- Suite (sequential, from backend/, committed trees): head 66 failed 1540 passed; base (main b893361) 66 failed 1519 passed; comm -23 new base empty.
+- Not done: nothing outstanding. Next: QA.

@@ -2,7 +2,9 @@
 schema: task/v1
 id: T-20261016-2147-checks-stance-chain
 title: "Stage check: stance chain is continuous"
-status: awaiting_owner
+status: done
+closed: 2026-10-16
+merge_commit: 4c44dbf
 lease_until: 2026-10-17T23:00+05:30
 created: 2026-10-16T21:47+05:30
 created_by: owner

@@ -34,3 +34,24 @@ Method: the branch is unmerged, so main runs old code. All checks ran in a throw
 ## Not done
 - Symlink removal. Help texts naming news_server/data/alto_data (backend/stance/runner.py:12,774; backtest compare_*): text still correct.
 - plan.md was written after coding in round 1.
+
+# Round 3 (final fix round after QA round 1 FAIL)
+Acceptance hash a8ad8dd8... (third approval in task.md) matches the file. Rebased: already on local main 9950df7. Head: dce991f. New commits: ffaecf3 (symlink guard), dce991f (script removed). Method as before: throwaway clone /tmp/t0321r2.3umm/alto_live (live file = production root), sandbox chk5 with --seed-index 544332.
+
+## Findings answered
+- QA finding 4 (symlink): fixed in ffaecf3. /Users/kmrh581/personal/projects/workspace/alto/.claude/worktrees/T-20261015-0321-checkout-data-root/backend/config/checkout.py walks the sandbox root and raises if any symlink resolves to the live root or inside it. Test test_sandbox_with_symlink_into_live_refused in backend/config/tests/test_checkout.py (temp dir). Also reproduced by hand: data_root /tmp/symbox containing data -> live/data raises CheckoutDeclarationError "contains the symlink ... inside the live data root".
+- Script: grep for rename_gujgasltd across the checkout found no reference; git rm in dce991f.
+- Findings 2, 3 (other): out of scope per owner (Dhan caches, other scripts, start/stop, cwd-relative paths). Not touched.
+- Finding 1 (check 3): amended acceptance; see below.
+
+## Checks as amended
+1. Dump (69 lines) base 9950df7 (old code, with dump_paths.py copied in) vs live clone: identical after normalising the checkout prefix, ALTO_WORKSPACE_REPO_ROOT, and base's .claude/worktrees/news_server symlink (which resolves to the same news_server dir).
+2. Each raises CheckoutDeclarationError naming the file: no file, missing field, unknown field, unknown mode, sandbox==live, sandbox inside live, live in worktree, plus symlink into live.
+3. Sandbox chk5: dump 55 of 69 lines under sandbox root, 0 name the live root; the other 14 are the two named classes (NSE read-only root, ALTO_ROOT-derived). `python -m backend.e2e.run --symbols 544332 --steps documents --end 2026-10-16` passes in the seeded sandbox ("none: every company passed"); seeding the index alone is enough with --end set to the run date, so no extra seeding option was needed. Write: CompanyStore().append_stance("544332", record) landed under .../alto_sandboxes/chk5/news_server/data/alto_data/stances/544332/log.jsonl. Live mtime walk (401909 files) before vs after the write: 0 modified, 0 new, 0 gone.
+4. Live: --llm-config benchmark and LLM_CONFIG_PATH=benchmark (e2e.run, stance.runner, workflow.cli) raise NonProductionLLMConfigOnLiveError. Sandbox: same --llm-config on e2e.run completes.
+5. Suite, sequential, live root, committed trees: new 66 failed/1557 passed, base 66 failed/1544 passed; comm -23 new base empty (lists /tmp/t0321r2.3umm/new, /tmp/t0321r2.3umm/base). Targeted: backend/config/tests 40 passed.
+
+## Honest notes
+- Mishap: my first chk5 attempt failed (a local branch named eng blocked eng/chk5) and my script then ran the e2e documents command in the live clone (mode live, production root) instead of the sandbox. Afterwards a find for files in the live root newer than 5 minutes showed none, and the later full mtime walk shows no change from it; the clone's logs/e2e/progress.jsonl was the only thing touched (reverted).
+- During the two suite runs the live root changed by: scienceamit1 book snapshots.jsonl and dashboard chat duckdb files (running API), and two new files data/screener_data/raw_reports/stocks/HDFCBANK/html/HDFCBANK_page_20261016_223016.html and ..._223143.html. Nothing under 544332. I could not tell whether the new HDFCBANK pages come from the suite (new or base) or the live scrapers; if from the suite it is pre-existing behaviour of an existing test, and base also ran.
+- outputs_changed: no for 544332 and all golden-company stores from the change itself (no store write on live).
