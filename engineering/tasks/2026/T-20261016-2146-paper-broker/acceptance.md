@@ -25,3 +25,8 @@ Money path. No order is placed or cancelled at Dhan; no Dhan API call is made.
    the book updated; no network access (a test blocks sockets).
 6. **Suite.** Executor, execution and book tests pass; full suite no new
    failure; boundary test passes.
+
+## Amendment v2 (owner 2026-10-16, after QA round 2)
+
+5a. **Planner inputs for a paper user.** Every price read on the proposal and approval path (`RebalanceService._trading_calendar` and `_build_planner_inputs`, and the same reads in `trading_loop_service` and `strategy_service`) goes through the checkout-gated daily price store, so a paper user reads the sandbox's stored prices and a dhan user is unchanged.
+5b. **Two approvals in a row.** The end-to-end test replaces neither `_build_planner_inputs` nor the price reads (it may still give `plan_orders`' result). It approves a first proposal from a flat book, then a second while holding the first fill; both fill and the ledger matches a hand calculation.

@@ -2,12 +2,17 @@
 schema: task/v1
 id: T-20261016-2252-stance-cold-start-window
 title: "Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01"
-status: awaiting_owner
-waiting_on: "approve acceptance.md; confirm the evidence route for a decision-kind fix while shadow is parked"
+status: ready
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: decision
 related: [E-20261015-1140-validation, T-20261016-2147-checks-stance-chain]
+evidence_route: "owner 2026-10-16: shadow is parked; this fix restores the owner's stated chain-start rule, so a before/after sandbox comparison (ARSSBL, one legacy, one 2026-07-01 company) replaces research+shadow"
+approvals:
+  - file: acceptance.md
+    sha256: 550d2a6d5b60df7d6b25ddf9fc7a74722473491e4596537243628596fdf53072
+    by: owner
+    at: 2026-10-16T22:55+05:30
 ---
 
 ## Goal
