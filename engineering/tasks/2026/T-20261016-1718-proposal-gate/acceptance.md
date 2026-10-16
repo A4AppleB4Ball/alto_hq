@@ -1,4 +1,4 @@
-# Acceptance: proposal-gate (DRAFT v2, not approved)
+# Acceptance: proposal-gate (v2, approved)
 
 Owner rule, 2026-10-16: the proposal is blocked when any company in its
 scope has missing or stale data, because one company's old analysis impairs
@@ -22,7 +22,7 @@ placed or cancelled. Depends on completeness-check (merged).
 3. **Held names.** A held company outside the price watchlist that does not
    qualify for rank_exit, with a missing quarter, blocks the proposal. A held
    company outside the watchlist that does qualify for rank_exit is being
-   sold and does not block (owner to confirm this reading).
+   sold and does not block (owner confirmed 2026-10-16).
 4. **No silent path.** If the completeness function or the calendar read
    fails, the build raises; no partial proposal is written. Tests inject both
    failures. The refusal is visible where the owner reads it (API response and
