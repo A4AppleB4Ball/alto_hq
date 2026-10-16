@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-1718-results-calendar-to-stance
 title: "Results calendar tells stance agents A, B and D the next result date before it publishes"
-status: in_progress
+status: needs_owner
+waiting_on: "item 2 (50-company date accuracy) not met: accept the substitute or defer to follow-up 1; see evidence.md"
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
