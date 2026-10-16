@@ -13,9 +13,9 @@ spawned_from: T-20261016-2336-daily-price-store-everywhere
 related: [T-20261016-2336-daily-price-store-everywhere, T-20261017-0040-price-reads-asof-and-start-coverage]
 approvals:
   - file: acceptance.md
-    sha256: dc1036de7905826fd82b6c4bb392d8a811864e00230d5d9c7f1d2c9d1a51f451
+    sha256: d0cd7b4a84b63655613758763e23497f70313aa4491d0fd4742e59311ae13ef6
     by: owner
-    at: 2026-10-17T15:30+05:30
+    at: 2026-10-17T19:00+05:30
 ---
 
 ## Goal
