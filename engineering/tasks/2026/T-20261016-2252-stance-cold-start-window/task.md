@@ -2,7 +2,7 @@
 schema: task/v1
 id: T-20261016-2252-stance-cold-start-window
 title: "Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01"
-status: in_progress
+status: ready
 claimed_by:
 lease_until: 2026-10-17T23:00+05:30
 waiting_on: owner - approve an LLM pilot for acceptance 5 (SHILPAMED sandbox rebuild; ARSSBL after body backfill) and confirm the min(chain start, feed start) reading
@@ -14,9 +14,9 @@ related: [E-20261015-1140-validation, T-20261016-2147-checks-stance-chain]
 evidence_route: "owner 2026-10-16: shadow is parked; this fix restores the owner's stated chain-start rule, so a before/after sandbox comparison (ARSSBL, one legacy, one 2026-07-01 company) replaces research+shadow"
 approvals:
   - file: acceptance.md
-    sha256: 550d2a6d5b60df7d6b25ddf9fc7a74722473491e4596537243628596fdf53072
+    sha256: 00e11190d357d7bec5b2a79e6d1692785aef60fc9570ac910fbc589f96baa4fd
     by: owner
-    at: 2026-10-16T22:55+05:30
+    at: 2026-10-16T23:29+05:30
 ---
 
 ## Goal

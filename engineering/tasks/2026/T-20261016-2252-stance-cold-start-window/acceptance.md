@@ -7,3 +7,9 @@
 5. **Repair path:** the listed links are rebuilt through the stance reconciler/rerun command on a sandbox, after which `stance_chain` passes for them. No hand edits of stance stores; the production rerun is the owner's call.
 6. **Unchanged elsewhere:** companies whose chain start is 2026-07-01 produce identical cold-start windows before and after.
 7. **Suite:** `pytest backend/stance backend/validation backend/lib` pass; full suite no new failure; boundary test passes.
+
+## Amendment v2 (owner 2026-10-16)
+
+8. **Window rule:** cold-start `covers_from` = min(chain start, FEED_START_DATE) (`stance_scan_start`); companies whose chain starts after 2026-07-01 keep 2026-07-01.
+9. **Poller:** `backend/stance/poller.py` picks the cold-start date from the same `lib/chain_start` function; no copy of the rule and no `SCAN_START` fallback remains (test).
+10. **Check 5 pilot:** SHILPAMED rebuilt in a sandbox stance directory (rewind from 2026-02-06, rerun, LLM spend approved for this one company); `stance_chain` passes for it. ARSSBL's rebuild waits for its 3 missing bodies and is not part of this task.
