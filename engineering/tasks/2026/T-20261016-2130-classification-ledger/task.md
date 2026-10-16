@@ -12,7 +12,7 @@ approvals:
     sha256: 5e36723fc4d56bb48cb59842ee920577296cca97cb593309ef595d19d7370238
     by: owner
     at: 2026-10-16T23:00+05:30
-claimed_by: claude-main-20261016-1900
+claimed_by:
 lease_until: 2026-10-17T22:00+05:30
 branch: eng/T-20261016-2130-classification-ledger
 ---

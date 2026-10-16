@@ -1,6 +1,6 @@
 # Handoff: proposal-gate (v2 rework)
 
-Branch eng/T-20261016-1718-proposal-gate, worktree .claude/worktrees/proposal-gate, base main 79e66a7. Commits f7be4bc, e7bbda6. v1 (per-name zero/cap) preserved as branch eng/T-20261016-1718-proposal-gate-v1-pername (797ec93). Acceptance hash 002c1a09... verified unchanged. plan.md written before code.
+Branch eng/T-20261016-1718-proposal-gate, worktree .claude/worktrees/proposal-gate, base main 66871a6 (rebased 2026-10-16; no conflicts, no code referenced DUE_NOTHING_IN or the old version, so no code change). Commits c8b08ab, fd33285 (were f7be4bc, e7bbda6). v1 (per-name zero/cap) preserved as branch eng/T-20261016-1718-proposal-gate-v1-pername (797ec93). Acceptance hash 002c1a09... verified unchanged. plan.md written before code.
 
 ## Change
 - backend/trading/proposals/completeness_gate.py rewritten: scope_symbols, rank_exiting, require_complete, CompletenessBlocked(ValueError), build_checker (kept). Only raises; no target, warning or fingerprint change.
@@ -23,3 +23,9 @@ Branch eng/T-20261016-1718-proposal-gate, worktree .claude/worktrees/proposal-ga
 ## Not done
 - Calendar-unreadable tested via an injected builder raising, not the real read_calendar.
 - Did not verify trading_loop_service's handling of the exception from auto_generate_if_needed (execution/manager.py:346 catches and logs).
+
+## Rebased on 66871a6 (numbers replace the ones above)
+- Acceptance hash 002c1a09... verified unchanged.
+- 1. Replay (same command): REFUSED, 15 of 372 in scope blocking (was 224): ABDL, ARSSBL (Q1+Q2 missing), BBOX, CHANDAN, EMUDHRA, FAIRCHEMOR, KRISHNADEF, PNGSREVA, RAYMOND, RAYMONDREL, SMCGLOBAL, STEELCAS, TAC, TATVA, THELEELA (Q2 only). All Missing. None are held (18 held, all on the watchlist, none blocking). Independent loop over watchlist+held through check_company with tz-aware created_at gives the same 15.
+- 2-4. Tests unchanged; trading + validation + test_boundaries: 152 passed.
+- 5. Entry points import OK. Full suite base (66871a6) 66 failures, new 67; comm -23 = auth/tests/test_session.py::test_verify_rejects_tampered_token, which passes alone (4 passed, twice): parallel-run flake, unrelated to this diff.
