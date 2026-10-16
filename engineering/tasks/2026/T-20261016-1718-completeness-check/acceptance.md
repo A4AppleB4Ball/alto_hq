@@ -29,7 +29,9 @@ temp-dir fixture.
    neither the store file nor any file under the data root changes mtime.
    A company with no meeting on record reports "no meeting on record".
 7. **No Dagster.** In the production environment,
-   `python -I -c "import backend.validation.completeness"` succeeds and
+   `python -I -c "import sys; sys.path.insert(0, '.'); import backend.validation.completeness"`
+   (run from the repo root; `-I` ignores PYTHONPATH and the working
+   directory) succeeds and
    `pip freeze` is unchanged.
 8. **Label conversion.** Calendar labels (`Q1FY27`) convert to quarter keys
    (`Q1_FY27`) through `backend.lib.quarter_policy`; a test covers every
