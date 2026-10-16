@@ -3,15 +3,16 @@ schema: task/v1
 id: T-20261016-2336-daily-price-store-everywhere
 title: "Every daily price read goes through the checkout-gated price store"
 status: ready
+friction: acceptance 2's scope (all of backend) is wider than the Goal's three sites; the mismatch was visible only after a grep
 created: 2026-10-16T23:36+05:30
 created_by: owner
 kind: internal
 related: [T-20261016-2146-paper-broker]
 approvals:
   - file: acceptance.md
-    sha256: 0180291beea7943bd4f65aff1f9359d69003588a45baddd51a76aee5348fe388
+    sha256: 9141e5ab0e52ccd8537eab9b449c4ce09e8b19220e8e7c7650a8a9146dcb9c21
     by: owner
-    at: 2026-10-16T23:36+05:30
+    at: 2026-10-16T23:51+05:30
 ---
 
 ## Goal
