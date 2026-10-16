@@ -2,12 +2,17 @@
 schema: task/v1
 id: T-20261017-0040-price-reads-asof-and-start-coverage
 title: "Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start"
-status: draft
+status: ready
 created: 2026-10-17T00:40+05:30
 created_by: claude-main
 kind: internal
 spawned_from: T-20261017-0010-dhan-prices-read-without-credentials
 related: [T-20261017-0010-dhan-prices-read-without-credentials]
+approvals:
+  - file: acceptance.md
+    sha256: 20964c290ed0feffd6229e8f04910725a656e623678cb2173c3dea55bc0e3e67
+    by: owner
+    at: 2026-10-17T01:10+05:30
 ---
 
 ## Goal

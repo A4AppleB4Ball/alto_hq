@@ -16,16 +16,10 @@ checkout-data-root (in flight).
 
 Pilot companies, from the completeness result for the 2026-10-16 stored state:
 one complete (20MICRONS, chain Q3_FY26..Q1_FY27 all analysed) and one that
-blocks (ARSSBL, Missing quarters per the incident). Same pair as the spike
+blocks (ARSSBL, Missing quarters per the incident). Pilot as_of must be on or before 2026-10-13 (the last day the Dhan daily cache covers; stance prices are read from the cache with no credentials, per T-20261017-0010; stance runs with `LLM_CONFIG_PATH=backend/config/llm_benchmark_deepseek.yaml`). Same pair as the spike
 (CHANDAN is the alternative blocking one).
 
-1. **Batched, one call per stage.** A Dagster run over the two partitions,
-   launched with `dagster job execute`/`materialize` from the venv against the
-   temp root, calls each existing CLI stage (producers, intake, quarterly,
-   stance) once with both symbols. Evidence: the run's event log
-   (`dagster run` or the event-log query in `query.py`) lists exactly one
-   stage-start event per stage, and the CLI invocations recorded in the
-   stage logs each contain both symbols. Count of stage invocations = 4, not 8.
+1. **Batched, one call per stage.** A Dagster run over the two partitions, launched with `dagster job execute`/`materialize` from the venv against the temp root, calls each existing CLI stage (producers, intake, quarterly, stance) once, not once per company. Producers, intake and quarterly name both symbols; stance names the companies that pass the completeness gate (20MICRONS; ARSSBL is gated out). Evidence: the run's event log lists exactly one stage-start event per stage, and each stage's recorded CLI invocation shows its symbol list. Count of stage invocations = 4, not 8.
 2. **Per-company verdicts in stored records.** A short Python query (the
    spike's `query.py` pattern, run with the venv python, no UI) prints for each
    of the two companies every asset's state and the completeness verdict
@@ -35,8 +29,7 @@ blocks (ARSSBL, Missing quarters per the incident). Same pair as the spike
    `python -m backend.validation.completeness.cli ARSSBL 20MICRONS` run
    against the same root, line for line.
 3. **A failure stops only its company.** On a frozen case copy, make the
-   quarterly stage fail for ARSSBL only (an input removed in the temp copy,
-   not a code edit). 20MICRONS' stance materialises (new link in the temp
+   quarterly stage fail for ARSSBL only (ARSSBL's missing filing body in the frozen case is the failure; no code edit). 20MICRONS' stance materialises (new link in the temp
    `log.jsonl`, hash changed); ARSSBL's stance asset does not materialise,
    its `log.jsonl` hash is unchanged, and its failure reason is in the record
    the query prints.
