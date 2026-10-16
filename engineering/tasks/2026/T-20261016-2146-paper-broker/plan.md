@@ -30,3 +30,8 @@ temp merge of this branch onto `eng/T-20261015-0321-checkout-data-root`; 6 full 
 - **A2:** `PaperAccountStore.update()` = load/modify/save under `stores.locking.exclusive_lock`, written with `atomic_write_text`; reads settle in memory only; ids from persisted `orders_issued`.
 - e2e test: only seeds stores (checkout, prices, holidays, instrument cache, strategy config, desired.json, account) and fixes the clock; the proposal's planner inputs/plan_orders stay given.
 - Checks run on a detached merge of the branch onto 20e6afe, `mode: sandbox`, empty temp root.
+
+## Round 3 (Amendment v2, B2)
+- Touches: `backend/executor/broker_factory/prices.py` (paper branch returns `DailyPriceWindow`, new `backend/executor/paper/price_window.py`: symbols + start..end view with `series`, `latest_close`, `trading_days`); call sites `rebalance_service._trading_calendar`, `strategy_service._trading_calendar`, `trading_loop_service._process_user_tick_locked` switch from `DhanPriceStore(...)` to `create_daily_price_store(...)`, same arguments. Callers: `_build_planner_inputs` (proposal + submit_decision), strategy preview, trigger tick.
+- Money path: yes. Dhan users pinned by tests asserting the identical DhanPriceStore call; paper reads stored prices.
+- Checks: 5a by `executor/broker_factory/tests/test_daily_price_store.py`; 5b by `executor/paper/tests/test_end_to_end.py` (no patch of `_build_planner_inputs` or price reads; `plan_orders` given); suite vs base 9013baa.

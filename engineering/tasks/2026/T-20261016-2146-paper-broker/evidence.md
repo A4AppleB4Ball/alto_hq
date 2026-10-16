@@ -1,11 +1,11 @@
 ---
 schema: evidence/v1
 task: T-20261016-2146-paper-broker
-round: 2
-qa: fail
+round: 3
+qa: pass
 qa_by: qa@engineering
-commits: 9950df7..70c1c1c (checks 4-6 on a merge with 20e6afe, my tree .claude/worktrees/T-20261016-2146-qa2, mode sandbox over an empty temp root)
-acceptance_sha256: 3b391c3c9004c78c0de337009837d167bd4dcc348042619406e48baec59650ef
+commits: 9013baa..9801fba (my tree .claude/worktrees/T-20261016-2146-qa3, mode sandbox over an empty temp root; baseline -qa3-base at 9013baa, same setup)
+acceptance_sha256: f9882844a8ee21b95588a0e3ff035e36c9744d8fd3c1b80d43f23e1ae73d0138
 outputs_changed: unverified
 ---
 
@@ -79,3 +79,43 @@ Dev's handoff itself says the planner mock remains and that the task is "not don
 
 ### Automatic check that would catch this class
 A test that a paper user's `RebalanceService._build_planner_inputs` runs over a seeded sandbox that holds one name. More generally: grep for `DhanPriceStore(` outside `broker_factory/` in code reachable from rebalance_service and the EMS. trading_loop_service.py:147, strategy_service.py:362 and price_chart_service.py:117 are other places a paper user would hit; I did not run them.
+
+## Round 3
+
+The approval sha256 (f9882844..., Amendment v2 included) matches acceptance.md. Range 9013baa..9801fba, rebased onto main, which now carries checkout-data-root, so I used no merged tree. My tree is `.claude/worktrees/T-20261016-2146-qa3` with `.alto_checkout.yaml` set to mode sandbox over an empty `/tmp/qa3root.*`. The baseline is `-qa3-base` (9013baa) over its own empty temp root. Logs are in `news_server/verify_data/reports/T-20261016-2146-paper-broker/r3_*.log` and my scratch tests are in `/tmp/qa3_r3/`. I placed or cancelled no orders, read no credentials and wrote no production data.
+
+### Acceptance checks
+Command: `pytest -q -p no:cacheprovider backend/executor/paper backend/executor/broker_factory backend/executor/tests/test_credentials.py backend/api/routes/tests/test_broker_switch.py backend/config/tests backend/api/services/tests/test_trading_loop_service.py` gave **95 passed** (r3_accept.log).
+1. Interface: PASS.
+2. Fill model: PASS. The owner's fill decisions are accepted, so they are not failures.
+3. Book: PASS.
+4. Live refusal: PASS, now on the branch itself.
+5. End to end: PASS. It runs the real factory, gate, lot lookup, previous_close/ADV, EMS and reconciler, with sockets blocked.
+5a. Planner inputs: PASS. `rebalance_service._trading_calendar`, `strategy_service._trading_calendar` and `trading_loop_service:147` all call `create_daily_price_store`. No `DhanPriceStore(` construction is left in those modules. My own test (`/tmp/qa3_r3/test_dhan_args.py`) shows that in a live checkout a dhan user gets exactly `DhanPriceStore("u", ["B","A"], [], start, end)`, the same as the base call shape, with symbol order kept. In live mode a paper user raises, and in a sandbox a dhan user raises.
+5b. Two approvals: PASS. The test replaces only `plan_orders`, which 5b allows. The real `submit_decision` runs `_build_planner_inputs`. On the second approval the planner gets holdings `{ACME: 60}` (entry 2026-10-05) and the stored trading calendar `[10-01, 10-05, 10-07]`. That is the B2 path, and it raised in round 2. Both orders fill. The ledger, current.json and cash match the hand calculation in the test.
+
+### Judgement on 5b's limits
+- **Path-constant patches** (`STANCES_DIR`, `PRICE_WATCHLIST_PATH`, `CUSTOM_WATCHLIST_PATH`, `MAPPING_PATH`, `LEGACY_CHAIN_STARTS_PATH`, `read_calendar.__defaults__`): I count these as seeding stores, not hiding a path. Every one of them is derived from `backend.config.paths` (repository.py:22, union/store.py:11, custom_picks.py:12, company_resolver.py:9-12 via METADATA_ROOT, chain_start/store.py:12, calendar_source.py:10,30). In a real sandbox they resolve from the checkout's data_root. The test only re-binds what was bound at import, before it could set the checkout. No code under test is replaced.
+- **Completeness gate over Not-initiated companies:** this is a real limit, but acceptable. The gate code runs for real; only its "initiated" branch is not exercised for paper users. That branch reads no prices and has no broker dependency, so this is not the B1/B2 class. ALERT, for a later release-runner fixture: seed one stance log and index so the gate takes its full path.
+
+### Findings
+No BLOCK or ALERT findings on the diff. With none to disprove, I did not run a verifier.
+
+### Observations (not failures)
+- `backend/api/services/price_chart_service.py:117` builds `DhanPriceStore("default", ...)` directly. A chart route for a paper sandbox would raise. It is not on the approval path.
+- `backend/trading/scripts/rebuild_price_refs.py:39` (handoff says :22) is a maintenance script on DhanPriceStore.
+- `backend/trading/harness.py:237`: `_resolve_price` builds DhanPriceStore when no `price_store` is passed. All three callers (harness.py:211,270,434) pass one through. This is a latent paper-user trap if a caller ever omits it.
+
+### Suite
+Dev-skill command from backend/, each tree over its own temp root:
+- head: 100 failed / 1580 passed / 8 errors
+- base: 100 failed / 1553 passed / 8 errors
+- `comm -23` is empty (108 lines each), so there are no new failures.
+- `stores/tests/test_boundaries.py`: 2 passed.
+- No attribution lines and no relative imports in the commits.
+
+### Dev claims compared after the verdict
+The handoff matches what I found: the call sites, the 5b patches, the suite counts and the observations. I did not re-run dev's fail-before revert or the entry-point import list. The handoff gives rebuild_price_refs at :22; the construction is at :39.
+
+### Automatic check for this class
+A test that fails on any `DhanPriceStore(` construction outside `broker_factory/` in modules reachable from rebalance_service, trading_loop_service, strategy_service and the EMS.

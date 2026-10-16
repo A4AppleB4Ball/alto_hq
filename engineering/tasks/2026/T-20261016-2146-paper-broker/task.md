@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-2146-paper-broker
 title: "PaperBroker: a local broker for sandboxes, refused in the live checkout"
-status: ready
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 claimed_by:
 lease_until: 2026-10-17T23:59+05:30
 created: 2026-10-16T21:46+05:30
