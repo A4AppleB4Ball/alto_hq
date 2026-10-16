@@ -1,5 +1,14 @@
 # Conventions changelog
 
+## hq/v3 — proposed 2026-10-16, awaiting owner approval
+
+`version/v1` extends `item/v1`, and `epic/v1` declares its sidecar files
+(`E-….<topic>.md` and `E-….<topic>.py` beside an existing epic)
+(P-20261016-2252-version-item-epic-sidecars). `python -m scripts.views.build`
+rejects any other file under an item folder pattern, and version folders
+other than `v<n>` or `v<n>.<m>`. No migration: no version exists, and the
+existing sidecars already have the declared form.
+
 ## hq/v2 — 2026-10-15
 
 Added the epic type (`E`, `org/epics/`, schema epic/v1)
