@@ -2,13 +2,17 @@
 schema: task/v1
 id: T-20261017-1300-sandbox-dhan-instrument-master
 title: "A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date"
-status: awaiting_owner
-waiting_on: "owner: approve acceptance.md"
+status: ready
 created: 2026-10-17T13:00+05:30
 created_by: claude-main
 kind: internal
 spawned_from: T-20261016-2336-daily-price-store-everywhere
 related: [T-20261016-2336-daily-price-store-everywhere, T-20261017-1200-nse-holiday-calendar-store, T-20261016-2252]
+approvals:
+  - file: acceptance.md
+    sha256: a38f8586911b941e325cfcd6d50216773d3d1b478f657ca5b8d36592c186138f
+    by: owner
+    at: 2026-10-17T13:30+05:30
 ---
 
 ## Goal

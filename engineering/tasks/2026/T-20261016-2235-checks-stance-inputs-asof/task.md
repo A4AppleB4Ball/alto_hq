@@ -3,7 +3,7 @@ schema: task/v1
 id: T-20261016-2235-checks-stance-inputs-asof
 title: "Stage check: no stance link used an input dated after its as-of"
 status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+waiting_on: "ship: owner approved the merge 2026-10-17"
 friction: "sandbox checkouts lack production-only state (alto_data/system/legacy_chain_starts.json), so 39 validation/stance tests fail there at base until it is copied in; no case-to-sandbox installer existed (added here)"
 created: 2026-10-16T22:35+05:30
 created_by: owner
@@ -14,6 +14,10 @@ approvals:
     sha256: 7f537bc157acc293cfe5937fc7006fc5085e82b2f7302cf9f9d3961c42ba7e73
     by: owner
     at: 2026-10-16T23:43+05:30
+  - file: evidence.md
+    sha256: 17021c1cce5bade3fe1ccaea089a038a86f7963c4b06944263b1283f10981d98
+    by: owner
+    at: 2026-10-17T13:00+05:30
 ---
 
 ## Goal

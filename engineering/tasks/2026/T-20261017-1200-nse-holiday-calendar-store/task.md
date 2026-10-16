@@ -2,13 +2,17 @@
 schema: task/v1
 id: T-20261017-1200-nse-holiday-calendar-store
 title: "A live job stores NSE's trading holidays per year; every reader reads the stored file and raises when a year is missing"
-status: awaiting_owner
-waiting_on: "owner: approve acceptance.md"
+status: ready
 created: 2026-10-17T12:00+05:30
 created_by: claude-main
 kind: internal
 spawned_from: T-20261016-2336-daily-price-store-everywhere
 related: [T-20261016-2336-daily-price-store-everywhere, T-20261017-0040-price-reads-asof-and-start-coverage]
+approvals:
+  - file: acceptance.md
+    sha256: 8ddb61d22bf27c9920a421feeb28ee8181db141b97edd183a46fe41b2434cb94
+    by: owner
+    at: 2026-10-17T13:00+05:30
 ---
 
 ## Goal

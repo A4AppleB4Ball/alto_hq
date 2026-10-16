@@ -16,14 +16,12 @@ when this view and an item disagree, the item wins.
 | [P-20261015-1140-epic-type](../org/changes/2026/P-20261015-1140-epic-type.md) | change/v1 | Add the epic item type (E) for high-level plans |
 | [P-20261016-2252-version-item-epic-sidecars](../org/changes/2026/P-20261016-2252-version-item-epic-sidecars.md) | change/v1 | version/v1 extends item/v1; epic/v1 declares its sidecar files |
 
-## awaiting_owner (4)
+## awaiting_owner (2)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261016-2235-checks-stance-inputs-asof](../engineering/tasks/2026/T-20261016-2235-checks-stance-inputs-asof/task.md) | task/v1 | Stage check: no stance link used an input dated after its as-of |
 | [T-20261016-2336-daily-price-store-everywhere](../engineering/tasks/2026/T-20261016-2336-daily-price-store-everywhere/task.md) | task/v1 | Every daily price read goes through the checkout-gated price store |
-| [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | A live job stores NSE's trading holidays per year; every reader reads the stored file and raises when a year is missing |
-| [T-20261017-1300-sandbox-dhan-instrument-master](../engineering/tasks/2026/T-20261017-1300-sandbox-dhan-instrument-master/task.md) | task/v1 | A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date |
 
 ## done (20)
 
@@ -109,8 +107,10 @@ when this view and an item disagree, the item wins.
 | [E-20261016-2147-shadow-lane](../org/epics/2026/E-20261016-2147-shadow-lane.md) | epic/v1 | Many shadow lanes run beside live, each a full product definition, compared over time on one dashboard |
 | [I-20261015-1058-stances-without-quarterly-analysis](../operations/incidents/2026/I-20261015-1058-stances-without-quarterly-analysis/incident.md) | incident/v1 | Ten companies hold stances with no quarterly analysis; the proposal buys one of them |
 
-## ready (1)
+## ready (3)
 
 | Item | Schema | Title |
 |---|---|---|
 | [T-20261017-0040-price-reads-asof-and-start-coverage](../engineering/tasks/2026/T-20261017-0040-price-reads-asof-and-start-coverage/task.md) | task/v1 | Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start |
+| [T-20261017-1200-nse-holiday-calendar-store](../engineering/tasks/2026/T-20261017-1200-nse-holiday-calendar-store/task.md) | task/v1 | A live job stores NSE's trading holidays per year; every reader reads the stored file and raises when a year is missing |
+| [T-20261017-1300-sandbox-dhan-instrument-master](../engineering/tasks/2026/T-20261017-1300-sandbox-dhan-instrument-master/task.md) | task/v1 | A new sandbox gets a read-only copy of the live Dhan instrument master; readers raise when the copy is older than the read's date |
