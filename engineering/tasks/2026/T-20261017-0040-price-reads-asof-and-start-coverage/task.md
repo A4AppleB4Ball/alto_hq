@@ -2,8 +2,9 @@
 schema: task/v1
 id: T-20261017-0040-price-reads-asof-and-start-coverage
 title: "Non-live price reads clamp a non-trading as_of to the last trading day and check that the cache covers the start"
-status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge"
+status: done
+closed: 2026-10-17
+merge_commit: 8cf276e7676ee5c8e5c3055daf4b64aa8479ad51
 created: 2026-10-17T00:40+05:30
 created_by: claude-main
 kind: internal
@@ -18,6 +19,11 @@ approvals:
     sha256: c7880926001da95f832f0938d2084823331d2c912a26744448f7fd2125272814
     by: owner
     at: 2026-10-17T02:10+05:30
+  - file: evidence.md
+    sha256: 6e9267dae76936f20e59038195714dafe6e77255361ac6b1decba61c61ed66e0
+    by: owner
+    at: 2026-10-17
+    note: owner standing instruction in conversation 'merge whatever is ready'; QA round 2 passed
 ---
 
 ## Goal

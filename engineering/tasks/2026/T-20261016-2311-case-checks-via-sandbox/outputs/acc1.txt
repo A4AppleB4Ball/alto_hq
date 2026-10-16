@@ -1,0 +1,39 @@
+AUDIT live opens: []; sandbox opens: 123
+511144 index_dates: pass
+511144 quarterly_versions: pass
+511144 intake_failures: pass
+CHANDAN index_dates: pass
+CHANDAN quarterly_versions: FAIL Q1_FY27/2026-08-20: no_analysis
+CHANDAN intake_failures: FAIL stockscans_chandan_concall_ppt_jun2026ppt: failed at extraction: LLM could not determine the reporting period from this document's content
+ARSSBL index_dates: pass
+ARSSBL quarterly_versions: FAIL Q1_FY27/2026-07-14: no_analysis
+ARSSBL quarterly_versions: FAIL Q1_FY27/2026-07-15: no_analysis
+ARSSBL quarterly_versions: FAIL Q2_FY27/2026-10-13: no_analysis
+ARSSBL quarterly_versions: FAIL Q2_FY27/2026-10-15: no_analysis
+ARSSBL intake_failures: pass
+{
+  "companies": 3,
+  "failures_by_reason": {
+    "index_dates": {},
+    "intake_failures": {
+      "failed_item": 1
+    },
+    "quarterly_versions": {
+      "no_analysis": 5
+    }
+  },
+  "read_errors": [],
+  "states": {
+    "index_dates": {
+      "pass": 3
+    },
+    "intake_failures": {
+      "fail": 1,
+      "pass": 2
+    },
+    "quarterly_versions": {
+      "fail": 2,
+      "pass": 1
+    }
+  }
+}

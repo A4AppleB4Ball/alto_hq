@@ -1,0 +1,24 @@
+AUDIT live opens: []; sandbox opens: 31
+ORIANA index_dates: pass
+ORIANA quarterly_versions: pass
+ORIANA intake_failures: pass
+{
+  "companies": 1,
+  "failures_by_reason": {
+    "index_dates": {},
+    "intake_failures": {},
+    "quarterly_versions": {}
+  },
+  "read_errors": [],
+  "states": {
+    "index_dates": {
+      "pass": 1
+    },
+    "intake_failures": {
+      "pass": 1
+    },
+    "quarterly_versions": {
+      "pass": 1
+    }
+  }
+}

@@ -1,0 +1,28 @@
+AUDIT live opens: []; sandbox opens: 9
+3MINDIA index_dates: pass
+3MINDIA quarterly_versions: pass
+3MINDIA intake_failures: READ ERROR FileNotFoundError: No intake queue for 3MINDIA at /Users/kmrh581/personal/projects/workspace/alto_sandboxes/T-2311-acc/news_server/data/alto_data/intake/companies/3MINDIA
+{
+  "companies": 1,
+  "failures_by_reason": {
+    "index_dates": {},
+    "intake_failures": {},
+    "quarterly_versions": {}
+  },
+  "read_errors": [
+    {
+      "check": "intake_failures",
+      "error": "FileNotFoundError: No intake queue for 3MINDIA at /Users/kmrh581/personal/projects/workspace/alto_sandboxes/T-2311-acc/news_server/data/alto_data/intake/companies/3MINDIA",
+      "symbol": "3MINDIA"
+    }
+  ],
+  "states": {
+    "index_dates": {
+      "pass": 1
+    },
+    "intake_failures": {},
+    "quarterly_versions": {
+      "pass": 1
+    }
+  }
+}
