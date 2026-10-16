@@ -8,7 +8,7 @@ created_by: owner
 kind: internal
 spawned_from: T-20261015-1058-dagster-spike
 related: [T-20261016-1718-completeness-check, E-20261015-1140-validation]
-claimed_by: claude-main-20261016-1900
+claimed_by:
 lease_until: 2026-10-17T19:00+05:30
 approvals:
   - file: acceptance.md
