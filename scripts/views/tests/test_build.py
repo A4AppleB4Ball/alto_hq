@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 import pytest
@@ -77,7 +78,9 @@ def test_file_beside_an_item_is_not_an_item(tmp_path):
 EPIC = """schema: epic/v1
 extends: item/v1
 file: org/epics/<year>/E-….md
-sidecar: org/epics/<year>/E-….<topic>.md
+sidecar:
+  - org/epics/<year>/E-….<topic>.md
+  - org/epics/<year>/E-….<topic>.py
 required:
   status: {type: enum, values: [open, done]}
 """
@@ -127,6 +130,10 @@ def test_epic_sidecar_is_recognised(tmp_path):
     "E-20261015-1140-Other_X.md",           # bad id
     "E-20261015-1140-other.inventory.md",   # sidecar of no epic
     "E-20261015-1140-data.In_Ventory.md",   # sidecar topic not kebab-case
+    "E-20261015-1140-other.measure.py",     # script of no epic
+    "notes.md",                             # not an item or a sidecar
+    "README.md",
+    "E-20261015-1140-data.measure.sh",      # not a declared sidecar extension
 ])
 def test_stray_file_under_epics_fails(tmp_path, name):
     root = epic_repo(tmp_path)
@@ -144,3 +151,62 @@ def test_version_in_both_views(tmp_path):
     assert "## awaiting_owner (1)" in (root / BY_STATUS).read_text()
     approvals = (root / APPROVALS).read_text()
     assert "[v3](../../product/versions/v3/version.md)" in approvals and "promote v3" in approvals
+
+
+def test_epic_sidecar_script_is_recognised(tmp_path):
+    root = epic_repo(tmp_path)
+    (root / "org/epics/2026/E-20261015-1140-data.measure.py").write_text("print(1)\n")
+    build(root)
+    assert "## open (1)" in (root / BY_STATUS).read_text()
+
+
+@pytest.mark.parametrize("rel", [
+    "engineering/tasks/2026/README.md",
+    "engineering/tasks/2026/notes.md",
+    "engineering/tasks/README.md",
+    "engineering/tasks/twenty/T-20261016-0001-a/task.md",
+])
+def test_stray_file_under_tasks_fails(tmp_path, rel):
+    root = make_repo(tmp_path, {"T-20261016-0002-a": "status: ready\n"})
+    (root / rel).parent.mkdir(parents=True, exist_ok=True)
+    (root / rel).write_text("# stray\n")
+    with pytest.raises(ItemError, match="README.md|notes.md|twenty"):
+        build(root)
+
+
+def test_files_inside_an_item_folder_are_allowed(tmp_path):
+    root = make_repo(tmp_path, {"T-20261016-0002-a": "status: ready\n"})
+    folder = root / "engineering/tasks/2026/T-20261016-0002-a"
+    (folder / "plan.md").write_text("plan\n")
+    (folder / "attempts" / "1").mkdir(parents=True)
+    (folder / "attempts" / "1" / "diagnosis.md").write_text("d\n")
+    build(root)
+    assert "## ready (1)" in (root / BY_STATUS).read_text()
+
+
+def version_repo(tmp_path: Path, folder: str) -> Path:
+    root = make_repo(tmp_path, {})
+    (root / "org" / "schemas" / "version.v1.yaml").write_text(VERSION)
+    write_item(root / f"product/versions/{folder}/version.md", "version/v1", folder, "status: staging\n")
+    return root
+
+
+@pytest.mark.parametrize("folder", ["vbad", "v1.x", "1", "v1.2.3", "V2"])
+def test_bad_version_folder_fails(tmp_path, folder):
+    root = version_repo(tmp_path, folder)
+    with pytest.raises(ItemError, match=f"versions/{re.escape(folder)}: not a valid version/v1 item folder"):
+        build(root)
+
+
+@pytest.mark.parametrize("folder", ["v1", "v12", "v1.2"])
+def test_good_version_folder_builds(tmp_path, folder):
+    root = version_repo(tmp_path, folder)
+    build(root)
+    assert f"[{folder}](../product/versions/{folder}/version.md)" in (root / BY_STATUS).read_text()
+
+
+def test_stray_file_under_versions_fails(tmp_path):
+    root = version_repo(tmp_path, "v1")
+    (root / "product/versions/README.md").write_text("x\n")
+    with pytest.raises(ItemError, match="versions/README.md"):
+        build(root)
