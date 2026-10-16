@@ -10,9 +10,9 @@ kind: internal
 related: [E-20261015-1140-validation, T-20261016-2147-checks-stance-chain, T-20261015-0321-checkout-data-root]
 approvals:
   - file: acceptance.md
-    sha256: ed0e83361368a9ca7287e9fbdd46e147c218f486bd152324f0deac794dc600f9
+    sha256: 7f537bc157acc293cfe5937fc7006fc5085e82b2f7302cf9f9d3961c42ba7e73
     by: owner
-    at: 2026-10-16T23:11+05:30
+    at: 2026-10-16T23:43+05:30
 ---
 
 ## Goal

@@ -2,11 +2,16 @@
 schema: task/v1
 id: T-20261016-2311-case-checks-via-sandbox
 title: "Stage checks on frozen cases read through DataAccess in a sandbox checkout; remove validation/cases/access.py path building"
-status: draft
+status: ready
 created: 2026-10-16T23:11+05:30
 created_by: owner
 kind: internal
 related: [T-20261016-2147-checks-index-quarterly, T-20261015-0321-checkout-data-root]
+approvals:
+  - file: acceptance.md
+    sha256: ab1b86b4a14fff96db01ffab4f35699952cacbdb8511b32b895e66075510b8a2
+    by: owner
+    at: 2026-10-16T23:43+05:30
 ---
 
 ## Goal

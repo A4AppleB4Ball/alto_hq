@@ -2,8 +2,7 @@
 schema: task/v1
 id: T-20261016-2252-hq-generated-views
 title: "alto_hq generated views: tasks by status and the owner's approval queue"
-status: needs_owner
-waiting_on: "QA round 2 FAIL on check 6 (non-.md files and non-id names in item folders are skipped silently; version folders have no id check). Decide: tighten the code, or amend check 6 to allow them; and file or waive a P- item for the schema changes"
+status: ready
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: internal
@@ -12,9 +11,9 @@ friction: "the amendment changes org/schemas, which README routes through P- ite
 branch: eng/T-20261016-2252-hq-generated-views
 approvals:
   - file: acceptance.md
-    sha256: 58869235dc1826fba05edf7c5b485a3797beab9ad19a4759d5c66937b3bf6a1a
+    sha256: 9d7843814461396a597589c4480c5ec32cd703d6e11798656ec1ef29365302b1
     by: owner
-    at: 2026-10-16T23:29+05:30
+    at: 2026-10-16T23:43+05:30
 ---
 
 ## Goal

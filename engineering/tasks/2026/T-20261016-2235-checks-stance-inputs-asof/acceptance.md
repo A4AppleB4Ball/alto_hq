@@ -8,3 +8,8 @@ Read-only on product data. Run from a sandbox checkout (T-20261015-0321) whose r
 4. **Unresolvable input fails** with reason `input_not_in_index`, never skipped.
 5. **Verdict contract** as in the completeness check.
 6. **Suite.** `pytest backend/validation backend/stance` pass; full suite no new failure; boundary test passes.
+
+## Amendment (owner 2026-10-16, after QA round 1)
+
+7. **Fingerprint independent of `--through`.** The same inputs and reasons give the same fingerprint for different `--through` dates (test).
+8. Check 6 is run after T-20261016-2311-case-checks-via-sandbox lands, in a fresh sandbox with no file copied from live.
