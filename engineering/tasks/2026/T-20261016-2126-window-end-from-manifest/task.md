@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-2126-window-end-from-manifest
 title: "Scenario window end comes from the case manifest's freeze date, not a constant"
-status: ready
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 created: 2026-10-16T21:26+05:30
 created_by: owner
 kind: internal
