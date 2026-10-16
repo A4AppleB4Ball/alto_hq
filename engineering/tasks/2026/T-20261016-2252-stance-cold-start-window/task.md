@@ -2,11 +2,11 @@
 schema: task/v1
 id: T-20261016-2252-stance-cold-start-window
 title: "Stance cold-start window starts at the company's chain start (lib/chain_start), not a fixed 2026-07-01"
-status: ready
+status: in_progress
 claimed_by:
-lease_until: 2026-10-17T23:00+05:30
-waiting_on: owner - approve an LLM pilot for acceptance 5 (SHILPAMED sandbox rebuild; ARSSBL after body backfill) and confirm the min(chain start, feed start) reading
-friction: no sandbox data root yet, so acceptance 5's sandbox rebuild needs a hand-built stance copy plus LLM approval
+lease_until: 2026-10-17T23:59+05:30
+waiting_on: owner - Bedrock token for the local proxy is expired (ExpiredTokenException); refresh it so the SHILPAMED sandbox pilot (check 10) can run
+friction: main's .alto_checkout.yaml landed mid-task, so an existing worktree needed a hand-written sandbox declaration and a hand-copied input set (no seed command beyond the index)
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: decision
@@ -14,9 +14,9 @@ related: [E-20261015-1140-validation, T-20261016-2147-checks-stance-chain]
 evidence_route: "owner 2026-10-16: shadow is parked; this fix restores the owner's stated chain-start rule, so a before/after sandbox comparison (ARSSBL, one legacy, one 2026-07-01 company) replaces research+shadow"
 approvals:
   - file: acceptance.md
-    sha256: 00e11190d357d7bec5b2a79e6d1692785aef60fc9570ac910fbc589f96baa4fd
+    sha256: a8d0bf6cc096578f6c6a16acdf2f9044a3166c285675ea956f16bab3d9f34367
     by: owner
-    at: 2026-10-16T23:29+05:30
+    at: 2026-10-16T23:50+05:30
 ---
 
 ## Goal
