@@ -2,19 +2,15 @@
 schema: task/v1
 id: T-20261016-1718-proposal-gate
 title: "Rebalance proposal refuses a stance whose latest quarter has no valid analysis"
-status: in_progress
+status: awaiting_owner
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
 spawned_from: T-20261015-1058-dagster-spike
 related: [T-20261016-1718-completeness-check, E-20261015-1140-validation]
-approvals:
-  - file: acceptance.md
-    sha256: 96d8d825f250802e302482ae8d623022a548566ae6463770b702b5c0cf1868c8
-    by: owner
-    at: 2026-10-16T18:55+05:30
 claimed_by: claude-main-20261016-1900
 lease_until: 2026-10-17T19:00+05:30
+waiting_on: "Read and approve acceptance.md v2 (whole-proposal block); the dev branch built the per-name version and must be reworked"
 branch: eng/T-20261016-1718-proposal-gate
 friction: acceptance 2 assumes only ARSSBL and CHANDAN differ; cash-limited buys and held incomplete names also move
 ---
