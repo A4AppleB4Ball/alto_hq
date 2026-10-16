@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-2259-test-data-guard
 title: "Tests cannot write to the production data root: a test mode, a per-run temp root, and a conftest guard"
-status: ready
+status: needs_owner
+waiting_on: "waive check 3 base half (cannot run in a worktree), decide chart_profiles.duckdb migration, then approve merge"
 created: 2026-10-16T22:59+05:30
 created_by: claude-main
 kind: internal

@@ -1,30 +1,23 @@
-# Handoff: test-data-guard (attempt 1)
+# Handoff, attempt 2
 
-Branch `eng/T-20261016-2259-test-data-guard` (worktree
-/Users/kmrh581/personal/projects/workspace/alto/.claude/worktrees/test-data-guard), base 35e1342.
-Commits: e5b664d (test mode, guard, backend/conftest.py, tests), 79bdab3 (test reads stances root via CompanyStore; fixes boundary test).
+Branch eng/T-20261016-2259-test-data-guard, rebased onto main 1665a1c (local main moved past 354cbda). Commits 1665a1c..e7bfc9d:
+63b62a6 test mode + guard (rewritten, unchanged content), be8fda9 test reads stances via CompanyStore (duckdb file dropped), cb2f413 chart profile path, 2abede5 ALTO_TEST_ROOT, e7bfc9d session-end live-root assertion.
 
-## Change
-- `backend/config/checkout.py`: mode `test` (no data_root needed); `activate_test_mode(root)`, `active_test_root()`, `LiveRootAccessError`, `refuse_live_path`. While active, `load_checkout` returns mode test with the temp root; the declared live root is kept for the guard.
-- `backend/config/paths.py`: test mode treated like sandbox for WORKSPACE_ROOT; `refuse_live_write(path)`.
-- `backend/stores/locking.py`: exclusive_lock, atomic_write_text, append_line_durable call `refuse_live_write` (every store write goes through these).
-- `backend/conftest.py` (new): makes a temp root, activates test mode before any test imports paths, removes the root at session end.
-- Tests: `backend/config/tests/test_test_mode.py`; `conftest.py` there with fixture `outside_test_mode`, used by test_checkout.py and test_new_sandbox_worktree.py (they test declarations as live/sandbox).
+## QA findings
+1. BLOCK duckdb committed: fixed. chart_profiles.duckdb is in no commit of the branch (history rewritten; `git log 1665a1c..HEAD -- backend/data` empty). ChartProfileStorage default is now `DASHBOARD_DIR / "chart_profiles.duckdb"` (backend/api/services/chart_profile_storage.py:31), so tests write under the temp root. Test: test_chart_profile_storage_default_path_is_under_the_temp_root.
+   Behaviour change: production now reads news_server/data/dashboard/chart_profiles.duckdb (a file already exists there) instead of backend/data/dashboard/ (cwd-relative). Server profiles in the old cwd file are not migrated; owner should check which one the server uses.
+2. ALERT children: fixed. activate_test_mode exports ALTO_TEST_ROOT; checkout.py reads it at import (_inherited_test_root, raises on a bad value). Test: test_child_process_inherits_test_mode_and_root. test_checkout.py's import-in-sandbox helper now strips the variable (it simulates a non-test process).
+3. ALERT unguarded writes: backend/config/live_root_watch.py snapshots (mtime,size) of <live>/data before the session and backend/conftest.py compares at session end, raising LiveRootChangedError naming created/modified/removed files. Excluded (a live server writes them, not tests): alto_data/workspace/*/book/* (snapshots.jsonl every 4 min) and alto_data/scheduler/*. Walk costs about 14 s twice. Unit tests: config/tests/test_live_root_watch.py. Caveat: any other live-server write during a run (e.g. dashboard chat, intake) would raise a false positive; none seen in 3 runs.
 
 ## Acceptance
-1. Mode: `test_roots_are_under_the_temp_root`, `test_declaring_test_mode_in_the_file_is_accepted` pass.
-2. Guard: `test_store_write_under_live_root_raises_naming_the_path` (CompanyStore(live/...).append_stance raises LiveRootAccessError naming the path) passes.
-3. ACME class: NOT shown as written. I may not write production, and the check needs base to run on the live root. Substitute: base run in a sandbox worktree. The named test file (2 tests) raises `_QueueReached` before `write_decision_ledger` and wrote nothing even on base-in-sandbox, so it does not itself reproduce the ACME files (the live ACME decisions.jsonl mtime 16 Oct 22:17 predates my runs). At head, same file: nothing created in the sandbox or live (`find -newer marker`). Owner/QA should run the base half on a quiet main if wanted.
-4. Full suite with markers: base-in-sandbox wrote 5 files into its sandbox root (workspace/backtest/system/dhan_instruments.json, workspace/u_test/strategy/config.json, dashboard/chat/*.duckdb x2, screener_data/raw_reports/.../HDFCBANK_page_*.html), i.e. tests do write the data root. Head: nothing in its sandbox, nothing in the live root (`find news_server -newer marker`: empty), temp root removed. Failures: base 100 failed + 8 errors; head 101 failed (after fixing, the only extra was test_boundaries on my own test, fixed in 79bdab3; rerun of config/tests + stores/tests: 66 passed). I did not rerun the whole suite after 79bdab3; `comm -23` before the fix listed only that one line.
-5. Boundary test passes (in the 66). Imports OK: intake.runner, stance.runner, e2e.run, workflow.cli, execution.runner, raw.master_pipeline, backtest.replay, api.main_cockpit, api.app_factory.
+1. Mode / STANCES_DIR under temp root: config/tests 55 passed (declaration `mode: test` in the worktree).
+2. Guard test: passes (test_store_write_under_live_root_raises_naming_the_path).
+3. ACME class: BASE HALF NOT RUN: a worktree cannot declare live, so the base cannot write the live root from here. Head half: marker /tmp/tdg2_marker; after three full suite runs `find news_server -newer marker` lists only my report logs under verify_data and workspace/scienceamit1/book/default/snapshots.jsonl (live server). The ACME writer was NOT identified (QA found 13 candidate files wrote nothing in an empty root); I did not find it either.
+4. Full suite from backend/, vs base 1665a1c in a sandbox declaration (logs and .set files in news_server/verify_data/reports/T-20261016-2259-test-data-guard/r2*):
+   base 95 failed 8 errors; head sandbox declaration 95 failed 8 errors; head `mode: test` 95 failed 8 errors. `comm -23 head base` empty for both; head sets identical to each other. The 5 subprocess tests QA listed pass under mode: test. The session-end assertion passed on the live root in both head runs.
+5. test_boundaries + cooldown file: 4 passed. Imports ok: config.paths, e2e.run, workflow.cli, api.local (needs the env vars the suite sets).
 
-## Notes for the owner
-- Tests that hardcoded live/sandbox expectations of the checkout now need the `outside_test_mode` fixture.
-- Tests that wrote to the data root (list above) now write to the temp root; any test that relied on real live data being present (e.g. screener_data, index files) now sees an empty root, possibly causing different failures than base; the failure sets matched except the one fixed line.
-- Run needs no `<data_root>/data/alto_data` any more under pytest (conftest creates it).
-
-## Not done
-- Acceptance 3 base half on live root (above); final full-suite rerun after 79bdab3.
-
-## Found
-`api/services/tests/test_rebalance_price_action_cooldown.py` cannot be the writer of ACME decisions in its current form (raises before the ledger). Writer is another test reaching `rebalance_service.py:1012`; head makes that harmless.
+## Not done / notes
+- Base half of check 3 (above). The 95 base failures are unchanged, not investigated.
+- A nested pytest subprocess would inherit ALTO_TEST_ROOT and its conftest would raise "already active"; none exists in the suite.
+- Scripts with cwd-relative data/dashboard paths (scripts/migrate_*.py, api/services/migrate_to_partitioned.py) are untouched.

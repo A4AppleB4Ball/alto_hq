@@ -1,10 +1,10 @@
 ---
 schema: evidence/v1
 task: T-20261016-2259-test-data-guard
-round: 1
+round: 2
 qa: fail
 qa_by: qa@claude
-commits: 35e1342..79bdab3
+commits: 1665a1c..e7bfc9d
 acceptance_sha256: 548696372fb90bf55e97871abdd206456477c4c24552181f3d64a957c06735db
 outputs_changed: unverified
 ---
@@ -40,3 +40,38 @@ Base (sandbox declaration, 35e1342): 95 failed, 8 errors. Head, sandbox declarat
 ### Risks
 Main-checkout run (mode live) not exercised: ship's full-suite diff there should confirm children do not write live.
 Check that would catch the class: an end-of-session assertion in backend/conftest.py that nothing under the live root changed, plus an env var carrying the test root to subprocesses.
+
+
+## Round 2
+
+Worktrees: head .../.claude/worktrees/tdg-qa (declaration `mode: test`) and tdg-qa2 (sandbox declaration), base tdg-base at 1665a1c (sandbox). Logs and .set files: news_server/verify_data/reports/T-20261016-2259-test-data-guard/r2_tdg-*.{log,set}. Marker /tmp/tdg_marker3 on news_server/data, excluding workspace/*/book/* and scheduler/*.
+
+### Round 1 findings
+1. Binary: FIXED. `git log 1665a1c..HEAD -- backend/data` empty; no duckdb in `git diff --stat`. chart_profile_storage.py:32 default is `DASHBOARD_DIR / "chart_profiles.duckdb"` (paths.py:149). Head worktree status clean after suite (no backend/data/dashboard created).
+2. Subprocess tests: FIXED. Under `mode: test` (tdg-qa) the 5 round-1 tests pass; `comm -23 head base` empty (see Suite). ALTO_TEST_ROOT is exported by activate_test_mode and read at import (checkout.py:44-57).
+3. Session-end assertion (backend/conftest.py, live_root_watch.py): works.
+   - My own temp-dir script /tmp/qa_watch.py: created, modified (size change), modified (same size, mtime only), removed, and a file reached through a symlinked dir are all detected; paths named in the message. Exit code with a raising sessionfinish hook is 1 (traceback after results), so it fails the run.
+   - Exclusions (workspace/*/book/*, scheduler/*) are justified: round 1 saw snapshots.jsonl change every 4 min with no test running. They do hide a real test write into a book dir or scheduler state; a non-book file under workspace/<u>/ is still detected. fnmatch "*" crosses "/", so the patterns cover nested dirs.
+   - False positive: any other live-server write during the 3 min run (dashboard chat duckdb, intake, ledgers) fails the session at the end; none seen in 3 runs here. A file removed between scandir and stat raises FileNotFoundError in snapshot (not tested live). Empty-directory creation is not detected (files only). rmtree of the temp root runs before the assertion, so a failing rmtree skips it. All minor ALERTs, not run past the verifier sub-agent (reproduced by script above).
+   - Cost: config/tests+cooldown file 57 tests took 37 s, of which about 28 s is the two walks. Full suite 183 s vs 206 s base: not material for a hand-run suite.
+
+### Acceptance (as written)
+1. Mode: PASS. `pytest backend/config/tests backend/api/services/tests/test_rebalance_price_action_cooldown.py -q` with `mode: test`: 57 passed.
+2. Guard: PASS (test_store_write_under_live_root_raises_naming_the_path in the 57).
+3. ACME class: NOT RUN as written. Base half needs a live-mode checkout; a worktree cannot declare live and base would write production. Head half: after that run and the full suite, `find news_server/data -newer /tmp/tdg_marker3 -not -path '*/workspace/*/book/*' -not -path '*/scheduler/*'` lists nothing. Writer of ACME decisions/trades still unidentified (known gap).
+4. Full suite: PASS. Marker find empty after head runs under both declarations; comm -23 below.
+5. Repo checks: PASS. test_boundaries in the suite (stores and stage_fleet) pass. Imports config.paths, e2e.run, workflow.cli ok; api.local needs SESSION_SECRET and ALLOWED_EMAILS and fails identically at base.
+
+### Suite
+Base sandbox: 95 failed, 11 errors, 1646 passed. Head sandbox (tdg-qa2): 95 failed, 11 errors, 1656 passed. Head mode test (tdg-qa): same counts. `comm -23 head base` empty for both; no failure fixed either. +10 passed are the new tests.
+
+### Findings
+- ALERT (owner decision): chart profile database moved from cwd-relative backend/data/dashboard/chart_profiles.duckdb to news_server/data/dashboard/chart_profiles.duckdb, not migrated. A file already exists at the new path (plus chart_profiles_old.duckdb); I did not open it. On the server the old file's profiles will silently not appear unless the owner checks which file holds the real profiles and copies it. Fix is data-side, via the owner.
+- ALERT: the watcher minor points above.
+- Verdict reason: `fail` only because check 3's base half cannot run in a worktree. No BLOCK. The owner can waive that half; everything else passed.
+
+### Dev claims
+Not confirmed: "ACME writer not found" (consistent with mine, not independently solved); the "95 failed 8 errors" count (I get 11 errors on all three trees, same sets). Everything else reproduced.
+
+### Check that would catch the class
+The session-end live-root assertion now in place catches any test write outside the book and scheduler exclusions at the end of a hand-run suite. For the ACME class specifically: run the cooldown test file once from the main checkout (live) with the marker after merge, as part of ship's full-suite diff.
