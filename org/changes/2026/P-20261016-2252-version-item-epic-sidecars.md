@@ -2,12 +2,12 @@
 schema: change/v1
 id: P-20261016-2252-version-item-epic-sidecars
 title: version/v1 extends item/v1; epic/v1 declares its sidecar files
-status: awaiting_owner
+status: applied
+conventions_version: hq/v3
 created: 2026-10-16T23:55+05:30
 created_by: dev
 evidence: [T-20261016-2252-hq-generated-views]
 migration: none
-waiting_on: "owner approves this change and the hq/v3 CHANGELOG entry (they ship with T-20261016-2252-hq-generated-views)"
 ---
 
 ## Problem

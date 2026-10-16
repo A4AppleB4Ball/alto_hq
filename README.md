@@ -224,7 +224,7 @@ migration, the validator passing. Never by an employee's ad-hoc edit.
   existing file, and the validator must pass over the whole repo.
 - **On a schedule.** Weekly at first, monthly once settled.
 
-The current version is `hq/v2`.
+The current version is `hq/v3`.
 
 ## Edge cases
 

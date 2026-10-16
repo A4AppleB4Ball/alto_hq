@@ -1,6 +1,6 @@
 # Conventions changelog
 
-## hq/v3 — proposed 2026-10-16, awaiting owner approval
+## hq/v3 — 2026-10-17
 
 `version/v1` extends `item/v1`, and `epic/v1` declares its sidecar files
 (`E-….<topic>.md` and `E-….<topic>.py` beside an existing epic)
