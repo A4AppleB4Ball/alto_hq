@@ -69,3 +69,20 @@ Full lists with evidence in the JSON output. FC01 quarter Q2_FY27 is `unknown` (
 ## Found
 
 - `find -newer` read-only checks on the production data root are polluted by the live API (book snapshots, dashboard chat duckdb) and screener scraping; acceptance checks of this form need a store-scoped path list or a quiet window.
+
+## QA ALERT fix (after QA round 1 PASS with ALERT, run.py:43-47 broad except)
+
+Commit `f37b816` (Validation: selection lists only the product's refusals, raises otherwise, exits non-zero on errors). Range now `79e66a7..f37b816`.
+
+- `selection/inputs.py`: new `UnreadableCompany` with two subclasses, one for each kind of error seen in the 12 rows:
+  `NotInMapping` (resolver does not know the symbol: FABTECHCL, PERMAGN) and `RefusedPublishDate` (a `ValueError` from
+  `backend.lib.concall_dates.doc_publish_date` on an index entry; this is checked per document before any other read, so the
+  `ValueError` is caught only around that one product reader: BIGBLOC, JSL, KDDL, MALLCOM, MOLDTKPAC, POLYMED, RAIN, SCHAEFFLER, SHK, STYL).
+- `run.py:select` catches only `UnreadableCompany`; any other exception (including a bare ValueError/KeyError) propagates.
+- CLI writes the output, prints `ERROR <symbol>: <reason>` per company on stderr, and exits 1 if any errored. At 2026-10-15 it exits 1 (12 errors), as it should.
+- Tests: `selection/tests/test_errors.py`. Known refusals are listed; ValueError, KeyError and RuntimeError propagate; unknown symbol gives NotInMapping;
+  publish-date wrapping only wraps ValueError (TypeError propagates); the CLI writes and then exits 1.
+- Rerun: sel5 and sel6 are `cmp`-identical. The candidates and counts are unchanged from sel3 apart from `alto_commit`, and the error reasons now name the class.
+  `find -L ../news_server/data -newer marker` was empty for that window. `pytest backend/validation` 45 passed. Full suite: 66 failed / 1465 passed; `comm -23 new base` empty.
+- `backend/validation/scenarios/__init__.py`: kept. The scenario-contract branch (`efe5533`) adds an identical empty file (0 bytes), so git merges
+  the add/add without a conflict. Removing mine would break the package import on this branch until theirs lands.

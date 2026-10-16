@@ -1,10 +1,10 @@
 ---
 schema: evidence/v1
 task: T-20261016-1928-scenario-selection
-round: 1
+round: 2
 qa: pass
 qa_by: qa@alto_hq/roles/engineering/qa
-commits: 79e66a7..d8d3275
+commits: 79e66a7..f37b816
 acceptance_sha256: ff3137bec0a1baefe2973b78cc6f15958d74a32d66260660dd6c0799067615ed
 outputs_changed: unverified
 ---
@@ -52,3 +52,44 @@ The suite ran from committed trees, with base 79e66a7 and head d8d3275 in parall
 
 - Whole-root `find -newer` checks are unreliable while the live API is running. A store-scoped list of paths, or comparing the module's write sites against the live writers' paths, would catch this class automatically.
 - A rule test that forbids `except Exception` in validation packages, unless the exception is re-raised, would catch the catch-all automatically.
+
+## Round 2
+
+The commit range judged is 79e66a7..f37b816, which adds f37b816 to round 1. The acceptance sha256 is unchanged and still matches the approval. QA worktree: `alto/.claude/worktrees/T-20261016-1928-scenario-selection-qa`, detached at f37b816. Outputs and logs are in /tmp/qa1928r2/.
+
+### Round 1 ALERT (b): fixed
+
+`run.py:45` now catches only `UnreadableCompany`. It has two subclasses (`inputs.py`):
+- `NotInMapping`: the company resolver does not know the symbol.
+- `RefusedPublishDate`: the ValueError from the product reader `backend.lib.concall_dates.doc_publish_date`, wrapped. `check_publish_dates` runs before `read_company_inputs`.
+
+What I checked:
+- **My temp-dir probe** (/tmp/qa1928r2/probe/test_probe.py). It stubs the stores and makes `read_company_facts` raise AttributeError for BBB. `select()` now raises AttributeError: 1 passed.
+- **The real CLI.** It wrote the output, printed one `ERROR <symbol>: ...` line per company on stderr, and exited 1.
+- **Dev's `test_errors.py`.** It covers ValueError, KeyError and RuntimeError propagating, a TypeError inside `doc_publish_date` propagating, and the CLI writing its output then exiting 1.
+
+### Acceptance re-run at f37b816
+
+- **Read-only.** Marker, then two CLI runs: both exited 1 because of the 12 errors, and both printed the same counts as round 1. `find .../news_server/data -newer /tmp/qa1928r2/m -type f` was **empty**.
+- **Reproducible.** `cmp a.json b.json` showed the two outputs identical. The output records alto_commit f37b816.
+- **Checks 1-3 unchanged.** For every class, the candidate lists match round 1 exactly, so ARSSBL, CHANDAN, FC01 and FC10 hold as in round 1. The 12 error symbols are the same as round 1, now typed (10 RefusedPublishDate, 2 NotInMapping).
+- **Check 4.** `pytest backend/validation`: 45 passed.
+
+### Suite
+
+The head suite at f37b816 ran serially and alone: 67 failed, 1464 passed. I compared it with the round 1 base list (79e66a7).
+- `comm -23` returned one entry, `auth/tests/test_session.py::test_verify_rejects_tampered_token`. It passed 6 of 6 times alone at head and 6 of 6 at base. The test flips the token's last base64 character, which can leave the decoded bytes unchanged, so it is flaky. f37b816 touches only `validation/scenarios/selection/`. Not counted as a new failure.
+- The base-only entry was `test_partitioned_storage`, the known flake.
+
+### task.md status
+
+Round 1 set `status: awaiting_owner`. Dev reports in_progress, but task.md read `awaiting_owner` before this round's write, and that is consistent with a PASS. It stays `awaiting_owner`, with `waiting_on` set to review evidence.md and approve the merge.
+
+### Verdict
+
+**PASS. No findings remain.** The owner still has to confirm the FC01 reading (round 1, point (a)). Round 1's other notes, (c) and the point-in-time risk, stand.
+
+### Checks that would catch this automatically
+
+- A rule test that forbids `except Exception` in validation packages.
+- Fixing the session test's tampering so it changes a decoded byte, not just the final base64 character.
