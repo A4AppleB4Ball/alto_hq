@@ -1,40 +1,47 @@
 ---
 schema: task/v1
 id: T-20261017-1200-nse-holiday-calendar-store
-title: "A live job stores NSE's trading holidays per year; every reader reads the stored file and raises when a year is missing"
-status: ready
+title: "Every holiday reader uses the stored NSE list from T-0040; one sandbox cache-only daily reader; a live job refreshes the list"
+status: awaiting_owner
+waiting_on: "owner: approve revised acceptance.md"
 created: 2026-10-17T12:00+05:30
 created_by: claude-main
 kind: internal
 spawned_from: T-20261016-2336-daily-price-store-everywhere
 related: [T-20261016-2336-daily-price-store-everywhere, T-20261017-0040-price-reads-asof-and-start-coverage]
-approvals:
-  - file: acceptance.md
-    sha256: 8ddb61d22bf27c9920a421feeb28ee8181db141b97edd183a46fe41b2434cb94
-    by: owner
-    at: 2026-10-17T13:00+05:30
+approvals: []
 ---
 
 ## Goal
 
-NSE's capital-market (CM) trading holidays are stored as one file per calendar year under a new `backend.config.paths` constant, written only by a live job. Every reader of the holiday calendar reads the stored files and raises naming the path and year when the year is missing. No reader calls NSE.
+Build on the stored holiday list that T-20261017-0040 adds; do not create a second store. After this task, every reader of the NSE holiday calendar reads `stored_nse_holidays()` and never calls NSE; the sandbox has one holiday-aware cache-only daily reader with one error type; index-store errors raise; and a live-only scheduler job keeps the stored list current.
 
 ## Why
 
-Owner decision 2026-10-17, option (a) of T-20261016-2336 handoff.md Round 2, F4. That item left check 11 (holiday half) unmet. Today `backend/lib/market_calendar/nse_holidays.py` `nse_trading_holidays()` calls NSE on every use. So the sandbox currency check (`backend/price_feed/cached_daily_series.py` `require_current`, used by `broker_factory/prices._shared_cache_window` and `broker_factory/daily_series.py` on the T-2336 branch) makes a network call. `paths.PAPER_HOLIDAYS_FILE` is a sandbox-only input that nobody fills.
+Owner decision 2026-10-17 (revised the same day). T-2336 check 11 (holiday half) is unmet because `nse_trading_holidays()` calls NSE on every use. T-0040 already provides:
+
+- `paths.NSE_HOLIDAYS_FILE = ~/NSE_BSE_Data/nse_holidays.json`, a single multi-year JSON list of ISO dates, already populated;
+- `backend/lib/market_calendar/stored_holidays.py`: `stored_nse_holidays()` and `HolidayListMissingError` (raised naming the path when the file is absent);
+- the writer `python -m backend.lib.market_calendar.write_holidays`, which merges NSE's listed year into the file.
+
+QA of T-2336 (evidence.md round 3, A4) also found two sandbox cache-only daily readers with different rules and error types, and a silent `except Exception` around index stores.
+
+## Depends on
+
+Lands after both T-20261017-0040 (commits 38337b9, b008fde) and T-20261016-2336 (branch `eng/T-20261016-2336-daily-price-store-everywhere`). Base the worktree on main once both have merged.
 
 ## Proposed design (dev confirms in plan.md)
 
-- **Store.** `paths.NSE_HOLIDAYS_DIR = DATA_ROOT / "market_calendar" / "nse_holidays"`, one `<YYYY>.json` per year: sorted ISO dates plus `fetched_at` and `source`. It is in the data root, so it reaches sandboxes and the server like other live data.
-- **Writer.** `backend/lib/market_calendar/` gets separate modules: a fetch (the current `NSE().holiday_list()` call), a store (read/write one year), and a CLI `python -m backend.lib.market_calendar.cli fetch`. The CLI writes the year NSE lists. NSE lists the current year only. It refuses to run in a sandbox checkout (the existing checkout gate). A refetch that differs from the stored year overwrites it and logs the diff.
-- **Schedule.** Add a new `nse_holiday_calendar` job to `backend/config/pipeline_scheduler.yaml`. Run it daily, before `refresh_price_cache` (16:00), in collision group `data_pipelines`, with tag `market_calendar`. It is a separate job rather than a step inside `refresh_price_cache`, so a failed NSE call does not block price refresh and each job owns one store.
-- **Readers.** `nse_trading_holidays(year)` (or for a span of years) reads only the store. Callers to switch: `cached_daily_series.require_current`, `broker_factory/prices.py`, `broker_factory/daily_series.py`, `broker_factory/build.py`, `price_watchlist/cli.py`, `price_watchlist/capture/market.py` and `api/services/trading_loop_service.py`. In `broker_factory/build.py`, the paper broker's `PAPER_HOLIDAYS_FILE` read is replaced by the store, and the constant is removed.
+1. **Readers use the store.** Switch every holiday read to `stored_nse_holidays()`: `require_current` in `backend/price_feed/cached_daily_series.py`, `broker_factory/prices._shared_cache_window`, `broker_factory/daily_series.py`, the paper broker in `broker_factory/build.py`, `price_watchlist/cli.py`, `price_watchlist/capture/market.py`, `api/services/trading_loop_service.py`, and any other caller of `nse_trading_holidays()` that reads (found by grep). `nse_trading_holidays()` remains only as the writer's fetch. Remove `paths.PAPER_HOLIDAYS_FILE`.
+2. **One cache-only daily reader (A4).** Merge `cached_daily_series.require_current` / `CachedPriceMissing` and `dhan_daily_store._read_cache_only` / `PriceCacheMissError` into one holiday-aware reader in the price-feed package with one error type. Callers (`prefetch_daily_prices.py`, `DhanDailyPriceStore`, `backtest/cli.py`, broker_factory) use it. A cache is current when its last bar is the last trading day on or before `end`, per the stored list.
+3. **No swallowed index errors.** `dhan_daily_store.py` (~211-214) stops catching `Exception` around index stores; a failure raises.
+4. **Scheduled refresh.** A `nse_holiday_calendar` job in `backend/config/pipeline_scheduler.yaml` runs `python -m backend.lib.market_calendar.write_holidays`, daily, before `refresh_price_cache`, collision group `data_pipelines`, live machine only (machine gate). The writer refuses to run in a sandbox checkout before any network call (add the gate if T-0040 has not).
 
 ## Out of scope
 
-BSE-specific holidays, muhurat/special sessions, and backfilling past years NSE no longer lists. The owner seeds those or waives them. Gaps inside a cached series (T-2336 "Not done").
+Re-creating or relocating the holiday store; BSE-specific holidays, muhurat/special sessions; backfilling past years NSE no longer lists; gaps inside a cached series.
 
 ## Notes
 
-- `require_current` and the broker_factory holiday wiring exist only on branch `eng/T-20261016-2336-daily-price-store-everywhere`. This task bases on that branch, or lands after it.
-- The first live run is the owner's call. Until a year file exists, every reader raises by design. That includes live `trading_loop_service`.
+- The first live run of the scheduled job is the owner's call.
+- If the stored list lacks a year a reader needs, the reader raises; no weekends-only fallback.
