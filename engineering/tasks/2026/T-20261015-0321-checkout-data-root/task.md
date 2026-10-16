@@ -15,6 +15,10 @@ approvals:
     sha256: 0d5e9c9923dfbb324bdcd5428c1b9b9724493636b1386191fea565feecaa6a95
     by: owner
     at: 2026-10-17T00:40+05:30
+  - file: acceptance.md
+    sha256: a8ad8dd82d7f8e48ee50bb48f9faa45fde490e35d9b00193a179abf4264dff9a
+    by: owner
+    at: 2026-10-17T02:10+05:30
 claimed_by: claude-main-20261016-1900
 lease_until: 2026-10-17T21:45+05:30
 branch: eng/T-20261015-0321-checkout-data-root

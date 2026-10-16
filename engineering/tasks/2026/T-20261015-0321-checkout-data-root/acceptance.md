@@ -25,8 +25,8 @@ the problem:
 
 In a worktree made by the new command:
 
-- every path in the dump from check 1 resolves under the sandbox root;
-- `python -m backend.e2e.run --symbols <one golden company> --steps documents`
+- every path in the dump from check 1 resolves under the sandbox root, except two named classes: the read-only external NSE/BSE exchange data root (`nse_data_root`, `nse_eq_dir`, `nse_index_dir`) and paths derived from the worktree's own code location; the Dhan price caches under the home directory are a known, accepted shared cache (owner ruling 2026-10-17: same prices, not part of this check);
+- `python -m backend.e2e.run --symbols <one golden company> --steps documents --end <the run date>`
   (the real flags; it has no `--companies` or `--dry-run`) run in the sandbox
   reads only sandbox paths. The sandbox is seeded for this check with a copy of
   that company's index file from the live root (the new command or a test
@@ -57,3 +57,8 @@ In a worktree made by the new command:
 
 - The server checkout's live file (a deploy step after merge).
 - Removal of the symlink (done on the owner's go).
+
+## Added by owner ruling 2026-10-17
+
+- A sandbox root containing a symlink that points into the live data root is refused by the guard (a test creates the symlink in a temp dir).
+- `scripts/rename_gujgasltd_to_gujenergy.py` is deleted; nothing references it.
