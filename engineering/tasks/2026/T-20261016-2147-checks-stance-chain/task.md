@@ -2,12 +2,16 @@
 schema: task/v1
 id: T-20261016-2147-checks-stance-chain
 title: "Stage checks: stance chain is continuous; no link used an input dated after its as-of"
-status: awaiting_owner
+status: ready
 created: 2026-10-16T21:47+05:30
 created_by: owner
 kind: internal
 related: [E-20261015-1140-validation]
-waiting_on: "Approve acceptance.md"
+approvals:
+  - file: acceptance.md
+    sha256: e93c7e448e0e6399feebf9c552d9f118232a7477eb080c18f3a57d450ed98f37
+    by: owner
+    at: 2026-10-16T21:51+05:30
 branch: eng/T-20261016-2147-checks-stance-chain
 ---
 

@@ -1,14 +1,19 @@
-# Acceptance: checks-index-quarterly (draft)
+# Acceptance: checks-index-quarterly (v2, owner-approved 2026-10-16)
 
 Read-only on product data.
 
-1. **On the frozen cases** (alto_testcases, read only): `index_dates` passes
-   on 511144; on CHANDAN it fails naming the entry whose reporting period was
-   not determined. `quarterly_versions` passes on 511144 and fails on ARSSBL
-   naming Q1 and Q2 FY27 as having no stored analysis. QA confirms each from
-   the case files by hand.
+1. **On the frozen cases** (alto_testcases, read only):
+   - 511144 passes all three checks.
+   - CHANDAN passes `index_dates` (its FY25 annual without `filed_at` is
+     before its chain start, so out of scope) and fails `intake_failures`
+     naming `stockscans_chandan_concall_ppt_jun2026ppt`, stage extraction,
+     "LLM could not determine the reporting period".
+   - ARSSBL fails `quarterly_versions` naming Q1 and Q2 FY27 as having no
+     stored analysis.
+   QA confirms each from the case files by hand.
 2. **One test per reason** on tmp fixtures: missing `reporting_period`,
-   missing `publish_date` / source, annual without `filed_at`, and each
+   missing `publish_date` / source, annual without `filed_at`, an entry
+   before the chain start that is ignored, a failed intake item, and each
    `validate_versions` reason.
 3. **No re-derivation.** `quarterly_versions` calls
    `lib/quarter_versions.validate_versions`; an AST test asserts neither check
