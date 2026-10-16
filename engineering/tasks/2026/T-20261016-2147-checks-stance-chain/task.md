@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-2147-checks-stance-chain
 title: "Stage checks: stance chain is continuous; no link used an input dated after its as-of"
-status: in_progress
+status: needs_owner
+waiting_on: owner - acceptance v2 needs DataAccess/AsOfLedger/CompanyResolver pointable at a case root (product change; see handoff.md 'v2 blocker'), or T-20261015-0321-checkout-data-root merged
 lease_until: 2026-10-17T22:00+05:30
 created: 2026-10-16T21:47+05:30
 created_by: owner

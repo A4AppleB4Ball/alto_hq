@@ -63,3 +63,34 @@
 - The frozen-case tests depend on `alto_testcases` beside the main checkout (resolved via git, raises if absent; helper
   `backend/validation/stance_chain/tests/frozen.py`). A shared helper in `backend/validation/cases/` would be a better home; I left
   it in my feature folder to avoid touching shared files.
+
+## v2 blocker (acceptance v2, alto_hq aa2c7ec, sha256 571f1542... verified against approval)
+
+Stopped without code changes, as instructed. The v2 rule says every input is resolved only through
+`lib` DataAccess / the AsOfLedger and the company resolver, and `--case` mode points them at the case root
+"via the same path mechanism". No such mechanism exists today:
+
+- `backend/config/paths.py:11-17`: one data root, "Deliberately NO env-var override".
+- `DataAccess.__init__` (`backend/lib/data_access.py:54`) takes no root. `get_announcement_index`
+  (`:156-162`) reads the module-level `SOURCES["screener_announcements"]`.
+- `AsOfLedger.announcements_between` calls `lib.events.company_announcements`. That reads the
+  module globals `ANNOUNCEMENTS_DIR` / `ATTACHMENT_HASHES_DIR` (`backend/lib/events.py:31-32`) and the NSE day files
+  through `backend.raw.utils.nse_company_rows`. None of these take a root.
+- `CompanyResolver` reads module-level `MAPPING_PATH` (`backend/lib/company_resolver.py:12`). `load_nse_only_symbols` has the same problem.
+
+Pointing these at a case root would need either a product change (a root parameter through DataAccess,
+events and the resolver) or a workaround (monkeypatching module globals, or subclassing as the completeness
+tests do). The first is a product change and the second is the workaround the coordinator ruled out.
+`T-20261015-0321-checkout-data-root` (status `ready`, QA failed round 1) looks like the intended mechanism.
+
+What the v2 redo would be once a root exists (about half a day): `stance_inputs_asof.inputs` builds a
+DataAccess/AsOfLedger/CompanyResolver on the given root. Quarterly comes from `DataAccess.quarter_versions`, annual from
+`list_annual_analyses` `filed_at`, triggers from `AsOfLedger.announcement_key` plus `announcements_between`,
+which covers both exchanges. An AST test bans `open`/`read_text`/`json.load` and day-file/index helpers in
+the package. The `bse_rows_between` commit `d79734f` gets reverted in the same commit. Until then the
+branch still holds the v1 implementation, which v2 does not accept: it reads index and day files
+itself, BSE only.
+
+Owner decision needed: (a) wait for checkout-data-root, (b) approve a root parameter on DataAccess/events/
+resolver as part of this task (it is a lib change and probably bigger than this task's kind), or (c) allow
+test-side subclassing like `completeness/tests/fixtures.FixtureDataAccess`.
