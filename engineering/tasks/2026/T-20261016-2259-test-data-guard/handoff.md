@@ -21,3 +21,6 @@ Branch eng/T-20261016-2259-test-data-guard, rebased onto main 1665a1c (local mai
 - Base half of check 3 (above). The 95 base failures are unchanged, not investigated.
 - A nested pytest subprocess would inherit ALTO_TEST_ROOT and its conftest would raise "already active"; none exists in the suite.
 - Scripts with cwd-relative data/dashboard paths (scripts/migrate_*.py, api/services/migrate_to_partitioned.py) are untouched.
+
+## Follow-up (owner decision): server chart-profile path unchanged
+Reverted cb2f413 (9b5f007). ChartProfileStorage keeps the cwd-relative data/dashboard/chart_profiles.duckdb for the server; `default_db_path()` returns the temp-root DASHBOARD_DIR path only in test mode (802a45b, backend/api/services/chart_profile_storage.py). The "behaviour change" note above no longer applies. Suite vs base (r2base.set): sandbox declaration and mode test both 95 failed 8 errors, comm -23 empty, no LiveRoot error; no backend/data/dashboard created; only the live server's snapshots.jsonl changed under the live root. Head 802a45b.

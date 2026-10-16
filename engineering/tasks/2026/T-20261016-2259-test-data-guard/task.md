@@ -14,6 +14,10 @@ approvals:
     sha256: 548696372fb90bf55e97871abdd206456477c4c24552181f3d64a957c06735db
     by: owner
     at: 2026-10-16T23:05+05:30
+  - file: acceptance.md
+    sha256: be3cff5b1589b1c43f5d23ecf3a88da3b62edecf917bbf1c43c2dd63434ed6e7
+    by: owner
+    at: 2026-10-17T03:00+05:30
 ---
 
 ## Goal
