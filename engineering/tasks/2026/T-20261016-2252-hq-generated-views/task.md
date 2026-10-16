@@ -2,8 +2,9 @@
 schema: task/v1
 id: T-20261016-2252-hq-generated-views
 title: "alto_hq generated views: tasks by status and the owner's approval queue"
-status: awaiting_owner
-waiting_on: "review evidence.md and approve the merge (also approve P-20261016-2252 and decide the .DS_Store rule)"
+status: done
+closed: 2026-10-16
+merge_commit: 3b945ba
 claimed_by:
 lease_until: 2026-10-17T23:59+05:30
 created: 2026-10-16T22:52+05:30
@@ -17,6 +18,10 @@ approvals:
     sha256: 9d7843814461396a597589c4480c5ec32cd703d6e11798656ec1ef29365302b1
     by: owner
     at: 2026-10-16T23:43+05:30
+  - file: evidence.md
+    sha256: 06bb61a9347c35a5c6d2f38abad34cd0c492bdde1c1e82bc2f91ef423cbe7fea
+    by: owner
+    at: 2026-10-16T23:55+05:30
 ---
 
 ## Goal
