@@ -2,8 +2,8 @@
 schema: task/v1
 id: T-20261016-1928-case-freezer
 title: "Freeze one company's sources and stores into alto_testcases as a hash-verified case"
-status: in_progress
-claimed_by: dev-case-freezer-20261016
+status: ready
+claimed_by:
 lease_until: 2026-10-17T20:00+05:30
 created: 2026-10-16T19:28+05:30
 created_by: owner
@@ -15,6 +15,7 @@ approvals:
     by: owner
     at: 2026-10-16T19:40+05:30
 branch: eng/T-20261016-1928-case-freezer
+friction: acceptance 4's literal `find -newer` cannot be empty on a live data root (the API process writes book snapshots and dashboard chat continuously); a check scoped to the freeze's read set, or a quiet window, is needed.
 ---
 
 ## Goal
