@@ -17,6 +17,8 @@ approvals:
 branch: eng/T-20261016-1718-lib-regroup
 ---
 
+> Deferred by the owner, 2026-10-16. Acceptance stays approved; set status back to ready when the owner says go.
+
 ## Goal
 
 Move the flat modules of `backend/lib/` into feature folders and update every import in one change, no shims. About 150 import lines (quarter_policy 30 files, data_access 29, company_resolver 29, announcement_key 28, concall_dates 22, filing_policy 18, events 16, quarter_versions 14).
