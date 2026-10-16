@@ -1,4 +1,4 @@
-# Acceptance: completeness-awaiting-state (DRAFT, not approved)
+# Acceptance: completeness-awaiting-state (approved)
 
 Read-only on product data; fixtures in temp dirs. Depends on completeness-check (merged).
 

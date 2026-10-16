@@ -2,13 +2,19 @@
 schema: task/v1
 id: T-20261016-2200-completeness-awaiting-state
 title: "Completeness: a due quarter with no documents is Awaiting and does not block"
-status: awaiting_owner
-waiting_on: "Read and approve acceptance.md"
+status: ready
 created: 2026-10-16T22:00+05:30
 created_by: owner
 kind: internal
 spawned_from: T-20261016-1718-proposal-gate
 related: [T-20261016-1718-completeness-check, T-20261016-1718-proposal-gate, D-20261016-2200-due-nothing-in-awaiting]
+approvals:
+  - file: acceptance.md
+    sha256: 891784628abcc1d4c874db17848220c890d1d56fb386b4808066075ca74e7e88
+    by: owner
+    at: 2026-10-16T22:30+05:30
+claimed_by: claude-main-20261016-1900
+lease_until: 2026-10-17T22:00+05:30
 branch: eng/T-20261016-2200-completeness-awaiting-state
 ---
 

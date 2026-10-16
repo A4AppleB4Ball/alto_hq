@@ -108,3 +108,32 @@ Commands run from the worktree. `C=/Users/kmrh581/personal/projects/workspace/al
 - **Constructors that mkdir:** `StepCache.__init__` (`stores/workflow_cache/step_cache.py:43`)
   and `RebalanceStore.__init__` mkdir on construction, so a read-only consumer cannot use
   them safely on a fresh root.
+
+# Round 2 (answers QA evidence.md)
+
+Commit `65bc595` "Validation: case freezer records each store's latest date and
+constructs no writing store" (on `905ef7e`). Cases re-frozen in alto_testcases
+as new local commit `557b0b0` (5a999e6 kept); both manifests record alto `65bc595`.
+
+- **Acceptance 2 (publish_date vs filed_at):** not changed in code, per the
+  coordinator: owner amendment pending.
+- **F1 fixed.** `roots.py` no longer constructs `StepCache`. Using `CACHE_DIR`
+  directly in validation/ is a new `test_boundaries` violation (store-owned
+  constant), so I added a read-only `cache_root()` in
+  `backend/stores/workflow_cache/step_cache.py` (returns `CACHE_DIR`, constructs
+  and creates nothing). This is the one edit outside `backend/validation/cases/`.
+  Test `test_production_roots_construct_no_writing_store` makes
+  `StepCache.__init__` raise and calls `production_roots()`.
+- **F2 fixed, no truncation.** New `cases/dates.py`: one reader per store, from
+  the field its writer records (stance `as_of`, quarter-version filename date,
+  proposal `created_at`, index `publish_date`/`filed_at`, intake and bse
+  `news_date`, day-file/bhavcopy/macro name dates, Dhan parquet bar dates).
+  Stores with no dated contract record `max_date: not_dated`; a dated store
+  whose files carry no date raises. Each frozen store records `max_date` and
+  `past_as_of`; `load.stores_past_as_of(manifest)` exposes them and the load CLI
+  prints them. Real cases: both show `{'prices_dhan_15min': '2026-10-16'}` past
+  the as-of. Test `test_post_as_of_records_are_kept_and_exposed`.
+- Rechecks: `load` 520 / 385 files verified; independent listing 174 / 149
+  files, 0 not in case; `pytest backend/validation` + boundaries + workflow_cache
+  56 passed; full suite 66 failed / 1468 passed, `comm -23 new base` empty.
+- Acceptance 4 caveat unchanged (live writers on the data root).

@@ -48,3 +48,7 @@ Read this at Step 0. Product facts go in the product's docs (`backend/docs/40_co
   every changed module before handing off.
 - Executor tests build a Dhan client by hand; when the client gains a
   required map (e.g. `set_lot_map`), test setup must add it.
+- `find <data> -newer marker` over the whole production data root picks up
+  the live API and scrapers (book `snapshots.jsonl`, `dashboard/chat/*.duckdb`,
+  `screener_data/raw_reports`), seen 2026-10-16 in T-20261016-1928. Rerun in a
+  quiet window and compare mtimes to your run's start/end before calling it a write.

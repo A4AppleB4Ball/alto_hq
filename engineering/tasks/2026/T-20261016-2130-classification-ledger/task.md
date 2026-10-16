@@ -2,11 +2,12 @@
 schema: task/v1
 id: T-20261016-2130-classification-ledger
 title: "Log every materiality classification, immaterial ones included, in the stance store"
-status: draft
+status: awaiting_owner
 created: 2026-10-16T21:30+05:30
 created_by: owner
 kind: internal
 related: [E-20261016-1756-stance-inputs, E-20261015-1140-validation, T-20261016-1718-completeness-check]
+waiting_on: "Read and approve acceptance.md and the ledger location (sidecar in the stance store)"
 branch: eng/T-20261016-2130-classification-ledger
 ---
 
