@@ -2,12 +2,17 @@
 schema: task/v1
 id: T-20261016-2315-checkout-guard-hardening
 title: "The checkout guard resolves every data path, refuses links to the live root or its parents at any depth, and costs no import-time walk"
-status: draft
+status: ready
 created: 2026-10-16T23:15+05:30
 created_by: claude-main
 kind: internal
 spawned_from: T-20261015-0321-checkout-data-root
 related: [T-20261015-0321-checkout-data-root]
+approvals:
+  - file: acceptance.md
+    sha256: 14188b83700eae249e7ab86999d89a0295ccdd634669fcc761b927db69123ba4
+    by: owner
+    at: 2026-10-16T23:20+05:30
 ---
 
 ## Goal
