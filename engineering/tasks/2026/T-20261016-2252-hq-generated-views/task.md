@@ -2,11 +2,12 @@
 schema: task/v1
 id: T-20261016-2252-hq-generated-views
 title: "alto_hq generated views: tasks by status and the owner's approval queue"
-status: ready
+status: in_progress
 created: 2026-10-16T22:52+05:30
 created_by: owner
 kind: internal
 related: []
+branch: eng/T-20261016-2252-hq-generated-views
 approvals:
   - file: acceptance.md
     sha256: d7feba4c53927eea9883253f08332f575d0848acd0a26b2fcbea71af4545ef94
