@@ -2,7 +2,8 @@
 schema: task/v1
 id: T-20261016-1718-proposal-gate
 title: "Rebalance proposal refuses a stance whose latest quarter has no valid analysis"
-status: in_progress
+status: awaiting_owner
+waiting_on: "review evidence.md and approve the merge"
 created: 2026-10-16T17:18+05:30
 created_by: owner
 kind: internal
